@@ -1,0 +1,13 @@
+# robots.txt for FreeGameHub
+# https://freegamehub.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://freegamehub.org/sitemap.xml
+
+# Disallow any future admin or temporary directories
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /temp/

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO Tags -->
+    <title>Play Minesweeper Online Free | Classic Mine Sweeper Game - FreeGameHub</title>
+    <meta name="description" content="Play the classic Minesweeper game online for free. Use logic to find all mines without detonating any. No download required. Multiple difficulty levels.">
+    <meta name="keywords" content="minesweeper, mine sweeper, minesweeper online, free minesweeper, minesweeper game">
+    <link rel="canonical" href="https://freegamehub.org/games/minesweeper.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Play Minesweeper Online Free | FreeGameHub">
+    <meta property="og:description" content="Classic logic puzzle game. Find all mines using number clues. Free to play!">
+    <meta property="og:url" content="https://freegamehub.org/games/minesweeper.html">
+    <meta property="og:type" content="game">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Minesweeper",
+      "description": "Classic logic puzzle game where players use clues to find hidden mines",
+      "gamePlatform": "Web Browser",
+      "genre": "Logic Puzzle"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play Minesweeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minesweeper is a logic puzzle game where you must reveal all safe cells without clicking any mines. Click cells to reveal numbers indicating how many mines are adjacent to that cell. Use these clues to deduce mine locations. Right-click to flag suspected mines."
+        }
+      },{
+        "@type": "Question",
+        "name": "What do the numbers mean in Minesweeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each number in Minesweeper shows how many mines are hidden in the 8 surrounding cells (up, down, left, right, and diagonals). A '1' means one mine nearby, '2' means two mines, and so on. A blank cell means zero adjacent mines."
+        }
+      },{
+        "@type": "Question",
+        "name": "How do you flag a mine in Minesweeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Right-click (or long-press on mobile) on any cell to place a flag. This marks the cell as a suspected mine location. Right-click again to remove the flag. Flagging helps you keep track of dangerous cells while solving the puzzle."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is the fastest way to complete Minesweeper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start by clicking corners and edges, as they have fewer adjacent cells and provide clearer information. Look for obvious patterns like the 1-2-1 configuration. Use both mouse buttons simultaneously on revealed numbers to quickly clear surrounding cells when all mines are flagged."
+        }
+      }]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/games.min.css">
+    <style>
+        .difficulty-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .difficulty-selector .btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .minesweeper-grid {
+            display: inline-grid;
+            gap: 0;
+            border: 3px solid #7f7f7f;
+            background: #7f7f7f;
+            box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(255,255,255,0.5);
+        }
+
+        .mine-cell {
+            width: 28px;
+            height: 28px;
+            border: 2px outset #bdbdbd;
+            background: #bdbdbd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .mine-cell:active {
+            border-style: inset;
+        }
+
+        .mine-cell.revealed {
+            border: 1px solid #7f7f7f;
+            border-style: solid;
+            background: #c0c0c0;
+            cursor: default;
+        }
+
+        .mine-cell.flagged {
+            background: #bdbdbd;
+        }
+
+        .mine-cell.flagged::after {
+            content: '🚩';
+        }
+
+        .mine-cell.mine {
+            background: #ff0000;
+        }
+
+        .mine-cell.mine::after {
+            content: '💣';
+        }
+
+        .mine-cell.revealed.num-1 { color: #0000ff; }
+        .mine-cell.revealed.num-2 { color: #008000; }
+        .mine-cell.revealed.num-3 { color: #ff0000; }
+        .mine-cell.revealed.num-4 { color: #000080; }
+        .mine-cell.revealed.num-5 { color: #800000; }
+        .mine-cell.revealed.num-6 { color: #008080; }
+        .mine-cell.revealed.num-7 { color: #000000; }
+        .mine-cell.revealed.num-8 { color: #808080; }
+
+        @media (max-width: 768px) {
+            .mine-cell {
+                width: 22px;
+                height: 22px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mine-cell {
+                width: 18px;
+                height: 18px;
+                font-size: 11px;
+                border-width: 1px;
+            }
+
+            .difficulty-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    <style>
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="game-page">
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar Ad -->
+        <aside class="sidebar-ad sidebar-ad-left">
+            <div class="ad-placeholder">
+                Left Ad 1<br>160x250
+            </div>
+            <div class="ad-placeholder">
+                Left Ad 2<br>160x250
+            </div>
+            <div class="ad-placeholder">
+                Left Ad 3<br>160x250
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+        <div class="game-header">
+            <h1>💣 Minesweeper</h1>
+            <p>Find all the mines without detonating any!</p>
+        </div>
+
+        <div class="container">
+            <div class="game-container">
+                <div class="difficulty-selector">
+                    <button class="btn btn-secondary" data-difficulty="easy">Easy (9x9)</button>
+                    <button class="btn btn-primary" data-difficulty="medium">Medium (16x16)</button>
+                    <button class="btn btn-secondary" data-difficulty="hard">Hard (16x30)</button>
+                </div>
+
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="info-label">Mines</span>
+                        <span class="info-value" id="mines-left">10</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time</span>
+                        <span class="info-value" id="timer">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Status</span>
+                        <span class="info-value" id="status">😊</span>
+                    </div>
+                </div>
+
+                <div class="game-board">
+                    <div class="minesweeper-grid" id="minesweeper-grid"></div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-primary" id="new-game">New Game</button>
+                    <p style="color: #666; font-size: 0.75rem; margin: 0.25rem 0 0 0;">Left-click to reveal • Right-click to flag</p>
+                </div>
+            </div>
+
+            <!-- Game Instructions -->
+            <div class="content-section">
+                <h2>How to Play Minesweeper</h2>
+                <p>Minesweeper is a classic logic puzzle game that has been entertaining players since the 1960s. The goal is to clear a grid of cells without detonating any hidden mines, using number clues to deduce safe cells.</p>
+
+                <h3>Game Rules</h3>
+                <ul>
+                    <li>The grid contains hidden mines randomly placed throughout</li>
+                    <li><strong>Left-click</strong> a cell to reveal what's underneath</li>
+                    <li><strong>Right-click</strong> a cell to place a flag marking it as a suspected mine</li>
+                    <li>If you reveal a mine, you lose the game</li>
+                    <li>If you reveal an empty cell, it shows a number indicating how many mines are in the 8 surrounding cells</li>
+                    <li>If there are no mines nearby (0), adjacent cells automatically reveal</li>
+                    <li>Use the numbers to logically deduce where mines must be located</li>
+                    <li>Flag all mines and reveal all safe cells to win</li>
+                </ul>
+
+                <h3>Difficulty Levels</h3>
+                <ul>
+                    <li><strong>Easy:</strong> 9×9 grid with 10 mines (12% mine density)</li>
+                    <li><strong>Medium:</strong> 16×16 grid with 40 mines (16% mine density)</li>
+                    <li><strong>Hard:</strong> 16×30 grid with 99 mines (21% mine density)</li>
+                </ul>
+
+                <h3>Understanding the Numbers</h3>
+                <p>When you reveal a cell, you might see a number from 1 to 8. This number tells you exactly how many mines are hidden in the eight cells surrounding that number (horizontally, vertically, and diagonally).</p>
+                <ul>
+                    <li>If a cell shows "1", there's exactly one mine in the surrounding 8 cells</li>
+                    <li>If a cell shows "3", there are three mines in the surrounding 8 cells</li>
+                    <li>If a cell is blank (no number), there are zero mines nearby, and all surrounding cells are safe</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Winning Strategies</h2>
+                <ul>
+                    <li><strong>Start with the Corners:</strong> Begin by clicking in corners or edges where you have more control over the number of surrounding cells.</li>
+                    <li><strong>Look for Obvious Patterns:</strong> If a cell shows "1" and there's only one unrevealed neighbor, that neighbor must be a mine.</li>
+                    <li><strong>Use the 1-2 Pattern:</strong> When you see a "1" next to a "2", and the "1" touches one unrevealed cell while the "2" touches three unrevealed cells (with one shared), the two cells exclusive to the "2" must be mines.</li>
+                    <li><strong>Flag Mines Immediately:</strong> When you're certain a cell contains a mine, flag it. This helps you keep track of known mines.</li>
+                    <li><strong>Count Remaining Mines:</strong> Keep an eye on the mine counter. As you flag mines, this helps you deduce remaining mine locations.</li>
+                    <li><strong>Don't Guess Early:</strong> Only make random guesses as a last resort. Usually, there's a logical deduction you can make.</li>
+                    <li><strong>Work from Revealed Areas:</strong> Focus on cells near already-revealed numbers rather than randomly clicking in unrevealed areas.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Common Patterns</h2>
+                <h3>The 1-1 Pattern</h3>
+                <p>When two "1"s are next to each other sharing three common unrevealed cells, the mine must be in one of those three cells. The cells not shared by both "1"s are safe.</p>
+
+                <h3>The 1-2-1 Pattern</h3>
+                <p>A "2" flanked by two "1"s often indicates that the two mines are in the cells directly adjacent to the "2" and not shared with the "1"s.</p>
+
+                <h3>Edge and Corner Patterns</h3>
+                <p>Cells along edges and in corners have fewer neighbors, making them easier to solve. A "1" in a corner with only three possible neighbors means each has a 33% chance of being a mine.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Tips for Beginners</h2>
+                <ul>
+                    <li>Start with Easy difficulty to learn the basic patterns</li>
+                    <li>Don't rush - take your time to analyze the numbers carefully</li>
+                    <li>Use flags liberally to mark known mines</li>
+                    <li>If you're stuck, look for cells where you can narrow down mine locations mathematically</li>
+                    <li>Remember that every game is solvable with logic (though sometimes you need to guess)</li>
+                    <li>Practice makes perfect - the more you play, the faster you'll recognize patterns</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Related Games -->
+        
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>How do you play Minesweeper?</h3>
+                    <p>Minesweeper is a logic puzzle game where you must reveal all safe cells without clicking any mines. Click cells to reveal numbers indicating how many mines are adjacent to that cell. Use these clues to deduce mine locations. Right-click to flag suspected mines.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What do the numbers mean in Minesweeper?</h3>
+                    <p>Each number in Minesweeper shows how many mines are hidden in the 8 surrounding cells (up, down, left, right, and diagonals). A '1' means one mine nearby, '2' means two mines, and so on. A blank cell means zero adjacent mines.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do you flag a mine in Minesweeper?</h3>
+                    <p>Right-click (or long-press on mobile) on any cell to place a flag. This marks the cell as a suspected mine location. Right-click again to remove the flag. Flagging helps you keep track of dangerous cells while solving the puzzle.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the fastest way to complete Minesweeper?</h3>
+                    <p>Start by clicking corners and edges, as they have fewer adjacent cells and provide clearer information. Look for obvious patterns like the 1-2-1 configuration. Use both mouse buttons simultaneously on revealed numbers to quickly clear surrounding cells when all mines are flagged.</p>
+                </div>
+            </div>
+<section class="related-games">
+            <div class="container">
+                <h2>You May Also Like</h2>
+                <div class="game-grid">
+                    <a href="memory.html" class="game-card">
+                        <div class="game-icon">🧠</div>
+                        <h4>Memory Game</h4>
+                        <p>Test your memory matching cards</p>
+                    </a>
+                    <a href="solitaire.html" class="game-card">
+                        <div class="game-icon">🂡</div>
+                        <h4>Classic Solitaire</h4>
+                        <p>Classic solitaire card game</p>
+                    </a>
+                    <a href="mahjong.html" class="game-card">
+                        <div class="game-icon">🀄</div>
+                        <h4>Mahjong Solitaire</h4>
+                        <p>Classic tile-matching puzzle</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Right Sidebar Ad -->
+    <aside class="sidebar-ad sidebar-ad-right">
+        <div class="ad-placeholder">
+            Right Ad 1<br>160x250
+        </div>
+        <div class="ad-placeholder">
+            Right Ad 2<br>160x250
+        </div>
+        <div class="ad-placeholder">
+            Right Ad 3<br>160x250
+        </div>
+    </aside>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Win/Lose Modal -->
+    <div class="modal" id="game-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over</h2>
+            <p id="modal-message"></p>
+            <p><strong>Time:</strong> <span id="final-time"></span> seconds</p>
+            <button class="btn btn-success" id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/minesweeper.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

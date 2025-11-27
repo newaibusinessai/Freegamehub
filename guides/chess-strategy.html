@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Strategy Guide for Beginners: Learn to Play & Win | FreeGameHub</title>
+    <meta name="description" content="Learn chess strategy from beginner to intermediate level. Master openings, tactics, endgames, and essential tips to improve your chess skills and win more games online.">
+    <meta name="keywords" content="chess strategy, chess tips for beginners, learn chess, chess tactics, chess openings, chess endgame, how to play chess, improve at chess">
+    <link rel="canonical" href="https://freegamehub.org/guides/chess-strategy.html">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Chess Strategy Guide for Beginners: Learn to Play & Win">
+    <meta property="og:description" content="Master chess strategy with our beginner-friendly guide. Learn openings, tactics, and winning techniques.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://freegamehub.org/guides/chess-strategy.html">
+    <meta property="og:image" content="https://freegamehub.org/images/chess-guide.jpg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Chess Strategy Guide for Beginners: Learn to Play & Win",
+        "description": "Comprehensive chess strategy guide covering openings, tactics, endgames, and essential tips for improvement.",
+        "author": {
+            "@type": "Organization",
+            "name": "FreeGameHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FreeGameHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://freegamehub.org/images/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://freegamehub.org/guides/chess-strategy.html"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freegamehub.org/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://freegamehub.org/guides/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Chess Strategy Guide",
+            "item": "https://freegamehub.org/guides/chess-strategy.html"
+        }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Improve Your Chess Strategy",
+        "description": "Guide to fundamental chess strategies including opening principles, middle game tactics, and endgame techniques",
+        "step": [{
+            "@type": "HowToStep",
+            "name": "Control the Center",
+            "text": "Start by controlling the four central squares (e4, d4, e5, d5) with pawns and pieces. Central control gives your pieces more mobility and influence over the board."
+        },{
+            "@type": "HowToStep",
+            "name": "Develop Your Pieces",
+            "text": "Bring your knights and bishops into play early. Aim to develop all minor pieces before moving the same piece twice. Connect your rooks by completing development."
+        },{
+            "@type": "HowToStep",
+            "name": "Protect Your King",
+            "text": "Castle early (kingside or queenside) to move your king to safety and activate your rook. Don't delay castling, as an exposed king is vulnerable to attack."
+        },{
+            "@type": "HowToStep",
+            "name": "Think Ahead",
+            "text": "Before making any move, consider your opponent's possible responses. Look for tactics like forks, pins, and skewers. Calculate at least 2-3 moves ahead."
+        },{
+            "@type": "HowToStep",
+            "name": "Learn Basic Endgames",
+            "text": "Study fundamental endgames like king and pawn vs king, and basic checkmate patterns (queen checkmate, rook checkmate). Endgame knowledge turns winning positions into victories."
+        }]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/games.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        article {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #f0f0ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .principle-box {
+            background: #f9f9f9;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            article {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">FreeGameHub</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../games/">Games</a></li>
+                <li><a href="../guides/">Guides</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h1>Chess Strategy Guide for Beginners: Learn to Play & Win</h1>
+
+            <p>Chess is the ultimate strategy game, combining deep tactical calculation with long-term strategic planning. Whether you're just learning the rules or looking to improve from beginner to intermediate level, this comprehensive guide will teach you the fundamental principles and strategies used by successful chess players worldwide.</p>
+
+            <div class="highlight-box">
+                <strong>Why Learn Chess Strategy?</strong> Knowing how the pieces move is just the beginning. Strategy transforms chess from random moves into a battle of wits where better plans lead to consistent victories.
+            </div>
+
+            <a href="../games/chess.html" class="cta-button">Play Chess Online Now</a>
+
+            <h2>The Three Phases of Chess</h2>
+
+            <p>Every chess game has three distinct phases, each requiring different strategies:</p>
+
+            <div class="principle-box">
+                <h3>Opening (Moves 1-10)</h3>
+                <p><strong>Goal:</strong> Develop your pieces, control the center, and ensure king safety</p>
+                <p><strong>Focus:</strong> Piece development, pawn structure, castling</p>
+            </div>
+
+            <div class="principle-box">
+                <h3>Middlegame (Moves 10-30+)</h3>
+                <p><strong>Goal:</strong> Create and execute tactical opportunities, improve piece positions</p>
+                <p><strong>Focus:</strong> Tactics, attacks, positional advantages</p>
+            </div>
+
+            <div class="principle-box">
+                <h3>Endgame (Few pieces remaining)</h3>
+                <p><strong>Goal:</strong> Convert advantages into checkmate or promotion</p>
+                <p><strong>Focus:</strong> King activity, pawn promotion, basic checkmates</p>
+            </div>
+
+            <h2>Fundamental Chess Principles</h2>
+
+            <h3>1. Control the Center</h3>
+            <p>The center squares (e4, d4, e5, d5) are the most important on the board:</p>
+            <ul>
+                <li>Pieces in the center control more squares</li>
+                <li>Start by moving central pawns (e4 or d4 for White, e5 or d5 for Black)</li>
+                <li>Aim your pieces toward the center even if they're on the sides</li>
+                <li>Controlling the center gives you more tactical opportunities</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Opening Principle:</strong> In the first few moves, advance your e-pawn or d-pawn two squares to stake your claim in the center.
+            </div>
+
+            <h3>2. Develop Your Pieces Quickly</h3>
+            <p>Get your pieces off the back rank and into the game:</p>
+            <ul>
+                <li><strong>Knights before Bishops:</strong> Generally develop knights to f3/c3 (White) or f6/c6 (Black)</li>
+                <li><strong>Don't move the same piece twice:</strong> In the opening, develop a new piece with each move</li>
+                <li><strong>Don't bring the Queen out early:</strong> She can be attacked and you'll waste time retreating</li>
+                <li><strong>Castle early:</strong> Usually within the first 10 moves to protect your king</li>
+            </ul>
+
+            <h3>3. King Safety is Paramount</h3>
+            <p>Your king's safety should be your top priority:</p>
+            <ul>
+                <li>Castle early (kingside castling is usually safer)</li>
+                <li>Keep pawns in front of your castled king</li>
+                <li>Don't create weaknesses near your king</li>
+                <li>Watch for back-rank checkmate threats</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Critical Rule:</strong> A game can turn on a single king safety mistake. Before making aggressive moves, always check: "Is my king safe?"
+            </div>
+
+            <h3>4. Every Move Should Have a Purpose</h3>
+            <p>Avoid "hope chess" - making moves without clear intent:</p>
+            <ul>
+                <li>Ask yourself: "What does this move accomplish?"</li>
+                <li>Good purposes: develop a piece, control key squares, attack enemy pieces, improve king safety</li>
+                <li>Bad moves: aimless pawn pushes, moving already-developed pieces, creating weaknesses</li>
+            </ul>
+
+            <h2>Chess Opening Principles</h2>
+
+            <h3>The First 10 Moves: Your Opening Checklist</h3>
+            <ol>
+                <li>Move central pawns (e4/d4 or e5/d5)</li>
+                <li>Develop knights toward the center (Nf3, Nc3 or Nf6, Nc6)</li>
+                <li>Develop bishops to active squares</li>
+                <li>Castle your king (usually kingside)</li>
+                <li>Connect your rooks (develop all back-rank pieces)</li>
+                <li>Don't move the same piece multiple times unless forced</li>
+                <li>Don't bring your queen out too early</li>
+                <li>Don't make unnecessary pawn moves on the flanks</li>
+            </ol>
+
+            <h3>Beginner-Friendly Openings</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Opening</th>
+                        <th>First Moves</th>
+                        <th>Benefits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Italian Game</strong></td>
+                        <td>1.e4 e5 2.Nf3 Nc6 3.Bc4</td>
+                        <td>Simple development, attacks f7, easy to understand</td>
+                    </tr>
+                    <tr>
+                        <td><strong>London System</strong></td>
+                        <td>1.d4 d5 2.Bf4 Nf6 3.e3 e6 4.Nf3</td>
+                        <td>Solid structure, flexible, easy to learn</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scotch Game</strong></td>
+                        <td>1.e4 e5 2.Nf3 Nc6 3.d4</td>
+                        <td>Opens the center, tactical opportunities, straightforward</td>
+                    </tr>
+                    <tr>
+                        <td><strong>French Defense</strong></td>
+                        <td>1.e4 e6 2.d4 d5</td>
+                        <td>Solid for Black, controls center, counterattacking chances</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Essential Chess Tactics</h2>
+
+            <p>Tactics are short-term combinations that win material or deliver checkmate. Master these patterns:</p>
+
+            <h3>1. Forks</h3>
+            <p>A single piece attacks two or more enemy pieces simultaneously:</p>
+            <ul>
+                <li><strong>Knight forks:</strong> The most common, knights can fork king and queen, rooks, etc.</li>
+                <li><strong>Pawn forks:</strong> A pawn attacking two pieces</li>
+                <li><strong>Queen/Bishop forks:</strong> Along diagonals</li>
+            </ul>
+
+            <h3>2. Pins</h3>
+            <p>A piece is attacked and cannot move without exposing a more valuable piece:</p>
+            <ul>
+                <li><strong>Absolute pin:</strong> Moving would expose your king (illegal)</li>
+                <li><strong>Relative pin:</strong> Moving would lose valuable material</li>
+                <li>Bishops and rooks are pinning pieces; knights cannot pin</li>
+            </ul>
+
+            <h3>3. Skewers</h3>
+            <p>The reverse of a pin - a valuable piece must move, exposing a less valuable piece:</p>
+            <ul>
+                <li>Often involves attacking the king or queen first</li>
+                <li>Bishops and rooks deliver skewers</li>
+            </ul>
+
+            <h3>4. Discovered Attacks</h3>
+            <p>Moving one piece reveals an attack from another piece:</p>
+            <ul>
+                <li>Extremely powerful because you make two threats at once</li>
+                <li><strong>Discovered check:</strong> Revealing a check is especially potent</li>
+            </ul>
+
+            <h3>5. Double Attacks</h3>
+            <p>One move creates two separate threats:</p>
+            <ul>
+                <li>Opponent can only defend against one threat</li>
+                <li>You win material or gain a significant advantage</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Tactical Training:</strong> Practice these patterns daily. Solving chess puzzles is the fastest way to improve your tactical vision.
+            </div>
+
+            <h2>Middlegame Strategy</h2>
+
+            <h3>Key Middlegame Concepts</h3>
+
+            <h4>Piece Activity</h4>
+            <ul>
+                <li>Active pieces (controlling important squares) are better than passive pieces</li>
+                <li>Rooks belong on open files (files without pawns)</li>
+                <li>Knights are strong in closed positions; bishops in open positions</li>
+                <li>The knight on the rim is dim - avoid placing knights on edge squares</li>
+            </ul>
+
+            <h4>Pawn Structure</h4>
+            <ul>
+                <li><strong>Passed pawns:</strong> Pawns with no opposing pawns blocking their path - very strong</li>
+                <li><strong>Doubled pawns:</strong> Two pawns on the same file - usually weak</li>
+                <li><strong>Isolated pawns:</strong> Pawns with no friendly pawns on adjacent files - can be weak</li>
+                <li><strong>Pawn chains:</strong> Diagonal lines of pawns - attack at the base</li>
+            </ul>
+
+            <h4>Space Advantage</h4>
+            <ul>
+                <li>More space gives your pieces more mobility</li>
+                <li>Advanced pawns control territory</li>
+                <li>Use space advantage to maneuver and create threats</li>
+            </ul>
+
+            <h2>Basic Endgame Principles</h2>
+
+            <h3>The King Becomes a Fighter</h3>
+            <p>In the endgame, your king transforms from a liability to a powerful piece:</p>
+            <ul>
+                <li>Activate your king - bring it toward the center</li>
+                <li>Use your king to support pawn advances</li>
+                <li>King and pawn endgames require precise calculation</li>
+            </ul>
+
+            <h3>Pawn Promotion is Key</h3>
+            <ul>
+                <li>Push passed pawns toward promotion</li>
+                <li>Support pawns with your king and pieces</li>
+                <li>Sometimes sacrificing material to promote is correct</li>
+            </ul>
+
+            <h3>Essential Checkmates to Learn</h3>
+
+            <div class="principle-box">
+                <h4>1. Queen and King vs King</h4>
+                <p>Use your queen to cut off escape squares while your king helps corner the enemy king.</p>
+            </div>
+
+            <div class="principle-box">
+                <h4>2. Rook and King vs King</h4>
+                <p>Use the rook to cut off ranks/files, gradually pushing the enemy king to the edge.</p>
+            </div>
+
+            <div class="principle-box">
+                <h4>3. Two Rooks vs King</h4>
+                <p>The "ladder mate" - use rooks on adjacent ranks/files to drive the king to the edge.</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>Practice These!</strong> You should be able to deliver these basic checkmates every time. Practice against the computer until they're automatic.
+            </div>
+
+            <h2>Common Beginner Mistakes</h2>
+
+            <div class="warning-box">
+                <h3>Mistake #1: Moving Pawns Too Much</h3>
+                <p>Every pawn move creates a permanent weakness. Focus on developing pieces in the opening, not pushing pawns randomly.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>Mistake #2: Bringing the Queen Out Early</h3>
+                <p>Your opponent will attack your queen, gaining time while you retreat. Develop minor pieces first.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>Mistake #3: Not Castling</h3>
+                <p>An uncastled king is vulnerable to attacks. Castle within the first 10 moves unless there's a specific reason not to.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>Mistake #4: Ignoring Opponent's Threats</h3>
+                <p>Before making your planned move, always ask: "What is my opponent threatening?"</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>Mistake #5: Trading Pieces Without Purpose</h3>
+                <p>Don't automatically capture just because you can. Ask: "Does this trade benefit me?"</p>
+            </div>
+
+            <h2>Your Chess Improvement Plan</h2>
+
+            <h3>For Absolute Beginners (Rating 0-800)</h3>
+            <ol>
+                <li>Master piece movements and basic rules</li>
+                <li>Learn the opening principles (control center, develop pieces, castle)</li>
+                <li>Practice basic tactics (forks, pins, skewers)</li>
+                <li>Learn the three basic checkmates</li>
+                <li>Play slow games (15+ minutes per side)</li>
+            </ol>
+
+            <h3>For Novices (Rating 800-1200)</h3>
+            <ol>
+                <li>Learn 2-3 simple openings deeply</li>
+                <li>Solve tactical puzzles daily (20-30 minutes)</li>
+                <li>Study your lost games to find mistakes</li>
+                <li>Learn basic endgame principles</li>
+                <li>Focus on not hanging pieces (leaving them undefended)</li>
+            </ol>
+
+            <h3>For Intermediate Players (Rating 1200-1600)</h3>
+            <ol>
+                <li>Deepen opening repertoire with strategic understanding</li>
+                <li>Study classic games by masters</li>
+                <li>Advanced tactics and calculation training</li>
+                <li>Master common endgames (rook endgames, pawn endgames)</li>
+                <li>Develop positional understanding</li>
+            </ol>
+
+            <h2>Practice Tips for Rapid Improvement</h2>
+
+            <ul>
+                <li><strong>Play Regularly:</strong> Consistency beats occasional marathon sessions</li>
+                <li><strong>Analyze Your Games:</strong> Especially losses - they're your best teachers</li>
+                <li><strong>Solve Puzzles Daily:</strong> Tactical training improves pattern recognition</li>
+                <li><strong>Study Master Games:</strong> Watch how experts handle different positions</li>
+                <li><strong>Use a Chess Engine:</strong> After games, check where you went wrong</li>
+                <li><strong>Play Slower Time Controls:</strong> Gives you time to think and avoid blunders</li>
+                <li><strong>Focus on One Area:</strong> Spend a week on openings, next week on tactics, etc.</li>
+                <li><strong>Join a Chess Community:</strong> Discuss games and learn from others</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Ready to apply these strategies?</strong> Start playing smarter chess today!</p>
+                <a href="../games/chess.html" class="cta-button">Play Chess vs Computer</a>
+            </div>
+
+            <h2>Recommended Resources</h2>
+            <ul>
+                <li><a href="../games/chess.html">Play Chess Online Free</a></li>
+                <li><strong>Books:</strong> "Bobby Fischer Teaches Chess" (beginner), "Logical Chess Move by Move" (intermediate)</li>
+                <li><strong>Websites:</strong> Lichess.org (free puzzles and analysis), Chess.com (lessons and videos)</li>
+                <li><strong>YouTube Channels:</strong> GothamChess, ChessVibes, Hanging Pawns</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/chess.html">Chess</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="solitaire-variants.html">Solitaire Variants</a>
+                    <a href="chess-strategy.html">Chess Strategy</a>
+                    <a href="minesweeper-guide.html">Minesweeper Guide</a>
+                    <a href="freecell-strategy.html">FreeCell Strategy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

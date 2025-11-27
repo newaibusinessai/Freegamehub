@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Mahjong Solitaire Online Free | Classic Tile Matching - FreeGameHub</title>
+    <meta name="description" content="Play Mahjong Solitaire online for free. Match pairs of identical tiles to clear the board. Classic turtle layout puzzle game. Mobile-friendly. No download.">
+    <meta name="keywords" content="mahjong, mahjong solitaire, tile matching, puzzle game, free games, online games, browser game, mahjongg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freegamehub.com/games/mahjong">
+    <meta property="og:title" content="Play Mahjong Solitaire Online Free | Classic Tile Matching">
+    <meta property="og:description" content="Play Mahjong Solitaire online for free. Match pairs of free tiles to clear the board. Classic turtle layout.">
+    <meta property="og:image" content="https://freegamehub.com/images/mahjong-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://freegamehub.com/games/mahjong">
+    <meta property="twitter:title" content="Play Mahjong Solitaire Online Free | Classic Tile Matching">
+    <meta property="twitter:description" content="Play Mahjong Solitaire online for free. Match pairs of free tiles to clear the board. Classic turtle layout.">
+    <meta property="twitter:image" content="https://freegamehub.com/images/mahjong-og.jpg">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "VideoGame",
+                "name": "Mahjong Solitaire",
+                "description": "Play Mahjong Solitaire online for free. Match pairs of free tiles to clear the board. Classic turtle layout.",
+                "genre": "Puzzle Game",
+                "gamePlatform": "Web Browser",
+                "operatingSystem": "Any",
+                "applicationCategory": "Game",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://freegamehub.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Games",
+                        "item": "https://freegamehub.com/games/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Mahjong Solitaire",
+                        "item": "https://freegamehub.com/games/mahjong"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play Mahjong Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Match pairs of identical tiles to remove them from the board. Only tiles that are free on at least one side (left or right) and not covered by other tiles can be selected. Continue matching until all tiles are removed or no more moves are possible."
+        }
+      },{
+        "@type": "Question",
+        "name": "What tiles can you match in Mahjong Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can match any two identical tiles that are free (not blocked on both sides or covered by other tiles). Most tiles must match exactly, but the four Flower tiles can match with any other Flower, and the four Season tiles can match with any other Season."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is Mahjong Solitaire the same as regular Mahjong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, Mahjong Solitaire is a single-player matching game using Mahjong tiles, while traditional Mahjong is a multiplayer strategy game. Mahjong Solitaire is also called Shanghai or Mahjong Titans and uses a different rule set than the classic Chinese game."
+        }
+      }]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+
+    <link rel="stylesheet" href="../css/games.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Ad Styles */
+        .ad-banner {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .ad-leaderboard {
+            width: 728px;
+            height: 90px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        .ad-rectangle {
+            width: 336px;
+            height: 280px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            border-radius: 8px;
+            margin: 40px auto;
+        }
+
+        .ad-sidebar-fixed {
+            position: absolute;
+            top: 100px;
+            width: 160px;
+            display: none;
+        }
+
+        .ad-sidebar-left {
+            left: 20px;
+        }
+
+        .ad-sidebar-right {
+            right: 20px;
+        }
+
+        body {
+            position: relative;
+        }
+
+        .ad-sidebar-fixed .ad-placeholder {
+            width: 160px;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 1600px) {
+            .ad-sidebar-fixed {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ad-leaderboard {
+                width: 320px;
+                height: 50px;
+                font-size: 12px;
+            }
+
+            .ad-rectangle {
+                width: 300px;
+                height: 250px;
+            }
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Controls */
+        .controls {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .info-text {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Game Container */
+        .game-container {
+            background: rgba(139, 90, 43, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .game-board {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        /* Tile Styles */
+        .tile {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d0 100%);
+            border: 2px solid #8b7355;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow:
+                3px 3px 0 rgba(0, 0, 0, 0.3),
+                6px 6px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .tile:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                3px 6px 0 rgba(0, 0, 0, 0.3),
+                6px 9px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .tile.free {
+            cursor: pointer;
+        }
+
+        .tile.blocked {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .tile.selected {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-color: #ff8c00;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow:
+                0 0 20px rgba(255, 215, 0, 0.8),
+                3px 8px 0 rgba(0, 0, 0, 0.3),
+                6px 11px 20px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+
+        .tile.hint {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow:
+                    0 0 10px rgba(102, 126, 234, 0.8),
+                    3px 3px 0 rgba(0, 0, 0, 0.3),
+                    6px 6px 10px rgba(0, 0, 0, 0.4);
+            }
+            50% {
+                box-shadow:
+                    0 0 30px rgba(102, 126, 234, 1),
+                    3px 3px 0 rgba(0, 0, 0, 0.3),
+                    6px 6px 10px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .tile.matched {
+            animation: matchAnimation 0.5s ease-out forwards;
+        }
+
+        @keyframes matchAnimation {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Tile content */
+        .tile-content {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* Win Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal h2 {
+            color: #28a745;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .game-board {
+                transform: scale(0.8);
+                transform-origin: center top;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .game-board {
+                transform: scale(0.6);
+                transform-origin: center top;
+            }
+
+            .controls {
+                font-size: 12px;
+            }
+
+            button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .game-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+                overflow-x: hidden;
+            }
+
+            .game-board {
+                transform: scale(0.45);
+                transform-origin: center top;
+                margin: 0 auto;
+                left: 50%;
+                margin-left: -400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">FreeGameHub</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../games/">Games</a></li>
+                <li><a href="../guides/">Guides</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Fixed Sidebar Ads (Desktop only, 1600px+) -->
+    <div class="ad-sidebar-fixed ad-sidebar-left">
+        <div class="ad-placeholder">Left Ad 1<br>160x250</div>
+        <div class="ad-placeholder">Left Ad 2<br>160x250</div>
+        <div class="ad-placeholder">Left Ad 3<br>160x250</div>
+    </div>
+
+    <div class="ad-sidebar-fixed ad-sidebar-right">
+        <div class="ad-placeholder">Right Ad 1<br>160x250</div>
+        <div class="ad-placeholder">Right Ad 2<br>160x250</div>
+        <div class="ad-placeholder">Right Ad 3<br>160x250</div>
+    </div>
+
+    <main>
+        <h1>Mahjong Solitaire</h1>
+
+        <div class="controls">
+            <button id="newGameBtn">New Game</button>
+            <button id="undoBtn" disabled>Undo</button>
+            <button id="hintBtn">Hint</button>
+            <button id="shuffleBtn">Shuffle</button>
+            <span class="info-text">Pairs: <span id="pairsCount">72</span></span>
+            <span class="info-text">Time: <span id="timer">0:00</span></span>
+        </div>
+
+        <div class="game-container">
+            <div class="game-board" id="gameBoard">
+                <!-- Tiles will be generated here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- In-Content Ad -->
+    <div class="ad-rectangle">In-Content Ad - 336x280</div>
+
+    <div class="container" style="max-width: 1300px; padding-left: 200px; padding-right: 0px;">
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>How to Play Mahjong Solitaire</h2>
+            <p>Mahjong Solitaire (also known as Shanghai Solitaire or Mahjongg) is a single-player tile-matching puzzle game using Mahjong tiles. The goal is to clear all tiles from the board by matching pairs.</p>
+
+            <h3>Game Setup</h3>
+            <ul>
+                <li>144 Mahjong tiles arranged in a special layered pattern (classic "turtle" layout)</li>
+                <li>Multiple layers stacked on top of each other</li>
+                <li>All tiles are visible from the start</li>
+            </ul>
+
+            <h3>Objective</h3>
+            <p>Remove all 144 tiles from the board by matching pairs of identical free tiles.</p>
+
+            <h3>Game Rules</h3>
+            <ul>
+                <li><strong>Free Tiles:</strong> A tile is "free" if it has no tiles on top of it AND at least one side (left or right) is completely open. Only free tiles can be selected.</li>
+                <li><strong>Matching:</strong> Click two identical free tiles to remove them from the board. They must be exactly the same symbol.</li>
+                <li><strong>Regular Tiles:</strong> Bamboo, Characters, Dots, Winds, and Dragons must match exactly (same symbol).</li>
+                <li><strong>Special Tiles:</strong> Any Season tile matches any other Season tile, and any Flower tile matches any other Flower tile. This gives you more flexibility!</li>
+                <li><strong>Blocked Tiles:</strong> Tiles that have other tiles on top or are blocked on both sides cannot be selected. The tile must have at least one side completely open.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>Understanding the Tiles</h2>
+            <p>There are 144 tiles total in Mahjong Solitaire, made up of several different types:</p>
+
+            <h3>Tile Types</h3>
+            <ul>
+                <li><strong>Bamboo (🀐-🀘):</strong> Nine different bamboo tiles (4 of each) = 36 tiles</li>
+                <li><strong>Characters (🀀-🀈):</strong> Nine different character tiles (4 of each) = 36 tiles</li>
+                <li><strong>Dots (🀙-🀡):</strong> Nine different dot tiles (4 of each) = 36 tiles</li>
+                <li><strong>Winds (🀀-🀃):</strong> Four wind directions (4 of each) = 16 tiles</li>
+                <li><strong>Dragons (🀄-🀆):</strong> Three dragon tiles (4 of each) = 12 tiles</li>
+                <li><strong>Seasons (🀦-🀩):</strong> Four season tiles (1 of each, all match each other) = 4 tiles</li>
+                <li><strong>Flowers (🀢-🀥):</strong> Four flower tiles (1 of each, all match each other) = 4 tiles</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>How to Play</h2>
+            <ul>
+                <li><strong>Select Tiles:</strong> Click on a free tile to select it. The tile will highlight in gold to show it's selected.</li>
+                <li><strong>Match Pairs:</strong> Click a second matching free tile to remove both tiles from the board.</li>
+                <li><strong>Deselect:</strong> Click the selected tile again to deselect it if you change your mind.</li>
+                <li><strong>New Selection:</strong> Click a different tile to switch your selection without deselecting first.</li>
+            </ul>
+
+            <h3>Game Controls & Features</h3>
+            <ul>
+                <li><strong>New Game:</strong> Start a fresh game with a new random tile layout</li>
+                <li><strong>Hint:</strong> Click the "Hint" button to highlight a matching pair with a 2-second pulsing animation</li>
+                <li><strong>Undo:</strong> Take back your last move if you made a mistake. Very useful for trying different strategies!</li>
+                <li><strong>Shuffle:</strong> Rearrange remaining tiles if you get stuck. Note: This doesn't always guarantee a solution.</li>
+                <li><strong>Timer:</strong> Track how long it takes to complete the puzzle. Challenge yourself to improve!</li>
+                <li><strong>Pair Counter:</strong> Shows how many pairs remain to be matched (starts at 72 pairs)</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>Winning Strategies</h2>
+            <ul>
+                <li><strong>Plan Ahead:</strong> Think about which tiles will become free after your move. Look for moves that free up the most tiles.</li>
+                <li><strong>Work Top-Down:</strong> Generally prioritize removing tiles from upper layers first. This frees up more tiles below.</li>
+                <li><strong>Clear Center Tiles:</strong> Focus on removing tiles from the center of the layout to open up more options on both sides.</li>
+                <li><strong>Clear Blockers:</strong> Prioritize removing tiles that are blocking many other tiles. These are usually in the middle layers.</li>
+                <li><strong>Save Options:</strong> If you have multiple matching pairs available, choose the one that opens up more tiles or removes blockers.</li>
+                <li><strong>Use Seasons/Flowers Wisely:</strong> These special tiles are flexible since any season matches any season. Save them for when you need them most.</li>
+                <li><strong>Don't Rush:</strong> Take your time to analyze the board before making moves. All tiles are visible, so plan your strategy.</li>
+                <li><strong>Watch for Identical Stacks:</strong> Avoid removing the top tiles of identical stacks too early - you might need access to lower tiles first.</li>
+                <li><strong>Use Hints Sparingly:</strong> Try to find matches yourself to improve your pattern recognition skills.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>Tips & Tricks</h2>
+            <ul>
+                <li><strong>Not All Games Are Winnable:</strong> Unlike FreeCell, not every Mahjong layout can be solved. If you get stuck, try the Shuffle feature or start a new game.</li>
+                <li><strong>Learn the Symbols:</strong> Spend time familiarizing yourself with the different tile symbols. This helps you spot matches faster.</li>
+                <li><strong>Count Your Matches:</strong> Keep track of how many of each tile type you've removed. This helps you know which matches are still available.</li>
+                <li><strong>Edge Tiles First:</strong> Tiles on the edges are often easier to access and can help clear paths to center tiles.</li>
+                <li><strong>Practice Makes Perfect:</strong> The more you play, the better you'll become at recognizing patterns and planning ahead.</li>
+            </ul>
+
+            <h3>Winning the Game</h3>
+            <p>You win when all 72 pairs have been matched and the board is completely clear! Your completion time will be displayed, and you can try to beat your best time.</p>
+        </div>
+
+        <div class="content-section" style="background: rgba(25, 35, 45, 0.95); color: #fff;">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">How do you play Mahjong Solitaire?</h3>
+                <p>Match pairs of identical tiles to remove them from the board. Only tiles that are free on at least one side (left or right) and not covered by other tiles can be selected. Continue matching until all tiles are removed or no more moves are possible.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">What tiles can you match in Mahjong Solitaire?</h3>
+                <p>You can match any two identical tiles that are free (not blocked on both sides or covered by other tiles). Most tiles must match exactly, but the four Flower tiles can match with any other Flower, and the four Season tiles can match with any other Season.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">Is Mahjong Solitaire the same as regular Mahjong?</h3>
+                <p>No, Mahjong Solitaire is a single-player matching game using Mahjong tiles, while traditional Mahjong is a multiplayer strategy game. Mahjong Solitaire is also called Shanghai or Mahjong Titans and uses a different rule set than the classic Chinese game.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Win Modal -->
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2>Congratulations!</h2>
+            <p>You completed the puzzle in <span id="finalTime">0:00</span>!</p>
+            <button id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Footer Banner Ad -->
+    <div class="ad-banner" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px 0;">
+        <div class="ad-leaderboard">Footer Ad - 728x90</div>
+    </div>
+
+    <script>
+        // Tile definitions using Unicode Mahjong symbols
+        const tileTypes = {
+            // Bamboo (1-9): 🀐-🀘
+            bamboo: ['🀐', '🀑', '🀒', '🀓', '🀔', '🀕', '🀖', '🀗', '🀘'],
+            // Characters (1-9): 🀀-🀈
+            characters: ['🀀', '🀁', '🀂', '🀃', '🀄', '🀅', '🀆', '🀇', '🀈'],
+            // Dots (1-9): 🀙-🀡
+            dots: ['🀙', '🀚', '🀛', '🀜', '🀝', '🀞', '🀟', '🀠', '🀡'],
+            // Winds: 🀀-🀃 (using alternative symbols for variety)
+            winds: ['🀀', '🀁', '🀂', '🀃'],
+            // Dragons: 🀄-🀆
+            dragons: ['🀆', '🀅', '🀄'],
+            // Seasons: 🀦-🀩
+            seasons: ['🀦', '🀧', '🀨', '🀩'],
+            // Flowers: 🀢-🀥
+            flowers: ['🀢', '🀣', '🀤', '🀥']
+        };
+
+        // Classic Turtle layout (144 tiles exactly)
+        const turtleLayout = [
+            [2,0,0],[3,0,0],[4,0,0],[5,0,0],[6,0,0],[7,0,0],[8,0,0],[9,0,0],[10,0,0],[11,0,0],
+            [1,1,0],[2,1,0],[3,1,0],[4,1,0],[5,1,0],[6,1,0],[7,1,0],[8,1,0],[9,1,0],[10,1,0],[11,1,0],[12,1,0],
+            [1,2,0],[2,2,0],[3,2,0],[4,2,0],[5,2,0],[6,2,0],[7,2,0],[8,2,0],[9,2,0],[10,2,0],[11,2,0],[12,2,0],
+            [1,3,0],[2,3,0],[3,3,0],[4,3,0],[5,3,0],[6,3,0],[7,3,0],[8,3,0],[9,3,0],[10,3,0],[11,3,0],[12,3,0],
+            [1,4,0],[2,4,0],[3,4,0],[4,4,0],[5,4,0],[6,4,0],[7,4,0],[8,4,0],[9,4,0],[10,4,0],[11,4,0],[12,4,0],
+            [2,5,0],[3,5,0],[4,5,0],[5,5,0],[6,5,0],[7,5,0],[8,5,0],[9,5,0],[10,5,0],[11,5,0],
+            [2,1,1],[3,1,1],[4,1,1],[5,1,1],[6,1,1],[7,1,1],[8,1,1],[9,1,1],[10,1,1],[11,1,1],
+            [2,2,1],[3,2,1],[4,2,1],[5,2,1],[6,2,1],[7,2,1],[8,2,1],[9,2,1],[10,2,1],[11,2,1],
+            [2,3,1],[3,3,1],[4,3,1],[5,3,1],[6,3,1],[7,3,1],[8,3,1],[9,3,1],[10,3,1],[11,3,1],
+            [2,4,1],[3,4,1],[4,4,1],[5,4,1],[6,4,1],[7,4,1],[8,4,1],[9,4,1],[10,4,1],[11,4,1],
+            [3,1,2],[4,1,2],[5,1,2],[6,1,2],[7,1,2],[8,1,2],[9,1,2],[10,1,2],
+            [3,2,2],[4,2,2],[5,2,2],[6,2,2],[7,2,2],[8,2,2],[9,2,2],[10,2,2],
+            [3,3,2],[4,3,2],[5,3,2],[6,3,2],[7,3,2],[8,3,2],[9,3,2],[10,3,2],
+            [3,4,2],[4,4,2],[5,4,2],[6,4,2],[7,4,2],[8,4,2],[9,4,2],[10,4,2],
+            [6,2,3],[7,2,3],
+            [6,2,4],[7,2,4]
+        ];
+
+        // Game state
+        const game = {
+            tiles: [],
+            selectedTile: null,
+            moveHistory: [],
+            startTime: null,
+            timerInterval: null,
+            matchedPairs: 0
+        };
+
+        // Initialize game
+        function initGame() {
+            // Clear existing tiles
+            game.tiles = [];
+            game.selectedTile = null;
+            game.moveHistory = [];
+            game.matchedPairs = 0;
+            document.getElementById('gameBoard').innerHTML = '';
+
+            // Create tile deck (4 of each regular tile, 1 of each season/flower)
+            const deck = [];
+
+            // Regular tiles (4 of each)
+            ['bamboo', 'characters', 'dots'].forEach(type => {
+                tileTypes[type].forEach(symbol => {
+                    for (let i = 0; i < 4; i++) {
+                        deck.push({ symbol, type, matchGroup: symbol });
+                    }
+                });
+            });
+
+            // Winds (4 of each)
+            tileTypes.winds.forEach(symbol => {
+                for (let i = 0; i < 4; i++) {
+                    deck.push({ symbol, type: 'winds', matchGroup: symbol });
+                }
+            });
+
+            // Dragons (4 of each)
+            tileTypes.dragons.forEach(symbol => {
+                for (let i = 0; i < 4; i++) {
+                    deck.push({ symbol, type: 'dragons', matchGroup: symbol });
+                }
+            });
+
+            // Seasons (1 of each, but they all match each other)
+            tileTypes.seasons.forEach(symbol => {
+                deck.push({ symbol, type: 'seasons', matchGroup: 'season' });
+            });
+
+            // Flowers (1 of each, but they all match each other)
+            tileTypes.flowers.forEach(symbol => {
+                deck.push({ symbol, type: 'flowers', matchGroup: 'flower' });
+            });
+
+            // Shuffle deck
+            shuffleArray(deck);
+
+            // Create tiles from layout
+            turtleLayout.forEach((pos, index) => {
+                const [x, y, z] = pos;
+                const tileData = deck[index];
+
+                const tile = {
+                    id: index,
+                    x, y, z,
+                    symbol: tileData.symbol,
+                    type: tileData.type,
+                    matchGroup: tileData.matchGroup,
+                    matched: false
+                };
+
+                game.tiles.push(tile);
+                createTileElement(tile);
+            });
+
+            updateFreeTiles();
+            updatePairsCount();
+            startTimer();
+            document.getElementById('undoBtn').disabled = true;
+        }
+
+        // Shuffle array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Create tile element
+        function createTileElement(tile) {
+            const tileEl = document.createElement('div');
+            tileEl.className = 'tile';
+            tileEl.dataset.id = tile.id;
+
+            // Position tile (adjust for 3D effect)
+            const baseX = 50 + tile.x * 55;
+            const baseY = 50 + tile.y * 70;
+            const offsetX = tile.z * 3;
+            const offsetY = tile.z * -3;
+
+            tileEl.style.left = `${baseX + offsetX}px`;
+            tileEl.style.top = `${baseY + offsetY}px`;
+            tileEl.style.zIndex = tile.z * 100 + tile.y * 10 + tile.x;
+
+            const content = document.createElement('div');
+            content.className = 'tile-content';
+            content.textContent = tile.symbol;
+            tileEl.appendChild(content);
+
+            tileEl.addEventListener('click', () => handleTileClick(tile.id));
+
+            document.getElementById('gameBoard').appendChild(tileEl);
+        }
+
+        // Check if tile is free
+        function isTileFree(tile) {
+            if (tile.matched) return false;
+
+            // Check if any tile is on top
+            const hasTop = game.tiles.some(t =>
+                !t.matched &&
+                t.z === tile.z + 1 &&
+                Math.abs(t.x - tile.x) <= 1 &&
+                Math.abs(t.y - tile.y) <= 1
+            );
+            if (hasTop) return false;
+
+            // Check if at least one side is completely open
+            const leftBlocked = game.tiles.some(t =>
+                !t.matched &&
+                t.z === tile.z &&
+                t.x === tile.x - 1 &&
+                Math.abs(t.y - tile.y) <= 1
+            );
+            const rightBlocked = game.tiles.some(t =>
+                !t.matched &&
+                t.z === tile.z &&
+                t.x === tile.x + 1 &&
+                Math.abs(t.y - tile.y) <= 1
+            );
+
+            return !leftBlocked || !rightBlocked;
+        }
+
+        // Update free tiles display
+        function updateFreeTiles() {
+            game.tiles.forEach(tile => {
+                if (tile.matched) return;
+
+                const tileEl = document.querySelector(`[data-id="${tile.id}"]`);
+                if (tileEl) {
+                    const free = isTileFree(tile);
+                    tileEl.classList.toggle('free', free);
+                    tileEl.classList.toggle('blocked', !free);
+                }
+            });
+        }
+
+        // Handle tile click
+        function handleTileClick(tileId) {
+            const tile = game.tiles.find(t => t.id === tileId);
+            if (!tile || tile.matched || !isTileFree(tile)) return;
+
+            const tileEl = document.querySelector(`[data-id="${tileId}"]`);
+
+            // Clear hint animations
+            document.querySelectorAll('.tile.hint').forEach(el => el.classList.remove('hint'));
+
+            // If no tile selected, select this one
+            if (!game.selectedTile) {
+                game.selectedTile = tile;
+                tileEl.classList.add('selected');
+                return;
+            }
+
+            // If same tile clicked, deselect
+            if (game.selectedTile.id === tile.id) {
+                tileEl.classList.remove('selected');
+                game.selectedTile = null;
+                return;
+            }
+
+            // Check if tiles match
+            if (tilesMatch(game.selectedTile, tile)) {
+                matchTiles(game.selectedTile, tile);
+            } else {
+                // Select new tile
+                document.querySelector(`[data-id="${game.selectedTile.id}"]`).classList.remove('selected');
+                game.selectedTile = tile;
+                tileEl.classList.add('selected');
+            }
+        }
+
+        // Check if two tiles match
+        function tilesMatch(tile1, tile2) {
+            return tile1.matchGroup === tile2.matchGroup;
+        }
+
+        // Match tiles
+        function matchTiles(tile1, tile2) {
+            // Save for undo
+            game.moveHistory.push([tile1.id, tile2.id]);
+
+            // Animate and remove
+            const tile1El = document.querySelector(`[data-id="${tile1.id}"]`);
+            const tile2El = document.querySelector(`[data-id="${tile2.id}"]`);
+
+            tile1El.classList.add('matched');
+            tile2El.classList.add('matched');
+
+            setTimeout(() => {
+                tile1El.style.display = 'none';
+                tile2El.style.display = 'none';
+            }, 500);
+
+            tile1.matched = true;
+            tile2.matched = true;
+            game.selectedTile = null;
+            game.matchedPairs++;
+
+            updateFreeTiles();
+            updatePairsCount();
+            document.getElementById('undoBtn').disabled = false;
+
+            // Check for win
+            if (game.matchedPairs === 72) {
+                setTimeout(showWin, 600);
+            }
+        }
+
+        // Undo last move
+        function undo() {
+            if (game.moveHistory.length === 0) return;
+
+            const [id1, id2] = game.moveHistory.pop();
+            const tile1 = game.tiles.find(t => t.id === id1);
+            const tile2 = game.tiles.find(t => t.id === id2);
+
+            tile1.matched = false;
+            tile2.matched = false;
+            game.matchedPairs--;
+
+            const tile1El = document.querySelector(`[data-id="${id1}"]`);
+            const tile2El = document.querySelector(`[data-id="${id2}"]`);
+
+            tile1El.style.display = '';
+            tile1El.classList.remove('matched');
+            tile2El.style.display = '';
+            tile2El.classList.remove('matched');
+
+            updateFreeTiles();
+            updatePairsCount();
+
+            if (game.moveHistory.length === 0) {
+                document.getElementById('undoBtn').disabled = true;
+            }
+        }
+
+        // Show hint
+        function showHint() {
+            // Clear previous hints
+            document.querySelectorAll('.tile.hint').forEach(el => el.classList.remove('hint'));
+
+            // Find available match
+            const freeTiles = game.tiles.filter(t => !t.matched && isTileFree(t));
+
+            for (let i = 0; i < freeTiles.length; i++) {
+                for (let j = i + 1; j < freeTiles.length; j++) {
+                    if (tilesMatch(freeTiles[i], freeTiles[j])) {
+                        document.querySelector(`[data-id="${freeTiles[i].id}"]`).classList.add('hint');
+                        document.querySelector(`[data-id="${freeTiles[j].id}"]`).classList.add('hint');
+
+                        setTimeout(() => {
+                            document.querySelectorAll('.tile.hint').forEach(el => el.classList.remove('hint'));
+                        }, 2000);
+
+                        return;
+                    }
+                }
+            }
+
+            alert('No matches available. Try shuffling!');
+        }
+
+        // Shuffle remaining tiles
+        function shuffle() {
+            const remainingTiles = game.tiles.filter(t => !t.matched);
+            const symbols = remainingTiles.map(t => ({ symbol: t.symbol, type: t.type, matchGroup: t.matchGroup }));
+            shuffleArray(symbols);
+
+            remainingTiles.forEach((tile, index) => {
+                tile.symbol = symbols[index].symbol;
+                tile.type = symbols[index].type;
+                tile.matchGroup = symbols[index].matchGroup;
+
+                const tileEl = document.querySelector(`[data-id="${tile.id}"]`);
+                const content = tileEl.querySelector('.tile-content');
+                content.textContent = tile.symbol;
+            });
+
+            game.selectedTile = null;
+            document.querySelectorAll('.tile.selected').forEach(el => el.classList.remove('selected'));
+        }
+
+        // Update pairs count
+        function updatePairsCount() {
+            document.getElementById('pairsCount').textContent = 72 - game.matchedPairs;
+        }
+
+        // Timer functions
+        function startTimer() {
+            stopTimer();
+            game.startTime = Date.now();
+            game.timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            if (game.timerInterval) {
+                clearInterval(game.timerInterval);
+                game.timerInterval = null;
+            }
+        }
+
+        function updateTimer() {
+            if (!game.startTime) return;
+            const elapsed = Math.floor((Date.now() - game.startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Show win modal
+        function showWin() {
+            stopTimer();
+            const finalTime = document.getElementById('timer').textContent;
+            document.getElementById('finalTime').textContent = finalTime;
+            document.getElementById('winModal').classList.add('show');
+        }
+
+        // Event listeners
+        document.getElementById('newGameBtn').addEventListener('click', () => {
+            initGame();
+        });
+
+        document.getElementById('undoBtn').addEventListener('click', () => {
+            undo();
+        });
+
+        document.getElementById('hintBtn').addEventListener('click', () => {
+            showHint();
+        });
+
+        document.getElementById('shuffleBtn').addEventListener('click', () => {
+            shuffle();
+        });
+
+        document.getElementById('playAgainBtn').addEventListener('click', () => {
+            document.getElementById('winModal').classList.remove('show');
+            initGame();
+        });
+
+        // Start game
+        initGame();
+    </script>
+</body>
+</html>

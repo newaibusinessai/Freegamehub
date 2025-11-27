@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO Tags -->
+    <title>Play Memory Game Online Free | Concentration Card Game - FreeGameHub</title>
+    <meta name="description" content="Play the classic Memory card game online for free. Test your memory by matching pairs of cards. Also known as Concentration. Mobile-friendly. No download.">
+    <meta name="keywords" content="memory game, concentration game, card matching, free memory game, online memory game">
+    <link rel="canonical" href="https://freegamehub.org/games/memory.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Play Memory Game Online Free | FreeGameHub">
+    <meta property="og:description" content="Test your memory with this classic card matching game. Free to play, no download required.">
+    <meta property="og:url" content="https://freegamehub.org/games/memory.html">
+    <meta property="og:type" content="game">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Memory Game",
+      "description": "Classic memory card matching game where players flip cards to find matching pairs",
+      "gamePlatform": "Web Browser",
+      "genre": "Puzzle Game"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play the Memory matching game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Memory Game (also called Concentration), click any card to flip it and reveal the symbol. Then click a second card to find a match. If the cards match, they stay face-up. If they don't match, both flip back face-down. Remember card locations to find all pairs."
+        }
+      },{
+        "@type": "Question",
+        "name": "What are the benefits of playing Memory games?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Memory games improve short-term memory, enhance concentration, develop visual recognition skills, and provide brain training that can help maintain cognitive function. Studies show regular practice can improve working memory capacity and focus."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is the best strategy for Memory Game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start from one corner and work systematically across the grid. Create mental maps of card locations by grouping them into sections. Use chunking techniques to remember positions better. Focus fully and eliminate distractions for best results."
+        }
+      }]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/games.min.css">
+    <style>
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            grid-gap: 8px;
+            justify-content: center;
+            margin: 10px auto;
+        }
+
+        .memory-card {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .memory-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .memory-card.matched {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .memory-grid {
+                grid-template-columns: repeat(4, 65px);
+                grid-gap: 6px;
+            }
+
+            .memory-card,
+            .card-front,
+            .card-back {
+                width: 65px;
+                height: 65px;
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .memory-grid {
+                grid-template-columns: repeat(4, 55px);
+                grid-gap: 5px;
+            }
+
+            .memory-card,
+            .card-front,
+            .card-back {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Override content-section text colors to white */
+        .content-section p,
+        .content-section li,
+        .content-section ul,
+        .content-section ol,
+        .content-section h2,
+        .content-section h3,
+        .content-section strong {
+            color: #fff !important;
+        }
+    </style>
+
+    <style>
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="game-page">
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar Ad -->
+        <aside class="sidebar-ad sidebar-ad-left">
+            <div class="ad-placeholder">
+                Left Ad 1<br>160x250
+            </div>
+            <div class="ad-placeholder">
+                Left Ad 2<br>160x250
+            </div>
+            <div class="ad-placeholder">
+                Left Ad 3<br>160x250
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+        <div class="game-header">
+            <h1>🧠 Memory Game</h1>
+            <p>Match all the pairs to win!</p>
+        </div>
+
+        <div class="container">
+            <div class="game-container">
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="info-label">Moves</span>
+                        <span class="info-value" id="moves">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time</span>
+                        <span class="info-value" id="timer">0:00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pairs</span>
+                        <span class="info-value"><span id="pairs-found">0</span>/8</span>
+                    </div>
+                </div>
+
+                <div class="game-board">
+                    <div class="memory-grid" id="memory-grid"></div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-primary" id="new-game">New Game</button>
+                </div>
+            </div>
+
+            <!-- Game Instructions -->
+            <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff !important;">
+                <h2 style="color: #fff; border-bottom-color: rgba(255, 255, 255, 0.3);">How to Play Memory Game</h2>
+                <p>Memory, also known as Concentration or Match Match, is a classic card game that tests your memory and concentration skills. The goal is simple: find and match all pairs of identical cards.</p>
+
+                <h3 style="color: #fff;">Game Rules</h3>
+                <ul>
+                    <li>All cards start face-down in a grid formation</li>
+                    <li>Click on any card to flip it over and reveal its symbol</li>
+                    <li>Click on a second card to try to find its match</li>
+                    <li>If the two cards match, they remain face-up and are removed from play</li>
+                    <li>If they don't match, both cards flip back face-down after a brief moment</li>
+                    <li>Remember the positions of cards you've seen to make matches faster</li>
+                    <li>Continue until all 8 pairs are matched</li>
+                    <li>Try to complete the game in as few moves and as little time as possible</li>
+                </ul>
+
+                <h3 style="color: #fff;">Objective</h3>
+                <p>Match all 16 cards (8 pairs) in the fewest number of moves and shortest time possible.</p>
+
+                <h3 style="color: #fff;">Scoring</h3>
+                <p>While this version doesn't have a formal scoring system, you can challenge yourself by:</p>
+                <ul>
+                    <li>Completing the game in fewer moves</li>
+                    <li>Beating your best time</li>
+                    <li>Achieving a perfect game (matching each pair on the first try)</li>
+                </ul>
+            </div>
+
+            <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff !important;">
+                <h2 style="color: #fff; border-bottom-color: rgba(255, 255, 255, 0.3);">Tips and Strategies</h2>
+                <ul>
+                    <li><strong>Focus and Concentration:</strong> Pay close attention when cards are revealed. Try to remember both the symbol and its position on the grid.</li>
+                    <li><strong>Use a Pattern:</strong> Start from one corner and work systematically across the grid rather than clicking randomly.</li>
+                    <li><strong>Create Mental Associations:</strong> Associate card positions with landmarks on the grid (corners, edges, center) to help remember locations.</li>
+                    <li><strong>Eliminate Pairs:</strong> Once you've seen two different cards, if you later see one of them again, you'll know where to find its match.</li>
+                    <li><strong>Practice Regularly:</strong> Like any skill, memory improves with practice. Play daily to sharpen your memory.</li>
+                </ul>
+            </div>
+
+            <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff !important;">
+                <h2 style="color: #fff; border-bottom-color: rgba(255, 255, 255, 0.3);">Benefits of Playing Memory Games</h2>
+                <p>Memory games aren't just fun—they're excellent for your brain health!</p>
+                <ul>
+                    <li><strong>Improves Memory:</strong> Regular play strengthens short-term memory and recall abilities</li>
+                    <li><strong>Enhances Concentration:</strong> Requires sustained focus and attention to detail</li>
+                    <li><strong>Boosts Cognitive Function:</strong> Exercises the brain and keeps it sharp</li>
+                    <li><strong>Suitable for All Ages:</strong> From children learning basic memory skills to seniors maintaining cognitive health</li>
+                    <li><strong>Low Pressure:</strong> Play at your own pace without time limits or competition</li>
+                </ul>
+            </div>
+
+            <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff !important;">
+                <h2 style="color: #fff; border-bottom-color: rgba(255, 255, 255, 0.3);">Advanced Memory Techniques</h2>
+                <p>Take your memory game skills to the next level with these advanced cognitive strategies used by memory champions:</p>
+
+                <h3 style="color: #fff;">Chunking Strategy</h3>
+                <p>Instead of remembering individual card positions, group the grid into sections (quadrants or rows). When you flip a card, mentally note which section it belongs to. For example, "Diamond in top-left quadrant" is easier to recall than a specific grid position. This technique leverages your brain's natural ability to organize information into meaningful groups.</p>
+
+                <h3 style="color: #fff;">Visual Story Method</h3>
+                <p>Create a mental story connecting the cards you see. If you flip a heart, then a star, imagine a heart shooting out a star. These visual narratives create stronger memory traces than isolated images. The more vivid and unusual your mental story, the more memorable it becomes.</p>
+
+                <h3 style="color: #fff;">The Method of Loci</h3>
+                <p>Associate each grid position with a familiar location in your home. The top-left might be your front door, top-middle your living room, and so on. When you see a card, place its symbol in that mental location. This ancient memory technique transforms abstract positions into concrete, familiar places your brain can easily retrieve.</p>
+
+                <p>Practice these techniques regularly, and you'll notice improvements not just in the game, but in your everyday memory tasks like remembering names, shopping lists, and important details. Memory games serve as a fun, engaging gym for your brain!</p>
+            </div>
+        </div>
+
+        <!-- Related Games -->
+        
+            <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff !important;">
+                <h2 style="color: #fff; border-bottom-color: rgba(255, 255, 255, 0.3);">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3 style="color: #fff;">How do you play the Memory matching game?</h3>
+                    <p>In Memory Game (also called Concentration), click any card to flip it and reveal the symbol. Then click a second card to find a match. If the cards match, they stay face-up. If they don't match, both flip back face-down. Remember card locations to find all pairs.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 style="color: #fff;">What are the benefits of playing Memory games?</h3>
+                    <p>Memory games improve short-term memory, enhance concentration, develop visual recognition skills, and provide brain training that can help maintain cognitive function. Studies show regular practice can improve working memory capacity and focus.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 style="color: #fff;">What is the best strategy for Memory Game?</h3>
+                    <p>Start from one corner and work systematically across the grid. Create mental maps of card locations by grouping them into sections. Use chunking techniques to remember positions better. Focus fully and eliminate distractions for best results.</p>
+                </div>
+            </div>
+<section class="related-games">
+            <div class="container">
+                <h2 style="color: #fff;">You May Also Like</h2>
+                <div class="game-grid">
+                    <a href="solitaire.html" class="game-card">
+                        <div class="game-icon">🂡</div>
+                        <h4>Classic Solitaire</h4>
+                        <p>Classic solitaire card game</p>
+                    </a>
+                    <a href="mahjong.html" class="game-card">
+                        <div class="game-icon">🀄</div>
+                        <h4>Mahjong Solitaire</h4>
+                        <p>Match tiles to clear the board</p>
+                    </a>
+                    <a href="minesweeper.html" class="game-card">
+                        <div class="game-icon">💣</div>
+                        <h4>Minesweeper</h4>
+                        <p>Classic logic puzzle game</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Right Sidebar Ad -->
+    <aside class="sidebar-ad sidebar-ad-right">
+        <div class="ad-placeholder">
+            Right Ad 1<br>160x250
+        </div>
+        <div class="ad-placeholder">
+            Right Ad 2<br>160x250
+        </div>
+        <div class="ad-placeholder">
+            Right Ad 3<br>160x250
+        </div>
+    </aside>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Win Modal -->
+    <div class="modal" id="win-modal">
+        <div class="modal-content">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've matched all the pairs!</p>
+            <p><strong>Moves:</strong> <span id="final-moves"></span></p>
+            <p><strong>Time:</strong> <span id="final-time"></span></p>
+            <button class="btn btn-success" id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/memory.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

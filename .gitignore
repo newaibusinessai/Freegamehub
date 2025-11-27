@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Scripts (validation/automation scripts not needed in production)
+check-meta-descriptions.js
+schema-validation-report.js
+link-validation-report.js
+add-resource-hints.js
+add-faq-schemas.js
+add-howto-schemas.js
+enhance-article-schemas.js
+add-visible-faqs.js
+fix-games-navigation.js
+update-footer-navigation.js

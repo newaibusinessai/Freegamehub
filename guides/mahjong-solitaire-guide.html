@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahjong Solitaire: Complete Tile Matching Guide | Rules & Strategy</title>
+    <meta name="description" content="Master Mahjong Solitaire with our complete guide. Learn the rules, tile types, winning strategies, and how it differs from traditional Mahjong. Start playing smarter today!">
+    <meta name="keywords" content="mahjong solitaire, mahjong solitaire strategy, how to play mahjong solitaire, mahjong tiles, mahjong matching game, shanghai solitaire">
+    <link rel="canonical" href="https://freegamehub.org/guides/mahjong-solitaire-guide.html">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Mahjong Solitaire: Complete Tile Matching Guide">
+    <meta property="og:description" content="Master Mahjong Solitaire with our complete guide covering rules, strategies, and tile-matching techniques.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://freegamehub.org/guides/mahjong-solitaire-guide.html">
+    <meta property="og:image" content="https://freegamehub.org/images/mahjong-guide.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Mahjong Solitaire: Complete Tile Matching Guide",
+        "description": "Master Mahjong Solitaire with our complete guide covering rules, tile types, winning strategies, and the differences from traditional Mahjong.",
+        "author": {
+            "@type": "Organization",
+            "name": "FreeGameHub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FreeGameHub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://freegamehub.org/images/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://freegamehub.org/guides/mahjong-solitaire-guide.html"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freegamehub.org/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://freegamehub.org/guides/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mahjong Solitaire Guide",
+            "item": "https://freegamehub.org/guides/mahjong-solitaire-guide.html"
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Play and Win Mahjong Solitaire",
+        "description": "Complete guide to Mahjong Solitaire including tile matching rules, strategy, and winning techniques",
+        "step": [{
+            "@type": "HowToStep",
+            "name": "Understand Free Tiles",
+            "text": "A tile is 'free' only if it has no tiles on top AND at least one side (left or right) is completely open. You can only match free tiles."
+        },{
+            "@type": "HowToStep",
+            "name": "Match Identical Tiles",
+            "text": "Click two identical free tiles to remove them. Most tiles must match exactly, but Flower tiles match any Flower, and Season tiles match any Season."
+        },{
+            "@type": "HowToStep",
+            "name": "Work Top-Down",
+            "text": "Prioritize removing tiles from upper layers first. This frees up more tiles below and opens up more matching options throughout the game."
+        },{
+            "@type": "HowToStep",
+            "name": "Clear Center Tiles Early",
+            "text": "Focus on removing tiles from the center of the layout first. Center tiles often block multiple other tiles, so clearing them opens up both sides of the pyramid."
+        },{
+            "@type": "HowToStep",
+            "name": "Save Flexible Tiles",
+            "text": "Use Season and Flower tiles strategically since they match any of their type. Save them for when you're running low on matching options."
+        }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        article {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 1.5rem 0 1rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin: 1rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .tile-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .tile-table th,
+        .tile-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .tile-table th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tile-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #667eea;
+        }
+
+        .benefit-card h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .internal-links {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .internal-links h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .internal-links ul {
+            margin-left: 1rem;
+        }
+
+        .internal-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .internal-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            article {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Classic Games Online</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../games/">Games</a></li>
+                <li><a href="index.html">Guides</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> &raquo;
+        <a href="index.html">Guides</a> &raquo;
+        <span>Mahjong Solitaire Guide</span>
+    </div>
+
+    <main>
+        <article>
+            <h1>Mahjong Solitaire: Complete Tile Matching Guide</h1>
+
+            <p>Mahjong Solitaire, also known as Shanghai Solitaire, is a captivating single-player tile-matching game that combines visual pattern recognition, strategic planning, and a touch of luck. While it shares tiles with traditional Mahjong, it's an entirely different game with unique rules and gameplay. This comprehensive guide will teach you everything you need to know about Mahjong Solitaire, from the basic rules to advanced strategies that will dramatically improve your win rate.</p>
+
+            <p>Whether you're completely new to Mahjong Solitaire or looking to refine your skills, this guide covers all aspects: understanding the tiles, learning the rules, mastering winning strategies, and discovering the cognitive benefits of regular play. Let's dive into the world of Mahjong Solitaire!</p>
+
+            <h2>What Is Mahjong Solitaire?</h2>
+
+            <p><strong>Mahjong Solitaire</strong> is a single-player matching game played with traditional Mahjong tiles. The objective is to remove all tiles from the board by matching pairs of identical free tiles. A tile is considered "free" when it has no tiles on top of it and has at least one free side (left or right).</p>
+
+            <p>The game features:</p>
+            <ul>
+                <li>144 tiles arranged in a specific layout (typically a turtle or pyramid shape)</li>
+                <li>Tiles stacked in multiple layers creating a 3D puzzle</li>
+                <li>72 pairs of matching tiles to find and remove</li>
+                <li>Strategic decisions about which tiles to match first</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Important: Mahjong Solitaire vs. Traditional Mahjong</h3>
+                <p>Despite using the same tiles, Mahjong Solitaire and traditional Mahjong are completely different games. Traditional Mahjong is a complex 4-player strategy game similar to Rummy, involving drawing, discarding, and forming specific tile combinations. Mahjong Solitaire is a single-player matching puzzle. They're as different as chess and checkers—completely separate games that happen to share some visual elements.</p>
+            </div>
+
+            <h2>History of Mahjong Solitaire</h2>
+
+            <p>Understanding the game's origins helps appreciate its evolution:</p>
+
+            <ul>
+                <li><strong>1981:</strong> Brodie Lockard created the first computer version while working for PLATO (an early computer education system)</li>
+                <li><strong>1986:</strong> Activision published "Shanghai" for multiple platforms, bringing Mahjong Solitaire to mainstream audiences</li>
+                <li><strong>1990s:</strong> Windows versions proliferated, making it one of the most played computer puzzle games</li>
+                <li><strong>Today:</strong> Available on virtually every platform, from web browsers to mobile devices</li>
+            </ul>
+
+            <p>The name "Shanghai" came from the Activision version and is still commonly used, though "Mahjong Solitaire" has become the standard term to distinguish it from traditional Mahjong.</p>
+
+            <h2>Understanding Mahjong Tiles</h2>
+
+            <p>A complete Mahjong set contains 144 tiles divided into several categories. Understanding these tile types is essential for effective play.</p>
+
+            <table class="tile-table">
+                <thead>
+                    <tr>
+                        <th>Tile Type</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Matching Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bamboo Suit</strong></td>
+                        <td>36 tiles</td>
+                        <td>Numbered 1-9, four copies each</td>
+                        <td>Must match exact number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Character Suit</strong></td>
+                        <td>36 tiles</td>
+                        <td>Numbered 1-9, four copies each</td>
+                        <td>Must match exact number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dot/Circle Suit</strong></td>
+                        <td>36 tiles</td>
+                        <td>Numbered 1-9, four copies each</td>
+                        <td>Must match exact number</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wind Tiles</strong></td>
+                        <td>16 tiles</td>
+                        <td>Four directions (N, S, E, W), four copies each</td>
+                        <td>Must match exact direction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dragon Tiles</strong></td>
+                        <td>12 tiles</td>
+                        <td>Three types (Red, Green, White), four copies each</td>
+                        <td>Must match exact color</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flower Tiles</strong></td>
+                        <td>4 tiles</td>
+                        <td>Four different flowers (optional)</td>
+                        <td>Any flower matches any flower</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Season Tiles</strong></td>
+                        <td>4 tiles</td>
+                        <td>Four seasons (optional)</td>
+                        <td>Any season matches any season</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h3>Special Matching Rules</h3>
+                <p><strong>Honor Tiles (Flowers and Seasons):</strong> Unlike other tiles that require exact matches, any Flower tile can match any other Flower tile, and any Season tile can match any other Season tile. These are "wild" matches within their category. Not all Mahjong Solitaire versions include these bonus tiles.</p>
+            </div>
+
+            <h2>How to Play Mahjong Solitaire: Complete Rules</h2>
+
+            <h3>Basic Gameplay</h3>
+
+            <h4>Objective:</h4>
+            <p>Remove all tiles from the board by matching pairs of identical free tiles.</p>
+
+            <h4>What Makes a Tile "Free"?</h4>
+            <p>A tile is free and can be selected if:</p>
+            <ol>
+                <li><strong>No tile is on top of it:</strong> The tile must be on the highest layer of its stack</li>
+                <li><strong>At least one side is open:</strong> Either the left or right side (or both) must be completely unblocked by other tiles</li>
+            </ol>
+
+            <h4>Making Matches:</h4>
+            <ol>
+                <li>Click on a free tile to select it</li>
+                <li>Click on another free tile that matches the first</li>
+                <li>If the tiles match and are both free, they're removed from the board</li>
+                <li>Continue matching until all tiles are cleared (win) or no more moves are available (loss)</li>
+            </ol>
+
+            <h3>Standard Layouts</h3>
+
+            <p>While hundreds of layouts exist, the most common are:</p>
+
+            <ul>
+                <li><strong>Turtle/Tortoise:</strong> The classic pyramid-like layout with a central peak</li>
+                <li><strong>Dragon:</strong> A long, serpentine arrangement</li>
+                <li><strong>Tower:</strong> Tall vertical structures</li>
+                <li><strong>Pyramid:</strong> Symmetrical pyramid shapes</li>
+                <li><strong>Bridge:</strong> Complex layouts with bridges and tunnels</li>
+            </ul>
+
+            <p>Each layout presents unique strategic challenges. The Turtle layout remains the most popular and is considered the "standard" Mahjong Solitaire experience.</p>
+
+            <div class="cta-box">
+                <h3>Ready to Start Playing?</h3>
+                <p>Put your knowledge into practice with free online Mahjong Solitaire</p>
+                <a href="../mahjong-solitaire.html" class="cta-button">Play Mahjong Solitaire Now</a>
+            </div>
+
+            <h2>Winning Strategies for Mahjong Solitaire</h2>
+
+            <p>While tile arrangement involves randomness, strategic play dramatically increases your win rate. These proven strategies will help you clear more boards successfully.</p>
+
+            <h3>1. Prioritize the Top Layers</h3>
+
+            <p><strong>Why it works:</strong> Tiles on top block tiles underneath. Removing top-layer tiles opens up more options below.</p>
+
+            <p><strong>Strategy:</strong> When you have a choice between matching tiles on different layers, prefer matching tiles from higher layers. This creates more free tiles and increases your strategic options.</p>
+
+            <h3>2. Focus on Buried Tiles</h3>
+
+            <p><strong>The Problem:</strong> If all four copies of a tile type get buried under other tiles, the game becomes unwinnable.</p>
+
+            <p><strong>Strategy:</strong> Pay attention to tiles that are deeply buried. When you see a match that will reveal a buried tile, prioritize it. Keep track of tiles that have only one or two copies visible—these are at risk of becoming blocked.</p>
+
+            <h3>3. Think Several Moves Ahead</h3>
+
+            <p>Like chess, good Mahjong Solitaire players plan multiple moves in advance:</p>
+
+            <ul>
+                <li>Before making a match, consider what tiles it will reveal</li>
+                <li>Anticipate whether your match will create new options or reduce them</li>
+                <li>Avoid moves that might trap critical tiles</li>
+            </ul>
+
+            <h3>4. Work from the Edges Inward</h3>
+
+            <p><strong>Why it works:</strong> Edge tiles typically have only one blocked side, making them easier to free. Clearing edges creates pathways to interior tiles.</p>
+
+            <p><strong>Strategy:</strong> Focus on matching edge tiles first, especially in the early game. This opens up the board and reveals more tiles.</p>
+
+            <h3>5. Identify and Eliminate "Blocking" Tiles</h3>
+
+            <p>Some tiles block many others. Identify these critical blockers:</p>
+
+            <ul>
+                <li>Tiles in the center of the layout that sit over many other tiles</li>
+                <li>Tiles that block entire rows or columns</li>
+                <li>Bridge tiles that connect different sections</li>
+            </ul>
+
+            <p>Prioritize removing these blockers to open up the board.</p>
+
+            <h3>6. Keep Track of Matched Pairs</h3>
+
+            <p>Mental bookkeeping helps avoid dead ends:</p>
+
+            <ul>
+                <li>Remember which tile types you've already matched (and thus have only two copies remaining)</li>
+                <li>Pay extra attention to these tiles—if both get buried, the game is lost</li>
+                <li>Some digital versions show how many of each tile type remain</li>
+            </ul>
+
+            <h3>7. Don't Rush the Easy Matches</h3>
+
+            <p><strong>Beginner Mistake:</strong> Immediately matching the first available pair without considering alternatives.</p>
+
+            <p><strong>Better Approach:</strong> Survey the entire board before making your first move. Identify all possible matches and choose the one that opens up the most strategic possibilities.</p>
+
+            <h3>8. Use the Undo Feature Wisely</h3>
+
+            <p>Most digital versions include an undo feature:</p>
+
+            <ul>
+                <li>Use it to explore different strategic paths</li>
+                <li>If a match leads to a dead end, undo and try a different approach</li>
+                <li>Don't over-rely on undo—it prevents you from improving your forward-planning skills</li>
+            </ul>
+
+            <div class="internal-links">
+                <h3>Explore More Brain-Boosting Games</h3>
+                <p>Enhance your cognitive skills with these related puzzle games:</p>
+                <ul>
+                    <li><a href="../memory-card-game.html">Play Memory Card Game</a></li>
+                    <li><a href="memory-game-benefits.html">Benefits of Memory Games</a></li>
+                    <li><a href="../blog/mahjong-brain-benefits.html">Why Mahjong Is Good for Your Brain</a></li>
+                    <li><a href="../solitaire.html">Classic Solitaire</a></li>
+                    <li><a href="../games.html">Browse All Games</a></li>
+                </ul>
+            </div>
+
+            <h2>Advanced Tips for Experienced Players</h2>
+
+            <h3>Pattern Recognition</h3>
+
+            <p>Experienced players develop the ability to recognize tile patterns quickly:</p>
+
+            <ul>
+                <li>Memorize the visual appearance of each tile type for faster identification</li>
+                <li>Train yourself to spot matching pairs at a glance</li>
+                <li>Recognize structural patterns in layouts (which areas typically block others)</li>
+            </ul>
+
+            <h3>Strategic Tile Counting</h3>
+
+            <p>Advanced players track tile distribution:</p>
+
+            <ul>
+                <li>Count how many of each tile type you've removed</li>
+                <li>Know when only one pair of a tile type remains</li>
+                <li>Calculate probability of being able to complete the game based on buried tiles</li>
+            </ul>
+
+            <h3>Layout-Specific Strategies</h3>
+
+            <p>Different layouts require different approaches:</p>
+
+            <ul>
+                <li><strong>Turtle:</strong> Focus on clearing the peak first, then work down layer by layer</li>
+                <li><strong>Tower layouts:</strong> Be extra careful about the order of removal to avoid creating unreachable tiles</li>
+                <li><strong>Bridge layouts:</strong> Identify which tiles support the structure and save them for last</li>
+            </ul>
+
+            <h2>Benefits of Playing Mahjong Solitaire</h2>
+
+            <p>Beyond entertainment, Mahjong Solitaire offers significant cognitive and psychological benefits:</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Visual Pattern Recognition</h4>
+                    <p>Regularly playing trains your brain to identify patterns quickly and accurately, a skill that transfers to many real-world tasks.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>Strategic Planning</h4>
+                    <p>The need to think several moves ahead develops strategic thinking and planning abilities applicable beyond gaming.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>Concentration & Focus</h4>
+                    <p>Successful play requires sustained attention and concentration, helping train your mind to maintain focus on complex tasks.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>Memory Enhancement</h4>
+                    <p>Tracking which tiles have been removed and remembering tile locations exercises both short-term and working memory.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>Stress Reduction</h4>
+                    <p>The meditative quality of tile-matching provides a mental break from daily stressors, promoting relaxation and mindfulness.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>Problem-Solving Skills</h4>
+                    <p>Each game presents a unique puzzle requiring analytical thinking and creative solutions to navigate around blocked tiles.</p>
+                </div>
+            </div>
+
+            <h3>Scientific Support for Cognitive Benefits</h3>
+
+            <p>Research on puzzle games, including tile-matching games like Mahjong Solitaire, suggests potential cognitive benefits:</p>
+
+            <ul>
+                <li><strong>Mental Flexibility:</strong> Studies indicate that puzzle games can improve cognitive flexibility and problem-solving abilities</li>
+                <li><strong>Processing Speed:</strong> Regular play may enhance visual processing speed and pattern recognition</li>
+                <li><strong>Brain Health:</strong> Engaging in mentally stimulating activities is associated with maintaining cognitive function as we age</li>
+                <li><strong>Stress Management:</strong> Focused gameplay can induce a flow state, reducing anxiety and promoting relaxation</li>
+            </ul>
+
+            <h2>Common Mistakes to Avoid</h2>
+
+            <h3>1. Matching Too Quickly</h3>
+            <p>Taking the first available match without surveying the board often leads to unwinnable positions. Always scan for alternative matches and consider the consequences of each.</p>
+
+            <h3>2. Ignoring the Top Layers</h3>
+            <p>Focusing only on easily accessible tiles while ignoring buried ones can trap critical tiles. Balance between accessible matches and strategic layer removal.</p>
+
+            <h3>3. Not Using Available Hints</h3>
+            <p>Many versions offer hint features. While you shouldn't rely on them exclusively, they can help you learn to spot matches you might otherwise miss.</p>
+
+            <h3>4. Forgetting About Special Tiles</h3>
+            <p>In versions with Flower and Season tiles, remember these can match any tile in their category—a powerful strategic advantage.</p>
+
+            <h3>5. Playing on Autopilot</h3>
+            <p>Mahjong Solitaire rewards thoughtful, deliberate play. Mindlessly clicking reduces both enjoyment and win rate.</p>
+
+            <div class="cta-box">
+                <h3>Practice Your Skills Now</h3>
+                <p>Apply these strategies with free Mahjong Solitaire online</p>
+                <a href="../mahjong-solitaire.html" class="cta-button">Play Free Mahjong</a>
+                <a href="../blog/mahjong-brain-benefits.html" class="cta-button">Brain Benefits Article</a>
+            </div>
+
+            <h2>Mahjong Solitaire vs. Traditional Mahjong</h2>
+
+            <p>Many players confuse these two games. Here's a clear comparison:</p>
+
+            <table class="tile-table">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Mahjong Solitaire</th>
+                        <th>Traditional Mahjong</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Players</strong></td>
+                        <td>1 (solo game)</td>
+                        <td>4 (multiplayer game)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Objective</strong></td>
+                        <td>Match and remove all tile pairs</td>
+                        <td>Form specific tile combinations (like Rummy)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gameplay</strong></td>
+                        <td>Pattern matching puzzle</td>
+                        <td>Strategic drawing/discarding game</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Difficulty</strong></td>
+                        <td>Easy to learn, moderate to master</td>
+                        <td>Complex rules, steep learning curve</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Game Length</strong></td>
+                        <td>5-15 minutes</td>
+                        <td>30-120 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skill vs. Luck</strong></td>
+                        <td>60% skill, 40% luck</td>
+                        <td>70% skill, 30% luck</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Both games use similar tiles but are entirely different experiences. Mahjong Solitaire is perfect for quick, solo puzzle sessions, while traditional Mahjong is a deep, social strategy game.</p>
+
+            <div class="faq">
+                <h2>Frequently Asked Questions About Mahjong Solitaire</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is Mahjong Solitaire and how do you play?</div>
+                    <p>Mahjong Solitaire is a single-player tile-matching puzzle game. You play by matching pairs of identical free tiles (tiles with no tile on top and at least one open side) to remove them from the board. The goal is to clear all 144 tiles by matching all 72 pairs. It's different from traditional 4-player Mahjong—Mahjong Solitaire is purely a matching puzzle game.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is every Mahjong Solitaire game winnable?</div>
+                    <p>No, not every Mahjong Solitaire game is guaranteed to be winnable. The outcome depends on both the initial tile arrangement and the order in which you make matches. However, many modern implementations use algorithms to ensure most layouts are solvable with optimal play. Well-designed games typically have win rates of 50-80% with good strategy.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between Mahjong and Mahjong Solitaire?</div>
+                    <p>They're completely different games that happen to use similar tiles. Traditional Mahjong is a 4-player strategic game where players draw and discard tiles to form specific combinations, similar to Rummy. Mahjong Solitaire is a single-player puzzle where you match pairs of identical tiles to clear the board. They're as different as chess and checkers—separate games sharing some visual elements.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How many tiles are in Mahjong Solitaire?</div>
+                    <p>Standard Mahjong Solitaire uses 144 tiles total: 36 Bamboo tiles (numbered 1-9, four of each), 36 Character tiles (1-9, four of each), 36 Dot/Circle tiles (1-9, four of each), 16 Wind tiles (four directions, four of each), 12 Dragon tiles (three types, four of each), and optionally 4 Flower tiles and 4 Season tiles (which can match any tile in their category).</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is the best strategy for Mahjong Solitaire?</div>
+                    <p>The best strategies include: 1) Prioritize matching tiles from top layers to open up the board, 2) Focus on freeing buried tiles before they become trapped, 3) Work from edges inward, 4) Think several moves ahead before making a match, 5) Identify and remove blocking tiles that cover many other tiles, and 6) Keep track of which tile types you've already matched to avoid trapping remaining pairs.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Why is it called Shanghai Solitaire?</div>
+                    <p>The name "Shanghai" comes from Activision's 1986 computer game version, which popularized Mahjong Solitaire in Western markets. Activision titled their version "Shanghai," and the name stuck. Today, "Mahjong Solitaire" is the more common term, but "Shanghai" or "Shanghai Solitaire" are still widely used, especially among long-time players who learned the game in the 1980s-90s.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can Mahjong Solitaire improve your brain?</div>
+                    <p>Yes, regular play of Mahjong Solitaire can provide cognitive benefits. It exercises pattern recognition, strategic planning, concentration, visual processing speed, and memory. Research suggests that puzzle games can help maintain cognitive function, improve problem-solving skills, and provide stress relief. While it's not a miracle cure, Mahjong Solitaire is an enjoyable way to keep your mind active and engaged.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What does "free tile" mean in Mahjong Solitaire?</div>
+                    <p>A "free tile" is one that can be selected and matched. For a tile to be free, it must meet two conditions: 1) No other tile can be on top of it (it must be on the highest layer of its stack), and 2) At least one side (left or right, or both) must be completely open with no adjacent tiles blocking it. Only free tiles can be selected and matched.</p>
+                </div>
+            </div>
+
+            <h2>Conclusion: Mastering Mahjong Solitaire</h2>
+
+            <p>Mahjong Solitaire is a beautifully balanced puzzle game that offers both immediate accessibility and long-term depth. While beginners can enjoy the satisfying tile-matching gameplay right away, mastering the strategic elements provides endless challenge and intellectual stimulation.</p>
+
+            <p>Remember the key principles for success:</p>
+            <ul>
+                <li>Understand that Mahjong Solitaire is entirely different from traditional Mahjong</li>
+                <li>Prioritize removing top-layer and blocking tiles</li>
+                <li>Think ahead—consider the consequences of each match</li>
+                <li>Work from edges inward to open up the board</li>
+                <li>Keep track of matched tiles to avoid trapping pairs</li>
+                <li>Practice regularly to develop pattern recognition skills</li>
+            </ul>
+
+            <p>Beyond the entertainment value, Mahjong Solitaire provides genuine cognitive benefits, from enhancing visual processing to improving strategic thinking. It's a game that rewards patience, observation, and careful planning—skills that transfer to many areas of life.</p>
+
+            <p>Whether you play for relaxation, mental exercise, or the challenge of clearing complex layouts, Mahjong Solitaire offers a rewarding gaming experience. Start with the classic Turtle layout, master the fundamental strategies, and progressively challenge yourself with more complex arrangements. With practice and strategic thinking, you'll find yourself clearing boards consistently and enjoying one of the finest puzzle games ever created.</p>
+
+            <div class="cta-box">
+                <h3>Start Your Mahjong Solitaire Journey</h3>
+                <p>Ready to put your knowledge into practice? Play now and master the tiles!</p>
+                <a href="../mahjong-solitaire.html" class="cta-button">Play Mahjong Solitaire</a>
+                <a href="../games.html" class="cta-button">More Puzzle Games</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

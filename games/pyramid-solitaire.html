@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Play Pyramid Solitaire Online Free | FreeGameHub</title>
+    <meta name="description" content="Play Pyramid Solitaire online for free. Match cards that add up to 13 to clear the pyramid. Fast-paced solitaire game. No download or registration required.">
+    <meta name="keywords" content="pyramid solitaire, solitaire online, free pyramid solitaire, card game, solitaire game">
+    <link rel="canonical" href="https://freegamehub.org/games/pyramid-solitaire.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Play Pyramid Solitaire Online Free | FreeGameHub">
+    <meta property="og:description" content="Match cards that add up to 13 to clear the pyramid. Free Pyramid Solitaire online.">
+    <meta property="og:url" content="https://freegamehub.org/games/pyramid-solitaire.html">
+    <meta property="og:type" content="game">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Pyramid Solitaire",
+      "description": "Pyramid Solitaire card game where players match cards that add up to 13 to clear the pyramid",
+      "gamePlatform": "Web Browser",
+      "genre": "Card Game",
+      "url": "https://freegamehub.org/games/pyramid-solitaire.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "FreeGameHub",
+        "url": "https://freegamehub.org/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freegamehub.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Games",
+        "item": "https://freegamehub.org/#games"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pyramid Solitaire",
+        "item": "https://freegamehub.org/games/pyramid-solitaire.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play Pyramid Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Pyramid Solitaire, remove pairs of cards that add up to 13. Aces count as 1, Jacks as 11, Queens as 12, and Kings as 13 (removed alone). Only uncovered cards can be matched. Clear the entire pyramid to win."
+        }
+      },{
+        "@type": "Question",
+        "name": "What card combinations equal 13 in Pyramid Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Valid pairs that sum to 13: Ace+Queen (1+12), 2+Jack (2+11), 3+10, 4+9, 5+8, 6+7. Kings equal 13 alone and can be removed without pairing. Only these combinations can be removed from the pyramid."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can you match cards from the stock pile in Pyramid Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can match the top card of the waste pile with any uncovered card in the pyramid, or with another card from the stock if it sums to 13. This gives you more pairing options when pyramid cards are limited."
+        }
+      }]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/games.min.css">
+    <style>
+        /* Force green background everywhere */
+        body.game-page {
+            background: #3a6b1f !important;
+        }
+
+        .game-page .game-container {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .game-page .game-header {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .game-page .game-header h1,
+        .game-page .game-header p {
+            color: #fff !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .game-page .content-section {
+            background: rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .game-page .content-section h2,
+        .game-page .content-section h3,
+        .game-page .content-section h4,
+        .game-page .content-section p,
+        .game-page .content-section li,
+        .game-page .content-section strong,
+        .game-page .content-section em {
+            color: #fff !important;
+        }
+
+        .game-page .content-section a {
+            color: #4CAF50 !important;
+        }
+
+        .game-page .info-item {
+            background: rgba(255,255,255,0.2) !important;
+            color: #fff !important;
+        }
+
+        .game-page .info-label {
+            color: rgba(255,255,255,0.9) !important;
+        }
+
+        .game-page .info-value {
+            color: #fff !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+    <style>
+        /* Game page background - lighter green */
+        .game-page {
+            background: #3a6b1f !important;
+        }
+
+        .pyramid-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 5px;
+        }
+
+        #pyramid {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .pyramid-row {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 8px;
+        }
+
+        .pyramid-row .card {
+            position: relative;
+            margin: 0;
+        }
+
+        .pyramid-row .card:not(.covered) {
+            z-index: 10;
+        }
+
+        .pyramid-row .card.covered {
+            z-index: 5;
+        }
+
+        .stock-waste {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .pile {
+            width: 100px;
+            height: 140px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Traditional Old-Style Card Design - MUCH BIGGER & OPAQUE */
+        .card {
+            width: 100px;
+            height: 140px;
+            background: #fefef8;
+            border: 2px solid #2a1f0f;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.3);
+            transition: all 0.2s ease;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid rgba(42, 31, 15, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .card:hover:not(.covered) {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+        }
+
+        .card.covered {
+            opacity: 1 !important;
+            cursor: not-allowed;
+            background: #fefef8 !important;
+            pointer-events: none;
+        }
+
+        .card.selected {
+            border: 3px solid #c9a020;
+            box-shadow: 0 0 0 3px rgba(201, 160, 32, 0.4), 0 6px 12px rgba(0,0,0,0.5);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* Drag and drop feedback */
+        .card.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+            transform: scale(1.05);
+        }
+
+        .card.drop-target {
+            border: 3px solid #4CAF50;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+            background: rgba(76, 175, 80, 0.1) !important;
+        }
+
+        .card.invalid-drop {
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .card.valid-pair {
+            animation: validPairFlash 0.4s;
+        }
+
+        @keyframes validPairFlash {
+            0% { background: #fefef8; }
+            50% { background: #4CAF50; box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); }
+            100% { background: #fefef8; }
+        }
+
+        /* Traditional suit colors */
+        .card.red {
+            color: #c41e3a;
+        }
+
+        .card.black {
+            color: #1a1a1a;
+        }
+
+        .card-top, .card-bottom {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            font-family: Georgia, "Times New Roman", serif;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .card-top {
+            top: 6px;
+            left: 8px;
+        }
+
+        .card-bottom {
+            bottom: 6px;
+            right: 8px;
+            transform: rotate(180deg);
+        }
+
+        .card-face {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 60px;
+            line-height: 1;
+        }
+
+        /* Court card styling */
+        .card.court {
+            background: linear-gradient(135deg, #fefef8 0%, #f8f5ed 100%);
+        }
+
+        .card.court .card-face {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+        }
+
+        .card-bottom {
+            text-align: right;
+            transform: rotate(180deg);
+        }
+
+        /* Traditional card back - BIGGER & OPAQUE */
+        .card-back {
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #8b0000 100%);
+            border: 2px solid #2a1f0f;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            color: rgba(255,255,255,0.15);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-back::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.05) 8px, rgba(255,255,255,0.05) 16px),
+                repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(255,255,255,0.05) 8px, rgba(255,255,255,0.05) 16px);
+        }
+
+        /* Reload icon when stock is empty */
+        .reload-icon {
+            width: 100px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px dashed #4CAF50;
+            border-radius: 4px;
+            color: #4CAF50;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .reload-icon:hover {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #45a049;
+            transform: scale(1.05) rotate(180deg);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        /* Top bar layout */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 0px 20px;
+            margin-top: -20px;
+            margin-bottom: 0px;
+        }
+
+        .title-section {
+            margin-right: auto;
+        }
+
+        .title-section h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .title-section p {
+            margin: 0;
+            margin-left: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .stats-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .controls-section {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Button clickability fixes */
+        .btn {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            position: relative !important;
+        }
+
+        .btn * {
+            pointer-events: none !important;
+        }
+
+        .game-controls .btn {
+            cursor: pointer !important;
+            border: 2px solid transparent !important;
+            display: inline-block !important;
+            min-width: 120px !important;
+            line-height: 1.5 !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            pointer-events: auto !important;
+            position: relative !important;
+        }
+
+        .game-controls .btn * {
+            pointer-events: none !important;
+        }
+
+        /* Elaborate Traditional Court Card Design */
+        .court-card {
+            background: #fefef8 !important;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px double #2a1f0f !important;
+            overflow: hidden;
+        }
+
+        .ornate-figure {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 22px 8px;
+        }
+
+        .figure-top, .figure-bottom {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .divider-line {
+            height: 2px;
+            width: 70%;
+            background: linear-gradient(90deg, transparent, #2a1f0f, transparent);
+            margin: 0 auto;
+        }
+
+        .rotated-180 {
+            transform: rotate(180deg);
+        }
+
+        .crown-ornate {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .royal-letter-large {
+            font-size: 50px;
+            font-weight: 900;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .suit-large {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .court-corner {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: bold;
+        }
+
+        .court-corner.top-left {
+            top: 4px;
+            left: 6px;
+        }
+
+        .court-corner.top-right {
+            top: 4px;
+            right: 6px;
+        }
+
+        .court-corner.bottom-left {
+            bottom: 4px;
+            left: 6px;
+        }
+
+        .court-corner.bottom-right {
+            bottom: 4px;
+            right: 6px;
+        }
+
+        .court-corner.rotated {
+            transform: rotate(180deg);
+        }
+
+        .corner-value {
+            font-size: 16px;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .corner-suit {
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .court-card.red .corner-value,
+        .court-card.red .corner-suit {
+            color: #c41e3a;
+        }
+
+        .court-card.black .corner-value,
+        .court-card.black .corner-suit {
+            color: #1a1a1a;
+        }
+
+        .court-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 25px 10px;
+        }
+
+        .court-figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,255,255,0.1));
+            border: 2px solid rgba(42, 31, 15, 0.2);
+            border-radius: 8px;
+            padding: 12px 18px;
+            width: 70px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .king-figure {
+            background: linear-gradient(135deg, rgba(255,215,0,0.25), rgba(255,255,255,0.1));
+        }
+
+        .queen-figure {
+            background: linear-gradient(135deg, rgba(255,105,180,0.2), rgba(255,255,255,0.1));
+        }
+
+        .jack-figure {
+            background: linear-gradient(135deg, rgba(100,149,237,0.2), rgba(255,255,255,0.1));
+        }
+
+        .crown, .feather {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .royal-symbol {
+            font-size: 40px;
+            font-weight: 900;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1;
+        }
+
+        .court-card.red .royal-symbol {
+            color: #c41e3a;
+        }
+
+        .court-card.black .royal-symbol {
+            color: #1a1a1a;
+        }
+
+        .scepter, .flower, .sword {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .court-card.red .crown,
+        .court-card.red .scepter,
+        .court-card.red .flower,
+        .court-card.red .sword,
+        .court-card.red .feather {
+            color: #c41e3a;
+        }
+
+        .court-card.black .crown,
+        .court-card.black .scepter,
+        .court-card.black .flower,
+        .court-card.black .sword,
+        .court-card.black .feather {
+            color: #1a1a1a;
+        }
+
+        /* Colorful Geometric Patterns */
+        .pattern-stripes,
+        .pattern-diamonds,
+        .pattern-circles,
+        .pattern-zigzag {
+            width: 60px;
+            height: 18px;
+            margin: 2px 0;
+        }
+
+        /* King Pattern - Gold and Red Stripes */
+        .king-pattern {
+            background: repeating-linear-gradient(
+                90deg,
+                #FFD700 0px,
+                #FFD700 4px,
+                #FF4444 4px,
+                #FF4444 8px,
+                #4169E1 8px,
+                #4169E1 12px
+            );
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Queen Pattern - Pink and Purple Circles */
+        .queen-pattern {
+            background: repeating-linear-gradient(
+                90deg,
+                #FF69B4 0px,
+                #FF69B4 4px,
+                #9370DB 4px,
+                #9370DB 8px,
+                #FFD700 8px,
+                #FFD700 12px
+            );
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Jack Pattern - Blue and Green Stripes */
+        .jack-pattern {
+            background: repeating-linear-gradient(
+                90deg,
+                #4169E1 0px,
+                #4169E1 4px,
+                #32CD32 4px,
+                #32CD32 8px,
+                #FF8C00 8px,
+                #FF8C00 12px
+            );
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Diamond Pattern */
+        .pattern-diamonds {
+            background:
+                linear-gradient(45deg, #FFD700 25%, transparent 25%),
+                linear-gradient(-45deg, #FFD700 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #FF4444 75%),
+                linear-gradient(-45deg, transparent 75%, #FF4444 75%);
+            background-size: 8px 8px;
+            background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Circle Pattern */
+        .pattern-circles {
+            background-image:
+                radial-gradient(circle, #FF69B4 30%, transparent 30%),
+                radial-gradient(circle, #9370DB 30%, transparent 30%);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 5px;
+            background-color: #FFE4E1;
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Zigzag Pattern */
+        .pattern-zigzag {
+            background:
+                linear-gradient(135deg, #4169E1 25%, transparent 25%),
+                linear-gradient(225deg, #4169E1 25%, transparent 25%),
+                linear-gradient(45deg, #32CD32 25%, transparent 25%),
+                linear-gradient(315deg, #32CD32 25%, transparent 25%);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 0, 4px 4px, 0 4px;
+            border: 1px solid #2a1f0f;
+        }
+
+        /* Color variations for court cards */
+        .court-card.red .royal-letter-large,
+        .court-card.red .suit-large {
+            color: #c41e3a;
+        }
+
+        .court-card.black .royal-letter-large,
+        .court-card.black .suit-large {
+            color: #1a1a1a;
+        }
+
+        /* Drag-and-drop visual feedback */
+        .card:active {
+            cursor: grabbing;
+        }
+
+        .drag-over {
+            background-color: rgba(52, 152, 219, 0.3) !important;
+            border-color: #3498db !important;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5) !important;
+        }
+
+        @media (max-width: 768px) {
+            .card, .card-back, .pile {
+                width: 50px;
+                height: 70px;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 12px;
+            }
+
+            .card-back {
+                font-size: 35px;
+            }
+
+            .pyramid-row {
+                gap: 2px;
+            }
+
+            #pyramid {
+                gap: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body, .container {
+                padding: 3px !important;
+            }
+
+            .top-bar {
+                padding: 5px 3px !important;
+                flex-direction: column !important;
+                gap: 5px !important;
+                margin-top: 0 !important;
+                align-items: flex-start !important;
+            }
+
+            .title-section h1 {
+                font-size: 0.75rem !important;
+                margin: 0 !important;
+                line-height: 1.2 !important;
+            }
+
+            .title-section p {
+                font-size: 0.6rem !important;
+                margin-left: 0 !important;
+            }
+
+            .stats-section {
+                width: 100% !important;
+                gap: 5px !important;
+                flex-wrap: wrap !important;
+                justify-content: flex-start !important;
+            }
+
+            .stat-item {
+                font-size: 0.6rem !important;
+            }
+
+            .game-header h1 {
+                font-size: 0.75rem !important;
+                margin: 5px 0 !important;
+            }
+
+            .controls {
+                gap: 3px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+
+            .btn {
+                padding: 3px 5px !important;
+                font-size: 0.6rem !important;
+            }
+
+            .card, .card-back, .pile {
+                width: 32px !important;
+                height: 45px !important;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 5px !important;
+                gap: 0 !important;
+            }
+
+            .card-top {
+                top: 1px !important;
+                left: 1px !important;
+            }
+
+            .card-bottom {
+                bottom: 1px !important;
+                right: 1px !important;
+            }
+
+            .card-face {
+                font-size: 2px !important;
+                overflow: hidden !important;
+                max-height: 100% !important;
+                transform: scale(0.5) !important;
+            }
+
+            .card {
+                overflow: hidden !important;
+            }
+
+            .card-back {
+                font-size: 20px !important;
+            }
+
+            .pyramid-row {
+                gap: 1px !important;
+            }
+
+            #pyramid {
+                gap: 1px !important;
+                margin-bottom: 50px !important;
+            }
+
+            #bottom-area {
+                gap: 3px !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .game-stats {
+                gap: 10px !important;
+                padding: 5px !important;
+            }
+
+            .stat {
+                font-size: 0.65rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="game-page">
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <aside class="sidebar-ad sidebar-ad-left">
+            <div class="ad-placeholder">Left Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 3<br>160x250</div>
+        </aside>
+
+        <main class="main-content">
+            <!-- New top bar with title, stats, and controls -->
+            <div class="top-bar">
+                <div class="title-section">
+                    <h1>🔺 Pyramid Solitaire</h1>
+                    <p>Match cards that add up to 13!</p>
+                </div>
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-label">Moves</span>
+                        <span class="stat-value" id="moves">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="timer">0:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Cards Left</span>
+                        <span class="stat-value" id="cards-left">28</span>
+                    </div>
+                </div>
+                <div class="controls-section">
+                    <button class="btn btn-primary" id="new-game">New Game</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="game-container">
+                    <div class="pyramid-container">
+                        <div id="pyramid"></div>
+
+                        <div class="stock-waste">
+                            <div class="pile" id="stock-pile"></div>
+                            <div class="pile" id="waste-pile"></div>
+                        </div>
+                    </div>
+
+                    <div class="game-hint">
+                        <p style="color: #000; font-size: 0.9rem; margin: 1rem 0; text-align: center;">Click pairs that add to 13 • Kings = 13 alone</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>How to Play Pyramid Solitaire</h2>
+                    <p>Pyramid Solitaire is a classic card matching game where your goal is to remove all 28 cards arranged in a pyramid shape. You do this by matching pairs of cards whose values add up to exactly 13.</p>
+
+                    <h3>Game Setup</h3>
+                    <p>The game begins with 28 cards dealt face-up in a pyramid formation of 7 rows:</p>
+                    <ul>
+                        <li>Row 1 (top): 1 card</li>
+                        <li>Row 2: 2 cards</li>
+                        <li>Row 3: 3 cards</li>
+                        <li>And so on until Row 7 (bottom): 7 cards</li>
+                        <li>The remaining 24 cards form a stock pile you can draw from</li>
+                    </ul>
+
+                    <h3>How to Play - Two Ways to Remove Cards</h3>
+
+                    <h4>Method 1: Click to Pair (Classic)</h4>
+                    <ol>
+                        <li><strong>Find Uncovered Cards:</strong> Only cards that are completely exposed (not covered by two cards below them) can be selected.</li>
+                        <li><strong>Click First Card:</strong> Click on any uncovered card to select it. It will be highlighted with a golden border.</li>
+                        <li><strong>Click Second Card:</strong> Click another uncovered card that adds up to 13 with your first card. Both cards will flash green and be removed!</li>
+                        <li><strong>Kings are Special:</strong> Kings have a value of 13, so they can be removed by clicking them once (no pairing needed).</li>
+                    </ol>
+
+                    <h4>Method 2: Drag and Drop (Intuitive)</h4>
+                    <ol>
+                        <li><strong>Drag Any Uncovered Card:</strong> Click and hold any uncovered card (from pyramid or waste pile).</li>
+                        <li><strong>Drop on Target Card:</strong> Drag it over another uncovered card and release.</li>
+                        <li><strong>Valid Pair (Sum = 13):</strong> Both cards flash green and are removed automatically! ✅</li>
+                        <li><strong>Invalid Pair (Sum ≠ 13):</strong> Target card shakes, and the dragged card returns to its original position. ❌</li>
+                    </ol>
+
+                    <p><em>💡 Tip: Both methods work simultaneously! Use whichever feels more comfortable.</em></p>
+
+                    <h3>Using the Stock Pile</h3>
+                    <ol>
+                        <li><strong>Draw Cards:</strong> Click the stock pile (left) to draw a card to the waste pile (right).</li>
+                        <li><strong>Pair with Pyramid:</strong> The waste card can be paired with any uncovered pyramid card (click or drag).</li>
+                        <li><strong>Reload When Empty:</strong> When stock runs out, a green ♻️ reload icon appears. Click it to move all waste cards back to stock!</li>
+                        <li><strong>Unlimited Reloads:</strong> You can reload as many times as needed to find winning combinations.</li>
+                    </ol>
+
+                    <h3>Win Condition</h3>
+                    <p><strong>Goal:</strong> Remove all 28 pyramid cards to win! The game tracks your moves and time.</p>
+
+                    <h3>Card Values</h3>
+                    <ul>
+                        <li><strong>Ace = 1</strong> (lowest value)</li>
+                        <li><strong>2 through 10 = Face value</strong> (2 is worth 2, 3 is worth 3, etc.)</li>
+                        <li><strong>Jack (J) = 11</strong></li>
+                        <li><strong>Queen (Q) = 12</strong></li>
+                        <li><strong>King (K) = 13</strong> (can be removed alone!)</li>
+                    </ul>
+
+                    <h3>All Valid Pairs That Add to 13</h3>
+                    <ul>
+                        <li><strong>Ace (1) + Queen (12) = 13</strong></li>
+                        <li><strong>2 + Jack (11) = 13</strong></li>
+                        <li><strong>3 + 10 = 13</strong></li>
+                        <li><strong>4 + 9 = 13</strong></li>
+                        <li><strong>5 + 8 = 13</strong></li>
+                        <li><strong>6 + 7 = 13</strong></li>
+                        <li><strong>King (13) = 13</strong> - Click once to remove!</li>
+                    </ul>
+
+                    <h3>Understanding Covered vs Uncovered Cards</h3>
+                    <p>A card is "uncovered" (playable) when:</p>
+                    <ul>
+                        <li><strong>BOTH</strong> cards directly below it have been removed</li>
+                        <li>Bottom row (row 7) cards are all uncovered from the start</li>
+                        <li>Each card in rows 1-6 needs both its "child" cards removed to become playable</li>
+                        <li>Covered cards cannot be clicked or dragged - they'll have a "not-allowed" cursor</li>
+                    </ul>
+
+                    <h3>Visual Feedback Guide</h3>
+                    <ul>
+                        <li><strong>🟢 Green Flash:</strong> Valid pair (sum = 13) - cards will be removed</li>
+                        <li><strong>⚠️ Shake Animation:</strong> Invalid pair (sum ≠ 13) - try a different combination</li>
+                        <li><strong>🟡 Golden Border:</strong> Card is selected (click method)</li>
+                        <li><strong>🟢 Green Glow:</strong> Valid drop zone when dragging</li>
+                        <li><strong>♻️ Green Reload Icon:</strong> Click to recycle waste cards back to stock</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Strategy Tips</h2>
+                    <ul>
+                        <li><strong>Choose Your Method:</strong> Use drag-and-drop for quick experimentation (invalid pairs shake) or clicking for precise planning</li>
+                        <li><strong>Uncover Strategically:</strong> Try to expose cards that create more pairing options - remember both cards below must be removed</li>
+                        <li><strong>Remove Kings Early:</strong> Kings can only be removed alone, so clear them when possible to avoid blocking other cards</li>
+                        <li><strong>Plan Ahead:</strong> Think about which cards you'll expose when removing pairs - you need to remove BOTH covering cards</li>
+                        <li><strong>Use Stock Wisely:</strong> Don't draw from stock until you've exhausted pyramid options</li>
+                        <li><strong>Leverage Unlimited Reloads:</strong> Don't worry about running out of stock - you can reload as many times as needed!</li>
+                        <li><strong>Focus on Bottlenecks:</strong> Clear cards that are blocking multiple other cards first</li>
+                        <li><strong>Experiment with Drag-Drop:</strong> The shake animation helps you quickly test combinations without committing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>How do you play Pyramid Solitaire?</h3>
+                    <p>In Pyramid Solitaire, remove pairs of cards that add up to 13. Aces count as 1, Jacks as 11, Queens as 12, and Kings as 13 (removed alone). Only uncovered cards can be matched. Clear the entire pyramid to win.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What card combinations equal 13 in Pyramid Solitaire?</h3>
+                    <p>Valid pairs that sum to 13: Ace+Queen (1+12), 2+Jack (2+11), 3+10, 4+9, 5+8, 6+7. Kings equal 13 alone and can be removed without pairing. Only these combinations can be removed from the pyramid.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can you match cards from the stock pile in Pyramid Solitaire?</h3>
+                    <p>Yes, you can match the top card of the waste pile with any uncovered card in the pyramid, or with another card from the stock if it sums to 13. This gives you more pairing options when pyramid cards are limited.</p>
+                </div>
+            </div>
+
+            <section class="related-games">
+                <div class="container">
+                    <h2>More Solitaire Games</h2>
+                    <div class="game-grid">
+                        <a href="solitaire.html" class="game-card">
+                            <div class="game-icon">🂡</div>
+                            <h4>Classic Solitaire</h4>
+                            <p>Classic solitaire card game</p>
+                        </a>
+                        <a href="spider-solitaire.html" class="game-card">
+                            <div class="game-icon">🕷️</div>
+                            <h4>Spider Solitaire</h4>
+                            <p>Challenge yourself with Spider</p>
+                        </a>
+                        <a href="freecell.html" class="game-card">
+                            <div class="game-icon">🎯</div>
+                            <h4>FreeCell</h4>
+                            <p>Strategy-based solitaire</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar-ad sidebar-ad-right">
+            <div class="ad-placeholder">Right Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 3<br>160x250</div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="win-modal">
+        <div class="modal-content">
+            <h2>🎉 You Win!</h2>
+            <p>You cleared the pyramid!</p>
+            <p><strong>Moves:</strong> <span id="final-moves"></span></p>
+            <p><strong>Time:</strong> <span id="final-time"></span></p>
+            <button class="btn btn-success" id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <script src="../js/pyramid-solitaire.min.js?v=2"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

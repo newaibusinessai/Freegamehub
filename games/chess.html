@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO Tags -->
+    <title>Play Chess Online Free | Chess vs Computer - FreeGameHub</title>
+    <meta name="description" content="Play chess online for free against computer AI. Practice skills, learn opening strategies, and improve your game. Mobile-friendly. No download or registration.">
+    <meta name="keywords" content="chess online, play chess, free chess, chess game, chess vs computer, chess strategy">
+    <link rel="canonical" href="https://freegamehub.org/games/chess.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Play Chess Online Free | FreeGameHub">
+    <meta property="og:description" content="Challenge the computer or practice your chess skills. Free online chess game.">
+    <meta property="og:url" content="https://freegamehub.org/games/chess.html">
+    <meta property="og:type" content="game">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Chess",
+      "description": "Play chess online against the computer. Practice strategies and improve your chess skills.",
+      "gamePlatform": "Web Browser",
+      "genre": "Strategy Game",
+      "url": "https://freegamehub.org/games/chess.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "FreeGameHub",
+        "url": "https://freegamehub.org/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freegamehub.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Games",
+        "item": "https://freegamehub.org/#games"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Chess",
+        "item": "https://freegamehub.org/games/chess.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play Chess for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chess is played on an 8x8 board with 16 pieces per player. The objective is to checkmate your opponent's King. Each piece moves differently: pawns move forward, rooks move in straight lines, bishops diagonally, knights in L-shapes, queens in any direction, and kings one square at a time."
+        }
+      },{
+        "@type": "Question",
+        "name": "What are the basic Chess opening principles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Control the center with pawns (e4, d4, e5, d5), develop your knights and bishops before moving the same piece twice, castle early to protect your King, don't bring your Queen out too early, and connect your rooks by completing development."
+        }
+      },{
+        "@type": "Question",
+        "name": "How do you win at Chess?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You win by checkmating the opponent's King (attacking it with no escape) or when your opponent resigns. The game can also end in a draw through stalemate, threefold repetition, 50-move rule, or insufficient material."
+        }
+      }]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/games.min.css">
+    <style>
+        /* Lighter green background for chess page */
+        .game-page {
+            background: #3a6b1f !important;
+        }
+
+        #chess-board {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            gap: 0;
+            border: 3px solid #333;
+            margin: 10px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .chess-square {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .chess-square.light {
+            background: #f0d9b5;
+        }
+
+        .chess-square.dark {
+            background: #b58863;
+        }
+
+        .chess-square.selected {
+            background: #7fa650 !important;
+            box-shadow: inset 0 0 0 3px #6d8a3f;
+        }
+
+        .chess-square:hover {
+            opacity: 0.8;
+        }
+
+        .chess-piece {
+            font-size: 45px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .chess-piece.white {
+            color: #fff;
+            text-shadow: 0 0 2px #000, 0 0 4px #000;
+        }
+
+        .chess-piece.black {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            #chess-board {
+                grid-template-columns: repeat(8, 45px);
+                grid-template-rows: repeat(8, 45px);
+            }
+
+            .chess-square {
+                width: 45px;
+                height: 45px;
+            }
+
+            .chess-piece {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #chess-board {
+                grid-template-columns: repeat(8, 38px);
+                grid-template-rows: repeat(8, 38px);
+            }
+
+            .chess-square {
+                width: 38px;
+                height: 38px;
+            }
+
+            .chess-piece {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+    <style>
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="game-page">
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <aside class="sidebar-ad sidebar-ad-left">
+            <div class="ad-placeholder">Left Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 3<br>160x250</div>
+        </aside>
+
+        <main class="main-content">
+            <div class="game-header">
+                <h1>♟️ Chess</h1>
+                <p>Play against the computer!</p>
+            </div>
+
+            <div class="container">
+                <div class="game-container">
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="info-label">Turn</span>
+                            <span class="info-value" id="turn">white</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Moves</span>
+                            <span class="info-value" id="moves">0</span>
+                        </div>
+                    </div>
+
+                    <div class="game-board">
+                        <div id="chess-board"></div>
+                    </div>
+
+                    <div class="game-controls">
+                        <button class="btn btn-primary" id="new-game">New Game</button>
+                        <p style="color: #666; font-size: 0.75rem; margin: 0.25rem 0 0 0;">Click piece to select • Click square to move</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>How to Play Chess</h2>
+                    <p>Chess is a classic strategy board game played between two opponents on an 8x8 checkered board. The goal is to checkmate your opponent's king.</p>
+
+                    <h3>Basic Rules</h3>
+                    <ul>
+                        <li><strong>Objective:</strong> Capture the opponent's king (checkmate)</li>
+                        <li><strong>Turns:</strong> White moves first, then players alternate</li>
+                        <li><strong>Moving:</strong> Click a piece to select it, then click where you want to move</li>
+                        <li><strong>Capturing:</strong> Move your piece to a square occupied by an opponent's piece</li>
+                    </ul>
+
+                    <h3>How Each Piece Moves</h3>
+                    <ul>
+                        <li><strong>Pawn (♙/♟):</strong> Moves forward one square (two on first move). Captures diagonally.</li>
+                        <li><strong>Rook (♖/♜):</strong> Moves any number of squares horizontally or vertically</li>
+                        <li><strong>Knight (♘/♞):</strong> Moves in L-shape (2 squares in one direction, 1 in perpendicular)</li>
+                        <li><strong>Bishop (♗/♝):</strong> Moves any number of squares diagonally</li>
+                        <li><strong>Queen (♕/♛):</strong> Moves like rook or bishop (most powerful piece)</li>
+                        <li><strong>King (♔/♚):</strong> Moves one square in any direction</li>
+                    </ul>
+
+                    <h3>Special Moves</h3>
+                    <ul>
+                        <li><strong>Pawn Promotion:</strong> When a pawn reaches the opposite end, it becomes a Queen</li>
+                        <li><strong>Castling:</strong> Special move involving king and rook (not yet implemented in this version)</li>
+                        <li><strong>En Passant:</strong> Special pawn capture (not yet implemented in this version)</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Basic Strategy</h2>
+                    <ul>
+                        <li><strong>Control the Center:</strong> Try to control the four central squares</li>
+                        <li><strong>Develop Pieces:</strong> Get your knights and bishops into play early</li>
+                        <li><strong>Protect Your King:</strong> Keep your king safe, usually by castling</li>
+                        <li><strong>Think Ahead:</strong> Consider your opponent's possible responses</li>
+                        <li><strong>Value of Pieces:</strong> Pawn=1, Knight/Bishop=3, Rook=5, Queen=9</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Opening Principles for Beginners</h2>
+                    <p>The opening phase (first 10-15 moves) sets the foundation for the rest of your game. Follow these fundamental principles to gain a strong position:</p>
+
+                    <h3>Key Opening Goals</h3>
+                    <ul>
+                        <li><strong>Control the Center:</strong> Pawns on e4, d4, e5, or d5 control key central squares. Central control gives your pieces more mobility and restricts your opponent's options.</li>
+                        <li><strong>Develop Knights Before Bishops:</strong> Knights typically develop to f3/c3 (white) or f6/c6 (black). They're most effective when placed toward the center, unlike bishops which can be effective from afar.</li>
+                        <li><strong>Don't Move the Same Piece Twice:</strong> Unless absolutely necessary, develop all your pieces before moving the same piece again. Each move should bring a new piece into play.</li>
+                        <li><strong>Castle Early:</strong> Castling moves your king to safety and activates your rook. Aim to castle within the first 10 moves, typically kingside for faster development.</li>
+                        <li><strong>Connect Your Rooks:</strong> Once your knights and bishops are developed and you've castled, your rooks should "see" each other across the back rank.</li>
+                        <li><strong>Don't Bring Your Queen Out Too Early:</strong> Your queen is powerful but vulnerable. Developing it early often leads to your opponent developing pieces while attacking your queen.</li>
+                    </ul>
+
+                    <p>Common beginner mistake: Moving too many pawns in the opening. While controlling the center with pawns is important, moving too many pawns weakens your position and delays piece development.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Essential Chess Tactics</h2>
+                    <p>Tactics are short-term moves that win material or create immediate advantages. Recognizing these patterns will dramatically improve your play:</p>
+
+                    <h3>Fundamental Tactical Patterns</h3>
+                    <ul>
+                        <li><strong>Fork:</strong> When one piece attacks two or more enemy pieces simultaneously. Knights are excellent forking pieces because of their unique movement.</li>
+                        <li><strong>Pin:</strong> When a piece cannot move without exposing a more valuable piece behind it. Bishops and rooks excel at creating pins along ranks, files, and diagonals.</li>
+                        <li><strong>Skewer:</strong> Similar to a pin, but the more valuable piece is in front. When it moves, you capture the piece behind it.</li>
+                        <li><strong>Discovered Attack:</strong> Moving one piece reveals an attack from another piece behind it, creating double threats.</li>
+                        <li><strong>Removing the Defender:</strong> Capturing or driving away a piece that's defending an important square or piece, then exploiting the weakness.</li>
+                    </ul>
+
+                    <p>Practice looking for these tactics in every position. Before making a move, ask yourself: "Can I fork anything?" or "Is my opponent's piece pinned?" This tactical awareness separates improving players from stagnant ones.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>About This Chess Game</h2>
+                    <p>This is a simplified chess implementation with a basic AI opponent. The AI makes random valid moves, making it suitable for beginners learning the game.</p>
+                    <p><strong>Note:</strong> Advanced features like castling, en passant, and check detection are not yet implemented. The game ends when a king is captured.</p>
+                </div>
+            </div>
+
+            
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>How do you play Chess for beginners?</h3>
+                    <p>Chess is played on an 8x8 board with 16 pieces per player. The objective is to checkmate your opponent's King. Each piece moves differently: pawns move forward, rooks move in straight lines, bishops diagonally, knights in L-shapes, queens in any direction, and kings one square at a time.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are the basic Chess opening principles?</h3>
+                    <p>Control the center with pawns (e4, d4, e5, d5), develop your knights and bishops before moving the same piece twice, castle early to protect your King, don't bring your Queen out too early, and connect your rooks by completing development.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do you win at Chess?</h3>
+                    <p>You win by checkmating the opponent's King (attacking it with no escape) or when your opponent resigns. The game can also end in a draw through stalemate, threefold repetition, 50-move rule, or insufficient material.</p>
+                </div>
+            </div>
+<section class="related-games">
+                <div class="container">
+                    <h2>More Games</h2>
+                    <div class="game-grid">
+                        <a href="memory.html" class="game-card">
+                            <div class="game-icon">🧠</div>
+                            <h4>Memory Game</h4>
+                            <p>Test your memory</p>
+                        </a>
+                        <a href="minesweeper.html" class="game-card">
+                            <div class="game-icon">💣</div>
+                            <h4>Minesweeper</h4>
+                            <p>Classic logic puzzle</p>
+                        </a>
+                        <a href="pyramid-solitaire.html" class="game-card">
+                            <div class="game-icon">🔺</div>
+                            <h4>Pyramid Solitaire</h4>
+                            <p>Match cards to 13</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar-ad sidebar-ad-right">
+            <div class="ad-placeholder">Right Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 3<br>160x250</div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/chess.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

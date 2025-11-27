@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play FreeCell Online Free | Classic FreeCell Solitaire - FreeGameHub</title>
+    <meta name="description" content="Play FreeCell Solitaire online for free. 99.99% winnable! Use strategy and free cells to build foundations. Mobile-friendly. No download or registration.">
+    <meta name="keywords" content="freecell, solitaire, card game, free cell, online games, free games, patience, card games, browser game">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freegamehub.com/games/freecell">
+    <meta property="og:title" content="Play FreeCell Online Free | Classic FreeCell Solitaire">
+    <meta property="og:description" content="Play FreeCell online for free. Almost every game is solvable! Use strategy and free cells to build foundations.">
+    <meta property="og:image" content="https://freegamehub.com/images/freecell-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://freegamehub.com/games/freecell">
+    <meta property="twitter:title" content="Play FreeCell Online Free | Classic FreeCell Solitaire">
+    <meta property="twitter:description" content="Play FreeCell online for free. Almost every game is solvable! Use strategy and free cells to build foundations.">
+    <meta property="twitter:image" content="https://freegamehub.com/images/freecell-og.jpg">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "VideoGame",
+                "name": "FreeCell Solitaire",
+                "description": "Play FreeCell online for free. Almost every game is solvable! Use strategy and free cells to build foundations.",
+                "genre": "Card Game",
+                "gamePlatform": "Web Browser",
+                "operatingSystem": "Any",
+                "applicationCategory": "Game",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://freegamehub.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Games",
+                        "item": "https://freegamehub.com/games/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "FreeCell",
+                        "item": "https://freegamehub.com/games/freecell"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play FreeCell?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In FreeCell, move all cards to four foundation piles (by suit, Ace to King). Use four free cells to temporarily store cards. Cards in the tableau must be built in descending order with alternating colors. Unlike Klondike, all cards are visible from the start."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is every FreeCell game winnable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost all FreeCell games are winnable - approximately 99.999% of all possible deals can be solved. Only a handful of specific deals are known to be unsolvable. This makes FreeCell more skill-based than luck-based compared to other Solitaire variants."
+        }
+      },{
+        "@type": "Question",
+        "name": "What are the free cells used for in FreeCell?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free cells are temporary storage spaces where you can place any single card. You have four free cells available. Use them strategically to rearrange cards and create sequences. Each occupied free cell limits how many cards you can move at once."
+        }
+      }]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+
+    <link rel="stylesheet" href="../css/games.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e5128 0%, #2d6a4f 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Ad Styles */
+        .ad-banner {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .ad-leaderboard {
+            width: 728px;
+            height: 90px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        .ad-rectangle {
+            width: 336px;
+            height: 280px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            border-radius: 8px;
+            margin: 40px auto;
+        }
+
+        .ad-sidebar-fixed {
+            position: absolute;
+            top: 100px;
+            width: 160px;
+            display: none;
+        }
+
+        .ad-sidebar-left {
+            left: 20px;
+        }
+
+        .ad-sidebar-right {
+            right: 20px;
+        }
+
+        body {
+            position: relative;
+        }
+
+        .ad-sidebar-fixed .ad-placeholder {
+            width: 160px;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 1600px) {
+            .ad-sidebar-fixed {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ad-leaderboard {
+                width: 320px;
+                height: 50px;
+                font-size: 12px;
+            }
+
+            .ad-rectangle {
+                width: 300px;
+                height: 250px;
+            }
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: -10px;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Controls */
+        .controls {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            margin-top: -5px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .game-number-input {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 2px solid #667eea;
+            font-size: 14px;
+            width: 100px;
+        }
+
+        .info-text {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Game Container */
+        .game-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px 55px;
+            border-radius: 15px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-board {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Top Area (Free Cells and Foundations) */
+        .top-area {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .free-cells, .foundations {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cell, .foundation {
+            width: 110px;
+            height: 150px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .cell.valid-drop, .foundation.valid-drop {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .cell.has-card, .foundation.has-card {
+            border-style: solid;
+        }
+
+        /* Tableau Columns */
+        .tableau {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .column {
+            width: 110px;
+            min-height: 150px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 5px;
+        }
+
+        .column.valid-drop {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Card Styles */
+        .card {
+            width: 100px;
+            height: 140px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 6px;
+            position: absolute;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .card.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        .card.selected {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .card.red {
+            color: #dc143c;
+        }
+
+        .card.black {
+            color: #000;
+        }
+
+        .card-top, .card-bottom {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .card-bottom {
+            transform: rotate(180deg);
+        }
+
+        .card-center {
+            font-size: 36px;
+            text-align: center;
+            align-self: center;
+        }
+
+        .card-face {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            line-height: 1;
+        }
+
+        .court-card-image {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .card-top, .card-bottom {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .card-top {
+            top: 5px;
+            left: 6px;
+        }
+
+        .card-bottom {
+            bottom: 5px;
+            right: 6px;
+            transform: rotate(180deg);
+        }
+
+        /* Win Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal h2 {
+            color: #28a745;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .tableau {
+                gap: 5px;
+            }
+
+            .column {
+                width: 40px;
+            }
+
+            .card {
+                width: 35px;
+                height: 50px;
+                padding: 2px;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 10px;
+            }
+
+            .card-center {
+                font-size: 18px;
+            }
+
+            .cell, .foundation {
+                width: 40px;
+                height: 55px;
+            }
+
+            .free-cells, .foundations {
+                gap: 5px;
+            }
+
+            .controls {
+                font-size: 12px;
+            }
+
+            button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 3px !important;
+            }
+
+            h1 {
+                font-size: 0.75rem !important;
+                margin: 5px 0 !important;
+            }
+
+            .controls {
+                gap: 3px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+
+            .btn {
+                padding: 3px 5px !important;
+                font-size: 0.6rem !important;
+            }
+
+            .top-area {
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 2px !important;
+                justify-content: space-between !important;
+                margin-bottom: 50px !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .free-cells, .foundations {
+                gap: 2px !important;
+                display: flex !important;
+            }
+
+            .tableau {
+                gap: 2px !important;
+            }
+
+            .column {
+                width: 32px !important;
+            }
+
+            .card {
+                width: 32px !important;
+                height: 45px !important;
+                padding: 1px !important;
+                font-size: 6px !important;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 5px !important;
+                gap: 0 !important;
+            }
+
+            .card-top {
+                top: 1px !important;
+                left: 1px !important;
+            }
+
+            .card-bottom {
+                bottom: 1px !important;
+                right: 1px !important;
+            }
+
+            .card-face {
+                font-size: 2px !important;
+                overflow: hidden !important;
+                max-height: 100% !important;
+                transform: scale(0.5) !important;
+            }
+
+            .card {
+                overflow: hidden !important;
+            }
+
+            .stats {
+                gap: 10px !important;
+                padding: 5px !important;
+            }
+
+            .stat {
+                font-size: 0.65rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">FreeGameHub</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../games/">Games</a></li>
+                <li><a href="../guides/">Guides</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Fixed Sidebar Ads (Desktop only, 1600px+) -->
+    <div class="ad-sidebar-fixed ad-sidebar-left">
+        <div class="ad-placeholder">Left Ad 1<br>160x250</div>
+        <div class="ad-placeholder">Left Ad 2<br>160x250</div>
+        <div class="ad-placeholder">Left Ad 3<br>160x250</div>
+    </div>
+
+    <div class="ad-sidebar-fixed ad-sidebar-right">
+        <div class="ad-placeholder">Right Ad 1<br>160x250</div>
+        <div class="ad-placeholder">Right Ad 2<br>160x250</div>
+        <div class="ad-placeholder">Right Ad 3<br>160x250</div>
+    </div>
+
+    <main>
+        <h1>FreeCell Solitaire</h1>
+
+        <div class="controls">
+            <button id="newGameBtn">New Game</button>
+            <button id="undoBtn" disabled>Undo</button>
+            <button id="autoMoveBtn">Auto-Move</button>
+            <input type="number" id="gameNumberInput" class="game-number-input" min="1" max="1000000" placeholder="Game #">
+            <button id="loadGameBtn">Load Game</button>
+            <span class="info-text">Moves: <span id="moveCount">0</span></span>
+        </div>
+
+        <div class="game-container">
+            <div class="game-board">
+                <div class="top-area">
+                    <div class="free-cells">
+                        <div class="cell" data-cell="0"></div>
+                        <div class="cell" data-cell="1"></div>
+                        <div class="cell" data-cell="2"></div>
+                        <div class="cell" data-cell="3"></div>
+                    </div>
+                    <div class="foundations">
+                        <div class="foundation" data-suit="hearts"></div>
+                        <div class="foundation" data-suit="diamonds"></div>
+                        <div class="foundation" data-suit="clubs"></div>
+                        <div class="foundation" data-suit="spades"></div>
+                    </div>
+                </div>
+                <div class="tableau">
+                    <div class="column" data-column="0"></div>
+                    <div class="column" data-column="1"></div>
+                    <div class="column" data-column="2"></div>
+                    <div class="column" data-column="3"></div>
+                    <div class="column" data-column="4"></div>
+                    <div class="column" data-column="5"></div>
+                    <div class="column" data-column="6"></div>
+                    <div class="column" data-column="7"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- In-Content Ad -->
+    <div class="ad-rectangle" style="margin-top: 300px;">In-Content Ad - 336x280</div>
+
+    <div class="container" style="max-width: 1300px; padding-left: 200px; padding-right: 0px;">
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>How to Play FreeCell</h2>
+            <p>FreeCell is a strategic solitaire card game where almost every game is winnable with the right strategy! Use four free cells and four foundations to organize all 52 cards.</p>
+
+            <h3>Game Setup</h3>
+            <ul>
+                <li>All 52 cards are dealt face-up into 8 tableau columns</li>
+                <li>First 4 columns have 7 cards each, last 4 columns have 6 cards each</li>
+                <li>Four free cells (temporary storage) start empty</li>
+                <li>Four foundations (final destination) start empty</li>
+            </ul>
+
+            <h3>Objective</h3>
+            <p>Move all cards to the four foundation piles, building up from Ace to King in each suit (♥ ♦ ♣ ♠).</p>
+
+            <h3>Game Rules</h3>
+            <ul>
+                <li><strong>Tableau Building:</strong> Cards in tableau columns must be built down (descending rank) in alternating colors (red on black, black on red). For example, a red 6 can be placed on a black 7.</li>
+                <li><strong>Free Cells:</strong> Any single card can be temporarily moved to an empty free cell. Use these strategically for maneuvering cards.</li>
+                <li><strong>Foundations:</strong> Build up from Ace to King in the same suit (Ace → 2 → 3 → ... → King). All cards must eventually end up here.</li>
+                <li><strong>Empty Columns:</strong> Any card or valid sequence can be moved to an empty tableau column. Empty columns are very valuable!</li>
+                <li><strong>Moving Sequences:</strong> You can move multiple cards at once if you have enough free cells and empty columns. The formula is: (free cells + 1) × (empty columns + 1). For example, with 2 free cells and 1 empty column, you can move up to 6 cards.</li>
+                <li><strong>Face-up Cards:</strong> All cards are dealt face-up from the start, so you can see the entire layout and plan your strategy.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>How to Move Cards</h2>
+            <ul>
+                <li><strong>Drag and Drop:</strong> Click and drag cards to move them to valid destinations</li>
+                <li><strong>Click to Move:</strong> Click a card to select it, then click the destination (free cell, foundation, or tableau column)</li>
+                <li><strong>Auto-Move:</strong> Click the "Auto-Move" button to automatically send eligible cards to foundations when it's safe to do so</li>
+                <li><strong>Undo:</strong> Made a mistake? Use the "Undo" button to take back your last move</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>Winning Strategies</h2>
+            <ul>
+                <li><strong>Plan Ahead:</strong> Think several moves ahead before committing. Since all cards are visible, you can plan your entire strategy.</li>
+                <li><strong>Free Empty Columns Early:</strong> Try to create and maintain empty columns as early as possible. They provide maximum flexibility for moving card sequences.</li>
+                <li><strong>Don't Block Low Cards:</strong> Avoid burying low cards (Aces, 2s, 3s) under high cards of the same suit. You'll need to get those low cards to foundations eventually.</li>
+                <li><strong>Use Free Cells Wisely:</strong> Don't fill all four free cells at once. Leave at least one or two empty so you have room to maneuver.</li>
+                <li><strong>Build Foundations Evenly:</strong> Don't rush one foundation to completion while neglecting others. Keep them roughly even to avoid blocking important cards.</li>
+                <li><strong>Work from Both Ends:</strong> Try to expose both high and low cards in sequences so you have more building options.</li>
+                <li><strong>Empty Columns Over Free Cells:</strong> When possible, use empty columns instead of free cells for temporary storage, as columns can hold entire sequences.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>Game Features</h2>
+            <ul>
+                <li><strong>Undo:</strong> Take back moves if you make a mistake or want to try a different approach</li>
+                <li><strong>Auto-Move:</strong> Automatically move cards to foundations when it's safe (no risk of blocking needed cards)</li>
+                <li><strong>Game Numbers:</strong> Play specific numbered games (1-1,000,000). Each game number is winnable with perfect play!</li>
+                <li><strong>Move Counter:</strong> Track your efficiency with the move counter. Try to minimize moves for better scores</li>
+                <li><strong>New Game:</strong> Start a fresh random game at any time</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>Why FreeCell is Special</h2>
+            <p>FreeCell is unique among solitaire games because:</p>
+            <ul>
+                <li><strong>Almost Every Game is Winnable:</strong> Of the 1 million possible game numbers, only one is known to be unsolvable (game #11982)</li>
+                <li><strong>Perfect Information:</strong> All cards are visible from the start, making it a game of pure strategy rather than luck</li>
+                <li><strong>Replayable:</strong> You can replay the same game number to improve your strategy and minimize moves</li>
+                <li><strong>Skill-Based:</strong> Success depends entirely on planning and strategy, not on the luck of the draw</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: rgba(15, 40, 25, 0.95); color: #fff;">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">How do you play FreeCell?</h3>
+                <p>In FreeCell, move all cards to four foundation piles (by suit, Ace to King). Use four free cells to temporarily store cards. Cards in the tableau must be built in descending order with alternating colors. Unlike Klondike, all cards are visible from the start.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">Is every FreeCell game winnable?</h3>
+                <p>Almost all FreeCell games are winnable - approximately 99.999% of all possible deals can be solved. Only a handful of specific deals are known to be unsolvable. This makes FreeCell more skill-based than luck-based compared to other Solitaire variants.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 style="color: #fff;">What are the free cells used for in FreeCell?</h3>
+                <p>Free cells are temporary storage spaces where you can place any single card. You have four free cells available. Use them strategically to rearrange cards and create sequences. Each occupied free cell limits how many cards you can move at once.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Win Modal -->
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2>Congratulations!</h2>
+            <p>You won! Game completed in <span id="finalMoves">0</span> moves.</p>
+            <button id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Footer Banner Ad -->
+    <div class="ad-banner" style="background: linear-gradient(135deg, #1e5128 0%, #2d6a4f 100%); padding: 20px 0;">
+        <div class="ad-leaderboard">Footer Ad - 728x90</div>
+    </div>
+
+    <script>
+        // Game State
+        const game = {
+            freeCells: [null, null, null, null],
+            foundations: { hearts: [], diamonds: [], clubs: [], spades: [] },
+            tableau: [[], [], [], [], [], [], [], []],
+            moveHistory: [],
+            moveCount: 0,
+            selectedCard: null,
+            selectedFrom: null,
+            gameNumber: null
+        };
+
+        // Card suits and values
+        const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+        const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        const suitSymbols = { hearts: '♥', diamonds: '♦', clubs: '♣', spades: '♠' };
+        const suitColors = { hearts: 'red', diamonds: 'red', clubs: 'black', spades: 'black' };
+
+        // Initialize game
+        function initGame(gameNumber = null) {
+            // Generate or use provided game number
+            game.gameNumber = gameNumber || Math.floor(Math.random() * 1000000) + 1;
+            document.getElementById('gameNumberInput').value = game.gameNumber;
+
+            // Create deck
+            const deck = [];
+            for (const suit of suits) {
+                for (const value of values) {
+                    deck.push({ suit, value, color: suitColors[suit] });
+                }
+            }
+
+            // Shuffle deck using game number as seed
+            shuffleDeck(deck, game.gameNumber);
+
+            // Reset game state
+            game.freeCells = [null, null, null, null];
+            game.foundations = { hearts: [], diamonds: [], clubs: [], spades: [] };
+            game.tableau = [[], [], [], [], [], [], [], []];
+            game.moveHistory = [];
+            game.moveCount = 0;
+            game.selectedCard = null;
+            game.selectedFrom = null;
+
+            // Deal cards: 7-7-7-7-6-6-6-6
+            let cardIndex = 0;
+            for (let col = 0; col < 8; col++) {
+                const cardsInColumn = col < 4 ? 7 : 6;
+                for (let row = 0; row < cardsInColumn; row++) {
+                    game.tableau[col].push(deck[cardIndex++]);
+                }
+            }
+
+            updateDisplay();
+            updateMoveCount();
+        }
+
+        // Seeded random number generator for reproducible games
+        function shuffleDeck(deck, seed) {
+            let random = seed;
+            for (let i = deck.length - 1; i > 0; i--) {
+                random = (random * 9301 + 49297) % 233280;
+                const j = Math.floor((random / 233280) * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+
+        // Create card element
+        function createTraditionalCardFace(card) {
+            const suit = suitSymbols[card.suit];
+            const value = card.value;
+
+            // Court cards
+            if (value === 'K') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'king-clubs.png';
+                else if (suit === '♠') imageName = 'king-spades.png';
+                else if (suit === '♥') imageName = 'king-hearts.png';
+                else if (suit === '♦') imageName = 'king-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="King of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            } else if (value === 'Q') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'queen-clubs.png';
+                else if (suit === '♠') imageName = 'queen-spades.png';
+                else if (suit === '♥') imageName = 'queen-hearts.png';
+                else if (suit === '♦') imageName = 'queen-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="Queen of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            } else if (value === 'J') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'jack-clubs.png';
+                else if (suit === '♠') imageName = 'jack-spades.png';
+                else if (suit === '♥') imageName = 'jack-hearts.png';
+                else if (suit === '♦') imageName = 'jack-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="Jack of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            }
+
+            // Ace
+            if (value === 'A') {
+                return `<div class="card-face">${suit}</div>`;
+            }
+
+            // Number cards
+            const numValue = parseInt(value);
+            let suitPattern = '';
+
+            if (numValue === 2) {
+                suitPattern = `<div style="font-size: 40px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 10px 0;">
+                    <div>${suit}</div>
+                    <div style="transform: rotate(180deg);">${suit}</div>
+                </div>`;
+            } else if (numValue === 3) {
+                suitPattern = `<div style="font-size: 35px; display: flex; flex-direction: column; justify-content: space-around; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 4) {
+                suitPattern = `<div style="font-size: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center; height: 100%; padding: 6px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 5) {
+                suitPattern = `<div style="font-size: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; height: 100%; align-items: center;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div style="grid-column: span 2; text-align: center;">${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 6) {
+                suitPattern = `<div style="font-size: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; height: 100%; padding: 5px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 7) {
+                suitPattern = `<div style="font-size: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: 100%; padding: 3px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div style="grid-column: span 2; text-align: center;">${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 8) {
+                suitPattern = `<div style="font-size: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 9) {
+                suitPattern = `<div style="font-size: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 10) {
+                suitPattern = `<div style="font-size: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            }
+
+            return `<div class="card-face">${suitPattern}</div>`;
+        }
+
+        function createCardElement(card) {
+            const cardEl = document.createElement('div');
+            cardEl.className = `card ${card.color}`;
+            const cardFace = createTraditionalCardFace(card);
+            cardEl.innerHTML = `
+                <div class="card-top">
+                    <div>${card.value}</div>
+                    <div>${suitSymbols[card.suit]}</div>
+                </div>
+                ${cardFace}
+                <div class="card-bottom">
+                    <div>${card.value}</div>
+                    <div>${suitSymbols[card.suit]}</div>
+                </div>
+            `;
+            cardEl.draggable = true;
+            return cardEl;
+        }
+
+        // Update display
+        function updateDisplay() {
+            // Clear all cards
+            document.querySelectorAll('.card').forEach(el => el.remove());
+
+            // Render free cells
+            game.freeCells.forEach((card, index) => {
+                const cell = document.querySelector(`.cell[data-cell="${index}"]`);
+                cell.classList.toggle('has-card', card !== null);
+                if (card) {
+                    const cardEl = createCardElement(card);
+                    setupCardInteraction(cardEl, 'freeCell', index);
+                    cell.appendChild(cardEl);
+                }
+            });
+
+            // Render foundations
+            Object.entries(game.foundations).forEach(([suit, cards]) => {
+                const foundation = document.querySelector(`.foundation[data-suit="${suit}"]`);
+                foundation.classList.toggle('has-card', cards.length > 0);
+                if (cards.length > 0) {
+                    const topCard = cards[cards.length - 1];
+                    const cardEl = createCardElement(topCard);
+                    setupCardInteraction(cardEl, 'foundation', suit);
+                    foundation.appendChild(cardEl);
+                }
+            });
+
+            // Render tableau
+            game.tableau.forEach((column, colIndex) => {
+                const columnEl = document.querySelector(`.column[data-column="${colIndex}"]`);
+                column.forEach((card, cardIndex) => {
+                    const cardEl = createCardElement(card);
+                    cardEl.style.top = `${cardIndex * 25}px`;
+                    setupCardInteraction(cardEl, 'tableau', colIndex, cardIndex);
+                    columnEl.appendChild(cardEl);
+                });
+            });
+
+            // Check for win
+            checkWin();
+        }
+
+        // Setup card interaction (drag and click)
+        function setupCardInteraction(cardEl, type, location, cardIndex = null) {
+            // Drag events
+            cardEl.addEventListener('dragstart', (e) => {
+                handleDragStart(e, type, location, cardIndex);
+            });
+
+            cardEl.addEventListener('dragend', (e) => {
+                cardEl.classList.remove('dragging');
+                clearValidDrops();
+            });
+
+            // Click events
+            cardEl.addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleCardClick(type, location, cardIndex);
+            });
+        }
+
+        // Handle drag start
+        function handleDragStart(e, type, location, cardIndex) {
+            const card = getCardAt(type, location, cardIndex);
+            if (!canMoveCard(type, location, cardIndex)) {
+                e.preventDefault();
+                return;
+            }
+
+            e.target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', JSON.stringify({ type, location, cardIndex }));
+
+            showValidDrops(card, type, location, cardIndex);
+        }
+
+        // Handle card click
+        function handleCardClick(type, location, cardIndex) {
+            const card = getCardAt(type, location, cardIndex);
+
+            // If no card selected, select this card
+            if (!game.selectedCard) {
+                if (canMoveCard(type, location, cardIndex)) {
+                    game.selectedCard = card;
+                    game.selectedFrom = { type, location, cardIndex };
+                    highlightSelected(type, location, cardIndex);
+                }
+                return;
+            }
+
+            // If same card clicked, deselect
+            if (game.selectedFrom.type === type &&
+                game.selectedFrom.location === location &&
+                game.selectedFrom.cardIndex === cardIndex) {
+                clearSelection();
+                return;
+            }
+
+            // Try to move to clicked location
+            if (tryAutoMove(game.selectedFrom.type, game.selectedFrom.location, game.selectedFrom.cardIndex, type, location)) {
+                clearSelection();
+                return;
+            }
+
+            // Otherwise, select new card
+            clearSelection();
+            if (canMoveCard(type, location, cardIndex)) {
+                game.selectedCard = card;
+                game.selectedFrom = { type, location, cardIndex };
+                highlightSelected(type, location, cardIndex);
+            }
+        }
+
+        // Get card at location
+        function getCardAt(type, location, cardIndex) {
+            if (type === 'freeCell') return game.freeCells[location];
+            if (type === 'foundation') return game.foundations[location][game.foundations[location].length - 1];
+            if (type === 'tableau') return game.tableau[location][cardIndex];
+            return null;
+        }
+
+        // Check if card can be moved
+        function canMoveCard(type, location, cardIndex) {
+            if (type === 'freeCell') return game.freeCells[location] !== null;
+            if (type === 'foundation') return game.foundations[location].length > 0;
+            if (type === 'tableau') {
+                const column = game.tableau[location];
+                if (cardIndex >= column.length) return false;
+
+                // Check if cards below form valid sequence
+                const cardsToMove = column.length - cardIndex;
+                const maxMovable = getMaxMovableCards();
+                return cardsToMove <= maxMovable && isValidSequence(column.slice(cardIndex));
+            }
+            return false;
+        }
+
+        // Calculate max movable cards: (free cells + 1) × (empty columns + 1)
+        function getMaxMovableCards() {
+            const freeCells = game.freeCells.filter(c => c === null).length;
+            const emptyColumns = game.tableau.filter(col => col.length === 0).length;
+            return (freeCells + 1) * (emptyColumns + 1);
+        }
+
+        // Check if cards form valid descending sequence with alternating colors
+        function isValidSequence(cards) {
+            for (let i = 0; i < cards.length - 1; i++) {
+                if (!isDescending(cards[i], cards[i + 1]) || cards[i].color === cards[i + 1].color) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Setup drop zones
+        document.querySelectorAll('.cell, .foundation, .column').forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                clearValidDrops();
+
+                const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+                const targetType = zone.classList.contains('cell') ? 'freeCell' :
+                                  zone.classList.contains('foundation') ? 'foundation' : 'tableau';
+                const targetLocation = zone.dataset.cell || zone.dataset.suit || zone.dataset.column;
+
+                moveCard(data.type, data.location, data.cardIndex, targetType, targetLocation);
+            });
+
+            // Click on empty area
+            zone.addEventListener('click', (e) => {
+                if (e.target === zone && game.selectedCard) {
+                    const targetType = zone.classList.contains('cell') ? 'freeCell' :
+                                      zone.classList.contains('foundation') ? 'foundation' : 'tableau';
+                    const targetLocation = zone.dataset.cell || zone.dataset.suit || zone.dataset.column;
+
+                    if (tryAutoMove(game.selectedFrom.type, game.selectedFrom.location, game.selectedFrom.cardIndex, targetType, targetLocation)) {
+                        clearSelection();
+                    }
+                }
+            });
+        });
+
+        // Try to auto-move to destination
+        function tryAutoMove(fromType, fromLocation, fromCardIndex, toType, toLocation) {
+            return moveCard(fromType, fromLocation, fromCardIndex, toType, toLocation);
+        }
+
+        // Move card
+        function moveCard(fromType, fromLocation, fromCardIndex, toType, toLocation) {
+            const card = getCardAt(fromType, fromLocation, fromCardIndex);
+            if (!card) return false;
+
+            // Validate move
+            if (!isValidMove(card, fromType, fromLocation, fromCardIndex, toType, toLocation)) {
+                return false;
+            }
+
+            // Save move for undo
+            const moveData = {
+                fromType, fromLocation, fromCardIndex, toType, toLocation,
+                card: JSON.parse(JSON.stringify(card))
+            };
+
+            // Handle tableau to tableau multi-card moves
+            if (fromType === 'tableau' && toType === 'tableau') {
+                const cardsToMove = game.tableau[fromLocation].slice(fromCardIndex);
+                moveData.cards = JSON.parse(JSON.stringify(cardsToMove));
+
+                game.tableau[fromLocation] = game.tableau[fromLocation].slice(0, fromCardIndex);
+                game.tableau[toLocation].push(...cardsToMove);
+            } else {
+                // Remove card from source
+                if (fromType === 'freeCell') {
+                    game.freeCells[fromLocation] = null;
+                } else if (fromType === 'foundation') {
+                    game.foundations[fromLocation].pop();
+                } else if (fromType === 'tableau') {
+                    game.tableau[fromLocation].pop();
+                }
+
+                // Add card to destination
+                if (toType === 'freeCell') {
+                    game.freeCells[toLocation] = card;
+                } else if (toType === 'foundation') {
+                    game.foundations[toLocation].push(card);
+                } else if (toType === 'tableau') {
+                    game.tableau[toLocation].push(card);
+                }
+            }
+
+            game.moveHistory.push(moveData);
+            game.moveCount++;
+            updateMoveCount();
+            updateDisplay();
+            document.getElementById('undoBtn').disabled = false;
+
+            return true;
+        }
+
+        // Validate move
+        function isValidMove(card, fromType, fromLocation, fromCardIndex, toType, toLocation) {
+            // Can't move to same location
+            if (fromType === toType && fromLocation == toLocation) return false;
+
+            // Free cell destination
+            if (toType === 'freeCell') {
+                return game.freeCells[toLocation] === null &&
+                       (fromType !== 'tableau' || fromCardIndex === game.tableau[fromLocation].length - 1);
+            }
+
+            // Foundation destination
+            if (toType === 'foundation') {
+                if (fromType === 'tableau' && fromCardIndex !== game.tableau[fromLocation].length - 1) {
+                    return false; // Only top card can go to foundation
+                }
+
+                const foundationCards = game.foundations[toLocation];
+
+                // Must be same suit
+                if (card.suit !== toLocation) return false;
+
+                // Must be Ace if empty, or next value
+                if (foundationCards.length === 0) {
+                    return card.value === 'A';
+                }
+
+                const topCard = foundationCards[foundationCards.length - 1];
+                return isAscending(topCard, card);
+            }
+
+            // Tableau destination
+            if (toType === 'tableau') {
+                const destColumn = game.tableau[toLocation];
+                const cardsToMove = fromType === 'tableau' ?
+                    game.tableau[fromLocation].slice(fromCardIndex).length : 1;
+
+                // Check if we can move this many cards
+                const maxMovable = getMaxMovableCards();
+                if (cardsToMove > maxMovable) return false;
+
+                // Empty column accepts any card
+                if (destColumn.length === 0) return true;
+
+                // Must be descending and alternating colors
+                const topCard = destColumn[destColumn.length - 1];
+                return isDescending(topCard, card) && topCard.color !== card.color;
+            }
+
+            return false;
+        }
+
+        // Check if card2 is one less than card1
+        function isDescending(card1, card2) {
+            const val1 = values.indexOf(card1.value);
+            const val2 = values.indexOf(card2.value);
+            return val1 === val2 + 1;
+        }
+
+        // Check if card2 is one more than card1
+        function isAscending(card1, card2) {
+            const val1 = values.indexOf(card1.value);
+            const val2 = values.indexOf(card2.value);
+            return val2 === val1 + 1;
+        }
+
+        // Show valid drop zones
+        function showValidDrops(card, fromType, fromLocation, fromCardIndex) {
+            // Check free cells
+            game.freeCells.forEach((cell, index) => {
+                if (isValidMove(card, fromType, fromLocation, fromCardIndex, 'freeCell', index)) {
+                    document.querySelector(`.cell[data-cell="${index}"]`).classList.add('valid-drop');
+                }
+            });
+
+            // Check foundations
+            Object.keys(game.foundations).forEach(suit => {
+                if (isValidMove(card, fromType, fromLocation, fromCardIndex, 'foundation', suit)) {
+                    document.querySelector(`.foundation[data-suit="${suit}"]`).classList.add('valid-drop');
+                }
+            });
+
+            // Check tableau
+            game.tableau.forEach((col, index) => {
+                if (isValidMove(card, fromType, fromLocation, fromCardIndex, 'tableau', index)) {
+                    document.querySelector(`.column[data-column="${index}"]`).classList.add('valid-drop');
+                }
+            });
+        }
+
+        // Clear valid drop highlights
+        function clearValidDrops() {
+            document.querySelectorAll('.valid-drop').forEach(el => {
+                el.classList.remove('valid-drop');
+            });
+        }
+
+        // Highlight selected card
+        function highlightSelected(type, location, cardIndex) {
+            document.querySelectorAll('.card').forEach(el => el.classList.remove('selected'));
+
+            let selector;
+            if (type === 'freeCell') {
+                selector = `.cell[data-cell="${location}"] .card`;
+            } else if (type === 'foundation') {
+                selector = `.foundation[data-suit="${location}"] .card`;
+            } else {
+                selector = `.column[data-column="${location}"] .card`;
+            }
+
+            const cards = document.querySelectorAll(selector);
+            if (type === 'tableau' && cards[cardIndex]) {
+                cards[cardIndex].classList.add('selected');
+            } else if (cards.length > 0) {
+                cards[0].classList.add('selected');
+            }
+        }
+
+        // Clear selection
+        function clearSelection() {
+            game.selectedCard = null;
+            game.selectedFrom = null;
+            document.querySelectorAll('.card').forEach(el => el.classList.remove('selected'));
+        }
+
+        // Undo last move
+        function undo() {
+            if (game.moveHistory.length === 0) return;
+
+            const move = game.moveHistory.pop();
+
+            // Handle multi-card tableau moves
+            if (move.cards) {
+                game.tableau[move.toLocation] = game.tableau[move.toLocation].slice(0, -move.cards.length);
+                game.tableau[move.fromLocation].push(...move.cards);
+            } else {
+                // Remove from destination
+                if (move.toType === 'freeCell') {
+                    game.freeCells[move.toLocation] = null;
+                } else if (move.toType === 'foundation') {
+                    game.foundations[move.toLocation].pop();
+                } else if (move.toType === 'tableau') {
+                    game.tableau[move.toLocation].pop();
+                }
+
+                // Restore to source
+                if (move.fromType === 'freeCell') {
+                    game.freeCells[move.fromLocation] = move.card;
+                } else if (move.fromType === 'foundation') {
+                    game.foundations[move.fromLocation].push(move.card);
+                } else if (move.fromType === 'tableau') {
+                    game.tableau[move.fromLocation].push(move.card);
+                }
+            }
+
+            game.moveCount--;
+            updateMoveCount();
+            updateDisplay();
+
+            if (game.moveHistory.length === 0) {
+                document.getElementById('undoBtn').disabled = true;
+            }
+        }
+
+        // Auto-move cards to foundations
+        function autoMove() {
+            let moved = false;
+
+            do {
+                moved = false;
+
+                // Try from tableau
+                for (let col = 0; col < game.tableau.length; col++) {
+                    const column = game.tableau[col];
+                    if (column.length === 0) continue;
+
+                    const card = column[column.length - 1];
+                    for (const suit of suits) {
+                        if (isValidMove(card, 'tableau', col, column.length - 1, 'foundation', suit)) {
+                            moveCard('tableau', col, column.length - 1, 'foundation', suit);
+                            moved = true;
+                            break;
+                        }
+                    }
+                    if (moved) break;
+                }
+
+                // Try from free cells
+                if (!moved) {
+                    for (let i = 0; i < game.freeCells.length; i++) {
+                        const card = game.freeCells[i];
+                        if (!card) continue;
+
+                        for (const suit of suits) {
+                            if (isValidMove(card, 'freeCell', i, null, 'foundation', suit)) {
+                                moveCard('freeCell', i, null, 'foundation', suit);
+                                moved = true;
+                                break;
+                            }
+                        }
+                        if (moved) break;
+                    }
+                }
+            } while (moved);
+        }
+
+        // Check for win condition
+        function checkWin() {
+            const totalCards = Object.values(game.foundations).reduce((sum, pile) => sum + pile.length, 0);
+            if (totalCards === 52) {
+                setTimeout(() => {
+                    document.getElementById('finalMoves').textContent = game.moveCount;
+                    document.getElementById('winModal').classList.add('show');
+                }, 500);
+            }
+        }
+
+        // Update move count display
+        function updateMoveCount() {
+            document.getElementById('moveCount').textContent = game.moveCount;
+        }
+
+        // Event listeners
+        document.getElementById('newGameBtn').addEventListener('click', () => {
+            initGame();
+        });
+
+        document.getElementById('undoBtn').addEventListener('click', () => {
+            undo();
+        });
+
+        document.getElementById('autoMoveBtn').addEventListener('click', () => {
+            autoMove();
+        });
+
+        document.getElementById('loadGameBtn').addEventListener('click', () => {
+            const gameNumber = parseInt(document.getElementById('gameNumberInput').value);
+            if (gameNumber && gameNumber > 0) {
+                initGame(gameNumber);
+            }
+        });
+
+        document.getElementById('playAgainBtn').addEventListener('click', () => {
+            document.getElementById('winModal').classList.remove('show');
+            initGame();
+        });
+
+        // Start game
+        initGame();
+    </script>
+</body>
+</html>

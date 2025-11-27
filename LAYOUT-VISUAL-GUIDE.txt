@@ -1,0 +1,180 @@
+
+═══════════════════════════════════════════════════════════════════════════
+                    NEW SIDEBAR AD LAYOUT (DESKTOP VIEW)
+═══════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          HEADER (Sticky Top)                             │
+│                  🎮 FreeGameHub    [Home] [Games] [About]               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌────────────┬────────────────────────────────────────┬────────────┐
+│            │                                        │            │
+│  LEFT AD   │          MAIN CONTENT                  │  RIGHT AD  │
+│  (Sticky)  │                                        │  (Sticky)  │
+│            │                                        │            │
+│ ┌────────┐ │  ┌──────────────────────────────────┐  │ ┌────────┐ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │  160   │ │  │        Game Title                │  │ │  160   │ │
+│ │   x    │ │  │                                  │  │ │   x    │ │
+│ │  600   │ │  │  [Moves] [Timer] [Score]         │  │ │  600   │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │  Ad    │ │  │  ┌────────────────────────────┐  │  │ │  Ad    │ │
+│ │        │ │  │  │                            │  │  │ │        │ │
+│ │ Slot   │ │  │  │      Game Board            │  │  │ │ Slot   │ │
+│ │        │ │  │  │                            │  │  │ │        │ │
+│ │   #1   │ │  │  └────────────────────────────┘  │  │ │   #1   │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ └────────┘ │  │  [New Game] [Undo] [Hint]        │  │ └────────┘ │
+│            │  │                                  │  │            │
+│ ┌────────┐ │  │  ──────────────────────────────  │  │ ┌────────┐ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │  160   │ │  │  How to Play Instructions        │  │ │  160   │ │
+│ │   x    │ │  │                                  │  │ │   x    │ │
+│ │  250   │ │  │  Game rules, strategies, tips    │  │ │  250   │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │  Ad    │ │  │  ──────────────────────────────  │  │ │  Ad    │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │ Slot   │ │  │  Related Games Section           │  │ │ Slot   │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ │   #2   │ │  │  [Game 1] [Game 2] [Game 3]      │  │ │   #2   │ │
+│ │        │ │  │                                  │  │ │        │ │
+│ └────────┘ │  └──────────────────────────────────┘  │ └────────┘ │
+│            │                                        │            │
+│   Follows  │                                        │   Follows  │
+│   Scroll   │                                        │   Scroll   │
+│   (Sticky) │                                        │   (Sticky) │
+│            │                                        │            │
+└────────────┴────────────────────────────────────────┴────────────┘
+
+└─────────────────────────────────────────────────────────────────────────┘
+│                              FOOTER                                      │
+│              [Home] [Privacy] [About] © 2025 FreeGameHub                │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════
+                    MOBILE/TABLET LAYOUT (< 1200px width)
+═══════════════════════════════════════════════════════════════════════════
+
+┌───────────────────────────────┐
+│         HEADER                │
+│   🎮 FreeGameHub              │
+│   [Home] [Games] [About]      │
+└───────────────────────────────┘
+
+┌───────────────────────────────┐
+│                               │
+│      MAIN CONTENT             │
+│      (Full Width)             │
+│                               │
+│  ┌─────────────────────────┐  │
+│  │   Game Title            │  │
+│  │                         │  │
+│  │   [Stats] [Timer]       │  │
+│  │                         │  │
+│  │   ┌─────────────────┐   │  │
+│  │   │   Game Board    │   │  │
+│  │   │                 │   │  │
+│  │   └─────────────────┘   │  │
+│  │                         │  │
+│  │   [Buttons]             │  │
+│  │                         │  │
+│  │   Instructions          │  │
+│  │                         │  │
+│  │   Related Games         │  │
+│  └─────────────────────────┘  │
+│                               │
+│  ⚠️ Sidebar ads HIDDEN        │
+│     on mobile for better     │
+│     user experience          │
+│                               │
+└───────────────────────────────┘
+
+┌───────────────────────────────┐
+│          FOOTER               │
+└───────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════
+                            AD UNIT SUMMARY
+═══════════════════════════════════════════════════════════════════════════
+
+📊 DESKTOP (> 1200px):
+   ✅ Left Sidebar:  2 ad units (160x600 + 160x250)
+   ✅ Right Sidebar: 2 ad units (160x600 + 160x250)
+   ✅ Total:         4 ad units per page
+   ✅ Behavior:      Sticky (follows scroll)
+
+📱 MOBILE/TABLET (< 1200px):
+   ✅ Sidebar ads:   HIDDEN (better UX)
+   ✅ Content:       Full width
+   ✅ Total ads:     0 (can add mobile banners if needed)
+
+
+═══════════════════════════════════════════════════════════════════════════
+                          ADVANTAGES OF THIS LAYOUT
+═══════════════════════════════════════════════════════════════════════════
+
+✅ More Ad Revenue:
+   - 4 ad units instead of 2-3 banner ads
+   - Sticky ads = always visible = more impressions
+   - Higher viewability = better CPM rates
+
+✅ Better User Experience:
+   - Content area stays clean and uncluttered
+   - No ads interrupting game play
+   - Ads feel less intrusive than banners
+   - Mobile users get ad-free experience
+
+✅ Professional Look:
+   - Matches layout of successful game sites
+   - Similar to Solitaire Bliss and CardGames.io
+   - Clean, modern design
+
+✅ SEO Benefits:
+   - Content stays "above the fold"
+   - Better mobile experience = better rankings
+   - Faster page load (fewer ad units on mobile)
+
+
+═══════════════════════════════════════════════════════════════════════════
+                            AD PLACEMENT NOTES
+═══════════════════════════════════════════════════════════════════════════
+
+📍 Current Status:
+   ✅ Homepage:     Updated with sidebar ads
+   ✅ Memory Game:  Updated with sidebar ads
+   ✅ Minesweeper:  Updated with sidebar ads
+   ✅ Solitaire:    Updated with sidebar ads
+
+🚧 To Update (When implementing full games):
+   ⚠️ Spider Solitaire
+   ⚠️ FreeCell
+   ⚠️ Pyramid Solitaire
+   ⚠️ Mahjong Solitaire
+
+
+═══════════════════════════════════════════════════════════════════════════
+                         NEXT STEPS FOR YOU
+═══════════════════════════════════════════════════════════════════════════
+
+1. ✅ Test the new layout:
+   - Open index.html in browser
+   - Check that ads appear on left and right
+   - Resize browser to see responsive behavior
+
+2. ✅ Deploy to Netlify/Vercel:
+   - Upload the updated files
+   - Test on live site
+
+3. ✅ Apply for AdSense:
+   - Once approved, replace placeholders with real ad code
+   - See AD-PLACEMENT-INFO.md for instructions
+
+4. ✅ Monitor performance:
+   - Check AdSense dashboard for earnings
+   - Optimize based on which ad units perform best
+
+
+═══════════════════════════════════════════════════════════════════════════

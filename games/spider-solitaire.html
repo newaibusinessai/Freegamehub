@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO Tags -->
+    <title>Play Spider Solitaire Online Free | 1, 2 & 4 Suit Modes - FreeGameHub</title>
+    <meta name="description" content="Play Spider Solitaire online for free. Choose 1, 2, or 4 suit difficulty. Build descending sequences. Mobile-friendly solitaire game. No download required.">
+    <meta name="keywords" content="spider solitaire, spider solitaire online, free spider solitaire, 2 suit spider solitaire">
+    <link rel="canonical" href="https://freegamehub.org/games/spider-solitaire.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Play Spider Solitaire Online Free | FreeGameHub">
+    <meta property="og:description" content="Play Spider Solitaire online. Choose 1-suit, 2-suit, or 4-suit difficulty. Build sequences and clear the tableau.">
+    <meta property="og:url" content="https://freegamehub.org/games/spider-solitaire.html">
+    <meta property="og:type" content="game">
+
+        <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Spider Solitaire",
+      "description": "Spider Solitaire card game with 1-suit, 2-suit, and 4-suit difficulty modes. Build sequences from King to Ace.",
+      "gamePlatform": "Web Browser",
+      "genre": "Card Game",
+      "url": "https://freegamehub.org/games/spider-solitaire.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "FreeGameHub",
+        "url": "https://freegamehub.org/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freegamehub.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Games",
+        "item": "https://freegamehub.org/#games"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Spider Solitaire",
+        "item": "https://freegamehub.org/games/spider-solitaire.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you play Spider Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Spider Solitaire, arrange cards in descending order (King to Ace) in the tableau. Complete sequences of the same suit are automatically removed. You can move any face-up card or sequence. The goal is to clear all cards by building eight complete sequences."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is the difference between 1-suit, 2-suit, and 4-suit Spider Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1-suit Spider uses only Spades (easiest), 2-suit uses Spades and Hearts (medium difficulty), and 4-suit uses all four suits (hardest). In all versions, you must build complete sequences in the same suit, but fewer suits make this easier to achieve."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can you move any card in Spider Solitaire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can move any face-up card, but you can only move multiple cards as a sequence if they're in descending order of the same suit. For example, you can move a 7-6-5 of Hearts together, but not a 7 of Hearts, 6 of Spades, 5 of Hearts."
+        }
+      }]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/games.min.css">
+    <style>
+        /* Force green background */
+        body.game-page {
+            background: #3a6b1f !important;
+        }
+
+        .game-page .game-container {
+            background: transparent !important;
+            box-shadow: none !important;
+            margin-top: -30px;
+        }
+
+        .game-page .content-section {
+            background: rgba(0, 0, 0, 0.3) !important;
+            margin-top: 180px;
+        }
+
+        .game-page .content-section h2,
+        .game-page .content-section h3,
+        .game-page .content-section h4,
+        .game-page .content-section p,
+        .game-page .content-section li {
+            color: #fff !important;
+        }
+
+        /* Top bar layout */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            margin-top: -10px;
+            gap: 20px;
+        }
+
+        .title-section h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .controls-section {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .difficulty-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .difficulty-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .spider-board {
+            max-width: 1600px;
+            margin: 10px auto;
+            padding: 5px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .stock-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .completed-sets {
+            display: flex;
+            gap: 10px;
+        }
+
+        .completed-set {
+            width: 80px;
+            height: 112px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .tableau {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tableau-pile {
+            position: relative;
+            width: 80px;
+            min-height: 400px;
+        }
+
+        .card {
+            width: 80px;
+            height: 112px;
+            background: #fefef8;
+            border: 2px solid #2a1f0f;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            z-index: 100 !important;
+        }
+
+        .card.face-down {
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #8b0000 100%);
+            color: rgba(255,255,255,0.15);
+        }
+
+        .card.face-down::after {
+            content: '🂠';
+            font-size: 40px;
+        }
+
+        .card.red {
+            color: #d00;
+        }
+
+        .card.black {
+            color: #000;
+        }
+
+        .card.selected {
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px #4a90e2;
+        }
+
+        .card-face {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 40px;
+            line-height: 1;
+        }
+
+        .court-card-image {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .court-card-img {
+            width: 80px;
+            height: 112px;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .court-card-img:hover {
+            z-index: 100 !important;
+        }
+
+        .court-card-img.selected {
+            border: 3px solid #4a90e2;
+            box-shadow: 0 0 0 3px #4a90e2;
+        }
+
+        .card-top, .card-bottom {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .card-top {
+            top: 4px;
+            left: 5px;
+        }
+
+        .card-bottom {
+            bottom: 4px;
+            right: 5px;
+            transform: rotate(180deg);
+        }
+
+        .tableau-pile .card {
+            left: 0;
+        }
+
+        .stock-pile {
+            width: 80px;
+            height: 112px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .stock-pile:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Compact stats in top bar */
+        .stats-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .stat-item-compact {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .stat-label-compact {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .stat-value-compact {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px), (max-width: 480px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                margin-top: 0;
+            }
+
+            .title-section h1 {
+                font-size: 1.2rem;
+            }
+
+            .controls-section {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
+            }
+
+            .difficulty-btn, .btn {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
+            .stats-section {
+                gap: 8px;
+            }
+
+            .stat-item-compact {
+                padding: 4px 8px;
+            }
+
+            .stat-label-compact {
+                font-size: 0.7rem;
+            }
+
+            .stat-value-compact {
+                font-size: 0.8rem;
+            }
+
+            .card, .tableau-pile, .stock-pile {
+                width: 28px;
+                height: 39px;
+            }
+
+            .court-card-img {
+                width: 28px !important;
+                height: 39px !important;
+            }
+
+            .completed-set {
+                width: 28px;
+                height: 39px;
+            }
+
+            .card {
+                font-size: 0.6rem;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 8px;
+                gap: 1px;
+            }
+
+            .card-top {
+                top: 2px;
+                left: 2px;
+            }
+
+            .card-bottom {
+                bottom: 2px;
+                right: 2px;
+            }
+
+            .card-face {
+                font-size: 18px;
+            }
+
+            .tableau {
+                gap: 3px;
+            }
+
+            .tableau-pile {
+                min-height: 300px;
+            }
+
+            .top-row {
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+
+            .game-page .content-section {
+                margin-top: 30px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body, .container {
+                padding: 3px !important;
+            }
+
+            .top-bar {
+                padding: 5px 3px !important;
+                gap: 5px !important;
+            }
+
+            .title-section h1 {
+                font-size: 0.75rem !important;
+                margin: 0 !important;
+                line-height: 1.2 !important;
+            }
+
+            .difficulty-btn, .btn {
+                padding: 3px 5px !important;
+                font-size: 0.6rem !important;
+            }
+
+            .stats-section {
+                gap: 5px !important;
+            }
+
+            .stat-item-compact {
+                padding: 3px 6px !important;
+            }
+
+            .stat-label-compact {
+                font-size: 0.6rem !important;
+            }
+
+            .stat-value-compact {
+                font-size: 0.7rem !important;
+            }
+
+            .card, .tableau-pile, .stock-pile {
+                width: 28px !important;
+                height: 39px !important;
+            }
+
+            .court-card-img {
+                width: 28px !important;
+                height: 39px !important;
+            }
+
+            .completed-set {
+                width: 28px !important;
+                height: 39px !important;
+            }
+
+            .tableau {
+                gap: 2px !important;
+            }
+
+            .top-row {
+                gap: 3px !important;
+                margin-bottom: 50px !important;
+            }
+
+            .stock-container {
+                margin-right: 0 !important;
+            }
+
+            .completed-sets {
+                gap: 2px !important;
+            }
+
+            .card-top, .card-bottom {
+                font-size: 6px !important;
+                gap: 0 !important;
+            }
+
+            .card-top {
+                top: 1px !important;
+                left: 1px !important;
+            }
+
+            .card-bottom {
+                bottom: 1px !important;
+                right: 1px !important;
+            }
+
+            .card-face {
+                font-size: 2px !important;
+                overflow: hidden !important;
+                max-height: 100% !important;
+                transform: scale(0.5) !important;
+            }
+
+            .card {
+                overflow: hidden !important;
+            }
+
+            .game-page .content-section {
+                margin-top: 30px !important;
+            }
+
+            .stock-pile {
+                font-size: 0.5rem !important;
+                line-height: 1.2 !important;
+            }
+        }
+    </style>
+</head>
+<body class="game-page">
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar Ad -->
+        <aside class="sidebar-ad sidebar-ad-left">
+            <div class="ad-placeholder">Left Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Left Ad 3<br>160x250</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top bar with title and controls -->
+            <div class="top-bar">
+                <div class="title-section">
+                    <h1>🕷️ Spider Solitaire</h1>
+                </div>
+                <div class="controls-section">
+                    <button class="difficulty-btn active" data-suits="1">1 Suit</button>
+                    <button class="difficulty-btn" data-suits="2">2 Suits</button>
+                    <button class="difficulty-btn" data-suits="4">4 Suits</button>
+                    <button class="btn btn-primary" id="new-game">New Game</button>
+                    <button class="btn btn-secondary" id="undo">Undo</button>
+                </div>
+                <div class="stats-section">
+                    <div class="stat-item-compact">
+                        <span class="stat-label-compact">Moves:</span>
+                        <span class="stat-value-compact" id="moves">0</span>
+                    </div>
+                    <div class="stat-item-compact">
+                        <span class="stat-label-compact">Sets:</span>
+                        <span class="stat-value-compact" id="sets-completed">0</span>
+                    </div>
+                    <div class="stat-item-compact">
+                        <span class="stat-label-compact">Stock:</span>
+                        <span class="stat-value-compact" id="stock-left">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="game-container">
+                    <div class="spider-board" id="spider-board">
+                        <div class="top-row">
+                            <div class="stock-container">
+                                <div class="stock-pile" id="stock-pile"></div>
+                            </div>
+                            <div class="completed-sets" id="completed-sets">
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                                <div class="completed-set"></div>
+                            </div>
+                        </div>
+
+                        <div class="tableau">
+                            <div class="tableau-pile" data-pile="0"></div>
+                            <div class="tableau-pile" data-pile="1"></div>
+                            <div class="tableau-pile" data-pile="2"></div>
+                            <div class="tableau-pile" data-pile="3"></div>
+                            <div class="tableau-pile" data-pile="4"></div>
+                            <div class="tableau-pile" data-pile="5"></div>
+                            <div class="tableau-pile" data-pile="6"></div>
+                            <div class="tableau-pile" data-pile="7"></div>
+                            <div class="tableau-pile" data-pile="8"></div>
+                            <div class="tableau-pile" data-pile="9"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Instructions -->
+                <div class="content-section">
+                    <h2>How to Play Spider Solitaire</h2>
+                    <p>Spider Solitaire is a challenging card game played with two complete decks (104 cards). The goal is to build eight sequences from King down to Ace in the same suit and remove them from the board.</p>
+
+                    <h3>Game Setup</h3>
+                    <ul>
+                        <li>Two complete 52-card decks are used (104 cards total)</li>
+                        <li>54 cards are dealt into 10 tableau columns: first 4 columns get 6 cards, remaining 6 columns get 5 cards each</li>
+                        <li>Only the top card in each column starts face-up</li>
+                        <li>Remaining 50 cards form the stock pile</li>
+                        <li>Choose difficulty: 1-suit (easiest), 2-suit (medium), or 4-suit (hardest)</li>
+                    </ul>
+
+                    <h3>Difficulty Modes</h3>
+                    <ul>
+                        <li><strong>1 Suit (Beginner):</strong> All cards are Spades - easiest to build sequences</li>
+                        <li><strong>2 Suits (Intermediate):</strong> Uses Spades and Hearts - moderate difficulty</li>
+                        <li><strong>4 Suits (Expert):</strong> Uses all four suits - most challenging</li>
+                    </ul>
+
+                    <h3>How to Win</h3>
+                    <p>Remove all eight complete King-to-Ace sequences (13 cards each) to win the game!</p>
+
+                    <h3>Game Rules</h3>
+                    <ul>
+                        <li><strong>Building Tableau:</strong> Cards can be placed on any card one rank higher, regardless of suit (e.g., 7 on 8)</li>
+                        <li><strong>Moving Sequences:</strong> You can move a sequence of cards ONLY if they are all the same suit and in descending order</li>
+                        <li><strong>Face-down Cards:</strong> When you move a card, the card beneath automatically flips face-up</li>
+                        <li><strong>Empty Columns:</strong> Any card or valid sequence can be placed in an empty column</li>
+                        <li><strong>Complete Sequences:</strong> When you build a complete King-to-Ace sequence in one suit, it's automatically removed</li>
+                        <li><strong>Stock Pile:</strong> Click the stock to deal one card to each of the 10 columns (all columns must have at least one card)</li>
+                    </ul>
+
+                    <h3>Strategy Tips</h3>
+                    <ul>
+                        <li><strong>Expose Face-down Cards:</strong> Priority is revealing hidden cards to see more options</li>
+                        <li><strong>Empty Columns Are Valuable:</strong> Try to create empty columns for strategic card movement</li>
+                        <li><strong>Build in Suit When Possible:</strong> Same-suit sequences give you more flexibility</li>
+                        <li><strong>Don't Rush to Deal:</strong> Exhaust all moves before dealing from stock</li>
+                        <li><strong>Plan Several Moves Ahead:</strong> Consider how each move affects future options</li>
+                        <li><strong>Keep Sequences Pure:</strong> Avoid mixing suits in long sequences when possible</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>How do you play Spider Solitaire?</h3>
+                        <p>In Spider Solitaire, arrange cards in descending order (King to Ace) in the tableau. Complete sequences of the same suit are automatically removed. You can move any face-up card or sequence. The goal is to clear all cards by building eight complete sequences.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between 1-suit, 2-suit, and 4-suit Spider Solitaire?</h3>
+                        <p>1-suit Spider uses only Spades (easiest), 2-suit uses Spades and Hearts (medium difficulty), and 4-suit uses all four suits (hardest). In all versions, you must build complete sequences in the same suit, but fewer suits make this easier to achieve.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can you move any card in Spider Solitaire?</h3>
+                        <p>You can move any face-up card, but you can only move multiple cards as a sequence if they're in descending order of the same suit. For example, you can move a 7-6-5 of Hearts together, but not a 7 of Hearts, 6 of Spades, 5 of Hearts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Games -->
+            <section class="related-games">
+                <div class="container">
+                    <h2>More Card Games</h2>
+                    <div class="game-grid">
+                        <a href="solitaire.html" class="game-card">
+                            <div class="game-icon">🂡</div>
+                            <h4>Classic Solitaire</h4>
+                            <p>The classic Klondike game</p>
+                        </a>
+                        <a href="freecell.html" class="game-card">
+                            <div class="game-icon">🎯</div>
+                            <h4>FreeCell</h4>
+                            <p>Strategy-based solitaire</p>
+                        </a>
+                        <a href="pyramid-solitaire.html" class="game-card">
+                            <div class="game-icon">🔺</div>
+                            <h4>Pyramid Solitaire</h4>
+                            <p>Match cards adding to 13</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar Ad -->
+        <aside class="sidebar-ad sidebar-ad-right">
+            <div class="ad-placeholder">Right Ad 1<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 2<br>160x250</div>
+            <div class="ad-placeholder">Right Ad 3<br>160x250</div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="../games/solitaire.html">Classic Solitaire</a>
+                    <a href="../games/spider-solitaire.html">Spider Solitaire</a>
+                    <a href="../games/freecell.html">FreeCell</a>
+                    <a href="../games/pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="../games/minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Win Modal -->
+    <div class="modal" id="win-modal">
+        <div class="modal-content">
+            <h2>🎉 You Win!</h2>
+            <p>Congratulations! You've completed Spider Solitaire!</p>
+            <p><strong>Moves:</strong> <span id="final-moves"></span></p>
+            <p><strong>Difficulty:</strong> <span id="final-difficulty"></span></p>
+            <button class="btn btn-success" id="play-again">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // Game state
+        let gameState = {
+            suits: 1,
+            tableau: Array(10).fill(null).map(() => []),
+            stock: [],
+            completedSets: 0,
+            moves: 0,
+            selectedCards: null,
+            history: []
+        };
+
+        // Card suits based on difficulty
+        const SUIT_CONFIGS = {
+            1: ['♠'],
+            2: ['♠', '♥'],
+            4: ['♠', '♥', '♣', '♦']
+        };
+
+        const RANKS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        const RANK_VALUES = { 'A': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13 };
+
+        // Initialize game
+        function initGame(suits = 1) {
+            gameState.suits = suits;
+            gameState.tableau = Array(10).fill(null).map(() => []);
+            gameState.stock = [];
+            gameState.completedSets = 0;
+            gameState.moves = 0;
+            gameState.selectedCards = null;
+            gameState.history = [];
+
+            // Create deck (104 cards total for Spider Solitaire)
+            const deck = [];
+            const suitSet = SUIT_CONFIGS[suits];
+
+            // For Spider Solitaire, we need 8 complete sets of 13 cards (104 total)
+            // In 1-suit mode: 8 sets of Spades
+            // In 2-suit mode: 4 sets of Spades + 4 sets of Hearts
+            // In 4-suit mode: 2 sets of each suit
+            const setsPerSuit = 8 / suitSet.length;
+
+            for (let suit of suitSet) {
+                for (let setNum = 0; setNum < setsPerSuit; setNum++) {
+                    for (let rank of RANKS) {
+                        deck.push({
+                            rank,
+                            suit,
+                            faceUp: false
+                        });
+                    }
+                }
+            }
+
+            // Shuffle deck
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+
+            // Deal to tableau: first 4 columns get 6 cards, last 6 get 5
+            let cardIndex = 0;
+            for (let col = 0; col < 10; col++) {
+                const numCards = col < 4 ? 6 : 5;
+                for (let i = 0; i < numCards; i++) {
+                    gameState.tableau[col].push(deck[cardIndex++]);
+                }
+                // Flip top card if column has cards
+                if (gameState.tableau[col].length > 0) {
+                    gameState.tableau[col][gameState.tableau[col].length - 1].faceUp = true;
+                }
+            }
+
+            // Remaining cards go to stock
+            gameState.stock = deck.slice(cardIndex);
+
+            render();
+        }
+
+        // Render game
+        function render() {
+            // Render tableau
+            for (let col = 0; col < 10; col++) {
+                const pile = document.querySelector(`.tableau-pile[data-pile="${col}"]`);
+                pile.innerHTML = '';
+
+                gameState.tableau[col].forEach((card, index) => {
+                    const cardEl = createCardElement(card, col, index);
+                    // Adjust card overlap for mobile
+                    const isMobile = window.innerWidth <= 768;
+                    const overlap = isMobile ? 15 : 35;
+                    cardEl.style.top = `${index * overlap}px`;
+                    pile.appendChild(cardEl);
+                });
+            }
+
+            // Render stock
+            const stockPile = document.getElementById('stock-pile');
+            const stockDeals = Math.ceil(gameState.stock.length / 10);
+            stockPile.innerHTML = stockDeals > 0 ? `${stockDeals}<br>deals` : 'Empty';
+            stockPile.style.cursor = stockDeals > 0 ? 'pointer' : 'not-allowed';
+
+            // Update stats
+            document.getElementById('moves').textContent = gameState.moves;
+            document.getElementById('sets-completed').textContent = gameState.completedSets;
+            document.getElementById('stock-left').textContent = stockDeals;
+
+            // Update completed sets
+            const completedSetsEl = document.getElementById('completed-sets');
+            completedSetsEl.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const setEl = document.createElement('div');
+                setEl.className = 'completed-set';
+                if (i < gameState.completedSets) {
+                    setEl.textContent = '✓';
+                    setEl.style.background = 'rgba(76, 175, 80, 0.3)';
+                    setEl.style.borderColor = '#4CAF50';
+                    setEl.style.color = '#4CAF50';
+                }
+                completedSetsEl.appendChild(setEl);
+            }
+        }
+
+        // Create card element
+        function createTraditionalCardFace(card) {
+            const suit = card.suit;
+            const value = card.rank;
+
+            // Court cards
+            if (value === 'K') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'king-clubs.png';
+                else if (suit === '♠') imageName = 'king-spades.png';
+                else if (suit === '♥') imageName = 'king-hearts.png';
+                else if (suit === '♦') imageName = 'king-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="King of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            } else if (value === 'Q') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'queen-clubs.png';
+                else if (suit === '♠') imageName = 'queen-spades.png';
+                else if (suit === '♥') imageName = 'queen-hearts.png';
+                else if (suit === '♦') imageName = 'queen-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="Queen of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            } else if (value === 'J') {
+                let imageName = '';
+                if (suit === '♣') imageName = 'jack-clubs.png';
+                else if (suit === '♠') imageName = 'jack-spades.png';
+                else if (suit === '♥') imageName = 'jack-hearts.png';
+                else if (suit === '♦') imageName = 'jack-diamonds.png';
+                return `<div class="card-face court-card-image">
+                    <img src="../${imageName}" alt="Jack of ${suit}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+            }
+
+            // Ace
+            if (value === 'A') {
+                return `<div class="card-face">${suit}</div>`;
+            }
+
+            // Number cards
+            const rankValues = {'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10};
+            const numValue = rankValues[value];
+            let suitPattern = '';
+
+            if (numValue === 2) {
+                suitPattern = `<div style="font-size: 32px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 8px 0;">
+                    <div>${suit}</div>
+                    <div style="transform: rotate(180deg);">${suit}</div>
+                </div>`;
+            } else if (numValue === 3) {
+                suitPattern = `<div style="font-size: 28px; display: flex; flex-direction: column; justify-content: space-around; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 4) {
+                suitPattern = `<div style="font-size: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: center; height: 100%; padding: 5px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 5) {
+                suitPattern = `<div style="font-size: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; height: 100%; align-items: center;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div style="grid-column: span 2; text-align: center;">${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 6) {
+                suitPattern = `<div style="font-size: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; height: 100%; padding: 4px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 7) {
+                suitPattern = `<div style="font-size: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: 100%; padding: 3px;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div style="grid-column: span 2; text-align: center;">${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 8) {
+                suitPattern = `<div style="font-size: 17px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 9) {
+                suitPattern = `<div style="font-size: 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div><div>${suit}</div>
+                </div>`;
+            } else if (numValue === 10) {
+                suitPattern = `<div style="font-size: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 100%;">
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                    <div>${suit}</div><div>${suit}</div>
+                </div>`;
+            }
+
+            return `<div class="card-face">${suitPattern}</div>`;
+        }
+
+        function createCardElement(card, col, index) {
+            const cardEl = document.createElement('div');
+            cardEl.className = 'card';
+
+            if (!card.faceUp) {
+                cardEl.classList.add('face-down');
+                return cardEl;
+            }
+
+            cardEl.classList.add(card.suit === '♥' || card.suit === '♦' ? 'red' : 'black');
+            const cardFace = createTraditionalCardFace(card);
+            cardEl.innerHTML = `
+                <div class="card-top">
+                    <div>${card.rank}</div>
+                    <div>${card.suit}</div>
+                </div>
+                ${cardFace}
+                <div class="card-bottom">
+                    <div>${card.rank}</div>
+                    <div>${card.suit}</div>
+                </div>
+            `;
+            cardEl.draggable = true;
+
+            cardEl.addEventListener('click', () => handleCardClick(col, index));
+            cardEl.addEventListener('dragstart', (e) => handleDragStart(e, col, index));
+            cardEl.addEventListener('dragover', (e) => e.preventDefault());
+            cardEl.addEventListener('drop', (e) => handleDrop(e, col));
+
+            return cardEl;
+        }
+
+        // Handle card click
+        function handleCardClick(col, index) {
+            const pile = gameState.tableau[col];
+            if (index < pile.length - 1 && !pile[index].faceUp) return;
+
+            if (gameState.selectedCards) {
+                // Try to move selected cards to this column
+                if (canPlaceSequence(pile, gameState.selectedCards.cards)) {
+                    saveHistory();
+                    const fromCol = gameState.selectedCards.col;
+                    const fromIndex = gameState.selectedCards.index;
+                    const cards = gameState.tableau[fromCol].splice(fromIndex);
+                    gameState.tableau[col].push(...cards);
+
+                    // Flip top card of source pile if exists
+                    if (gameState.tableau[fromCol].length > 0) {
+                        gameState.tableau[fromCol][gameState.tableau[fromCol].length - 1].faceUp = true;
+                    }
+
+                    gameState.moves++;
+                    gameState.selectedCards = null;
+                    checkForCompleteSequence();
+                    render();
+                }
+            } else {
+                // Select cards from this position to end
+                const cards = pile.slice(index);
+                if (isValidSequence(cards)) {
+                    gameState.selectedCards = { col, index, cards };
+                    render();
+
+                    // Highlight selected cards
+                    const pileEl = document.querySelector(`.tableau-pile[data-pile="${col}"]`);
+                    const cardEls = pileEl.querySelectorAll('.card');
+                    for (let i = index; i < cardEls.length; i++) {
+                        cardEls[i].classList.add('selected');
+                    }
+                }
+            }
+        }
+
+        // Check if cards form a valid moveable sequence (descending order, any suit)
+        function isValidSequence(cards) {
+            if (cards.length === 0) return false;
+            if (!cards[0].faceUp) return false;
+
+            // Cards must be in descending order (suit doesn't matter for moving)
+            for (let i = 0; i < cards.length - 1; i++) {
+                if (RANK_VALUES[cards[i].rank] !== RANK_VALUES[cards[i + 1].rank] + 1) return false;
+            }
+            return true;
+        }
+
+        // Check if sequence can be placed on target pile
+        function canPlaceSequence(targetPile, cards) {
+            if (targetPile.length === 0) return true; // Can place on empty pile
+
+            const topCard = targetPile[targetPile.length - 1];
+            const bottomCard = cards[0];
+
+            return RANK_VALUES[topCard.rank] === RANK_VALUES[bottomCard.rank] + 1;
+        }
+
+        // Drag and drop handlers
+        function handleDragStart(e, col, index) {
+            const cards = gameState.tableau[col].slice(index);
+            if (isValidSequence(cards)) {
+                gameState.selectedCards = { col, index, cards };
+                e.dataTransfer.effectAllowed = 'move';
+            } else {
+                e.preventDefault();
+            }
+        }
+
+        function handleDrop(e, col) {
+            e.preventDefault();
+            if (!gameState.selectedCards) return;
+
+            const pile = gameState.tableau[col];
+            if (canPlaceSequence(pile, gameState.selectedCards.cards)) {
+                saveHistory();
+                const fromCol = gameState.selectedCards.col;
+                const fromIndex = gameState.selectedCards.index;
+                const cards = gameState.tableau[fromCol].splice(fromIndex);
+                gameState.tableau[col].push(...cards);
+
+                // Flip top card of source pile if exists
+                if (gameState.tableau[fromCol].length > 0) {
+                    gameState.tableau[fromCol][gameState.tableau[fromCol].length - 1].faceUp = true;
+                }
+
+                gameState.moves++;
+                gameState.selectedCards = null;
+                checkForCompleteSequence();
+                render();
+            }
+        }
+
+        // Check for complete K-A sequences
+        function checkForCompleteSequence() {
+            for (let col = 0; col < 10; col++) {
+                const pile = gameState.tableau[col];
+                if (pile.length < 13) continue;
+
+                // Check from bottom for K-A sequence
+                for (let startIdx = pile.length - 13; startIdx >= 0; startIdx--) {
+                    const sequence = pile.slice(startIdx, startIdx + 13);
+
+                    // Must all be face-up
+                    if (!sequence.every(c => c.faceUp)) continue;
+
+                    // Must all be same suit
+                    const suit = sequence[0].suit;
+                    if (!sequence.every(c => c.suit === suit)) continue;
+
+                    // Must be K to A
+                    const expectedRanks = ['K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'A'];
+                    const isComplete = sequence.every((card, i) => card.rank === expectedRanks[i]);
+
+                    if (isComplete) {
+                        // Remove sequence
+                        gameState.tableau[col].splice(startIdx, 13);
+                        gameState.completedSets++;
+
+                        // Flip top card if exists
+                        if (gameState.tableau[col].length > 0) {
+                            gameState.tableau[col][gameState.tableau[col].length - 1].faceUp = true;
+                        }
+
+                        // Check for win
+                        if (gameState.completedSets === 8) {
+                            setTimeout(showWinModal, 500);
+                        }
+
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Deal from stock
+        function dealFromStock() {
+            if (gameState.stock.length === 0) return;
+
+            // Check all columns have at least one card
+            if (gameState.tableau.some(pile => pile.length === 0)) {
+                alert('All columns must have at least one card before dealing!');
+                return;
+            }
+
+            saveHistory();
+
+            // Deal one card to each column
+            for (let col = 0; col < 10; col++) {
+                if (gameState.stock.length > 0) {
+                    const card = gameState.stock.pop();
+                    card.faceUp = true;
+                    gameState.tableau[col].push(card);
+                }
+            }
+
+            gameState.moves++;
+            checkForCompleteSequence();
+            render();
+        }
+
+        // Save history for undo
+        function saveHistory() {
+            gameState.history.push({
+                tableau: JSON.parse(JSON.stringify(gameState.tableau)),
+                stock: JSON.parse(JSON.stringify(gameState.stock)),
+                completedSets: gameState.completedSets,
+                moves: gameState.moves
+            });
+        }
+
+        // Undo last move
+        function undo() {
+            if (gameState.history.length === 0) return;
+
+            const lastState = gameState.history.pop();
+            gameState.tableau = lastState.tableau;
+            gameState.stock = lastState.stock;
+            gameState.completedSets = lastState.completedSets;
+            gameState.moves = lastState.moves;
+            gameState.selectedCards = null;
+
+            render();
+        }
+
+        // Show win modal
+        function showWinModal() {
+            document.getElementById('final-moves').textContent = gameState.moves;
+            document.getElementById('final-difficulty').textContent = `${gameState.suits} Suit${gameState.suits > 1 ? 's' : ''}`;
+            document.getElementById('win-modal').style.display = 'flex';
+        }
+
+        // Event listeners
+        document.getElementById('new-game').addEventListener('click', () => {
+            initGame(gameState.suits);
+        });
+
+        document.getElementById('undo').addEventListener('click', undo);
+
+        document.getElementById('stock-pile').addEventListener('click', dealFromStock);
+
+        document.querySelectorAll('.difficulty-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const suits = parseInt(btn.dataset.suits);
+                initGame(suits);
+            });
+        });
+
+        document.getElementById('play-again').addEventListener('click', () => {
+            document.getElementById('win-modal').style.display = 'none';
+            initGame(gameState.suits);
+        });
+
+        // Allow clicking on empty tableau piles
+        document.querySelectorAll('.tableau-pile').forEach(pileEl => {
+            pileEl.addEventListener('click', (e) => {
+                if (e.target === pileEl && gameState.selectedCards) {
+                    const col = parseInt(pileEl.dataset.pile);
+                    handleCardClick(col, gameState.tableau[col].length);
+                }
+            });
+            pileEl.addEventListener('dragover', (e) => e.preventDefault());
+            pileEl.addEventListener('drop', (e) => {
+                const col = parseInt(pileEl.dataset.pile);
+                handleDrop(e, col);
+            });
+        });
+
+        // Start game
+        initGame(1);
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>

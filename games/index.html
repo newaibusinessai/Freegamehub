@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO Tags -->
+    <title>All Free Online Games | Card Games & Puzzle Games - FreeGameHub</title>
+    <meta name="description" content="Browse all free online games. Play classic solitaire, card games, puzzle games, and strategy games. No download or registration. Mobile-friendly browser games.">
+    <meta name="keywords" content="free online games, all games, solitaire games, card games, puzzle games, strategy games, browser games">
+    <link rel="canonical" href="https://freegamehub.org/games/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="All Free Online Games - FreeGameHub">
+    <meta property="og:description" content="Browse all free online games including solitaire, card games, and puzzle games. Play instantly in your browser.">
+    <meta property="og:url" content="https://freegamehub.org/games/">
+    <meta property="og:type" content="website">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "All Free Online Games",
+      "description": "Complete collection of free online games including card games, puzzle games, and strategy games",
+      "url": "https://freegamehub.org/games/",
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 8,
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Classic Solitaire",
+            "url": "https://freegamehub.org/games/solitaire.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Spider Solitaire",
+            "url": "https://freegamehub.org/games/spider-solitaire.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "VideoGame",
+            "name": "FreeCell",
+            "url": "https://freegamehub.org/games/freecell.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Pyramid Solitaire",
+            "url": "https://freegamehub.org/games/pyramid-solitaire.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Mahjong Solitaire",
+            "url": "https://freegamehub.org/games/mahjong.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Memory Game",
+            "url": "https://freegamehub.org/games/memory.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Minesweeper",
+            "url": "https://freegamehub.org/games/minesweeper.html"
+          }
+        },{
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Chess",
+            "url": "https://freegamehub.org/games/chess.html"
+          }
+        }]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freegamehub.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Games",
+        "item": "https://freegamehub.org/games/"
+      }]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/main.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .page-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .games-category {
+            margin: 3rem 0;
+        }
+
+        .games-category h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #000000;
+            font-weight: 700;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .category-description {
+            margin-bottom: 2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .game-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .game-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">🎮 FreeGameHub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../games/">Games</a>
+                <a href="../guides/">Guides</a>
+                <a href="../blog/">Blog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>All Free Online Games</h1>
+            <p>Play classic card games, puzzle games, and strategy games - all free, no download required</p>
+        </div>
+    </div>
+
+    <main class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+        <div class="games-category">
+            <h2>♠♥ Card Games</h2>
+            <p class="category-description">Enjoy timeless card games including multiple solitaire variants. Perfect for relaxation and mental exercise.</p>
+
+            <div class="game-grid">
+                <a href="solitaire.html" class="game-card">
+                    <div class="game-icon">🂡</div>
+                    <h3>Classic Solitaire</h3>
+                    <p>The classic Klondike Solitaire card game. Build foundation piles from Ace to King in alternating colors.</p>
+                    <span class="game-badge">Most Popular</span>
+                </a>
+
+                <a href="spider-solitaire.html" class="game-card">
+                    <div class="game-icon">🕷️</div>
+                    <h3>Spider Solitaire</h3>
+                    <p>Challenging variant with 1, 2, or 4 suit difficulty modes. Build complete sequences from King to Ace.</p>
+                    <span class="game-badge">Challenging</span>
+                </a>
+
+                <a href="freecell.html" class="game-card">
+                    <div class="game-icon">🎯</div>
+                    <h3>FreeCell</h3>
+                    <p>Strategic solitaire where every game is winnable! Use free cells to organize your cards strategically.</p>
+                    <span class="game-badge">Strategy</span>
+                </a>
+
+                <a href="pyramid-solitaire.html" class="game-card">
+                    <div class="game-icon">🔺</div>
+                    <h3>Pyramid Solitaire</h3>
+                    <p>Match cards that add up to 13 to clear the pyramid. Fast-paced and addictive gameplay.</p>
+                    <span class="game-badge">Quick Play</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="games-category">
+            <h2>🧩 Puzzle Games</h2>
+            <p class="category-description">Test your logic, memory, and problem-solving skills with these classic puzzle games.</p>
+
+            <div class="game-grid">
+                <a href="mahjong.html" class="game-card">
+                    <div class="game-icon">🀄</div>
+                    <h3>Mahjong Solitaire</h3>
+                    <p>Classic tile-matching puzzle game. Remove pairs of free tiles to clear the board.</p>
+                    <span class="game-badge">Relaxing</span>
+                </a>
+
+                <a href="memory.html" class="game-card">
+                    <div class="game-icon">🧠</div>
+                    <h3>Memory Game</h3>
+                    <p>Test and improve your memory! Find all matching pairs by remembering card positions.</p>
+                    <span class="game-badge">Brain Training</span>
+                </a>
+
+                <a href="minesweeper.html" class="game-card">
+                    <div class="game-icon">💣</div>
+                    <h3>Minesweeper</h3>
+                    <p>Classic logic puzzle. Use number clues to find all mines without detonating any.</p>
+                    <span class="game-badge">Classic</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="games-category">
+            <h2>♟️ Strategy Games</h2>
+            <p class="category-description">Challenge your strategic thinking with classic games that require planning and foresight.</p>
+
+            <div class="game-grid">
+                <a href="chess.html" class="game-card">
+                    <div class="game-icon">♟️</div>
+                    <h3>Chess</h3>
+                    <p>Play chess against the computer. Practice openings, tactics, and improve your chess skills.</p>
+                    <span class="game-badge">Strategy</span>
+                </a>
+            </div>
+        </div>
+
+        <section style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin: 3rem 0;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50;">Why Play Free Games at FreeGameHub?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 0.5rem;">✅ 100% Free</h3>
+                    <p style="color: #666;">All games are completely free to play with no hidden costs or premium features.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 0.5rem;">🚀 No Download</h3>
+                    <p style="color: #666;">Start playing instantly in your browser. No installation or downloads required.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 0.5rem;">📱 Mobile Friendly</h3>
+                    <p style="color: #666;">Play on any device - desktop, tablet, or smartphone. Fully responsive design.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 0.5rem;">👤 No Registration</h3>
+                    <p style="color: #666;">Jump right into the games. No sign-up, login, or personal information required.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Popular Games</h4>
+                    <a href="solitaire.html">Classic Solitaire</a>
+                    <a href="spider-solitaire.html">Spider Solitaire</a>
+                    <a href="freecell.html">FreeCell</a>
+                    <a href="pyramid-solitaire.html">Pyramid Solitaire</a>
+                    <a href="minesweeper.html">Minesweeper</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Guides</h4>
+                    <a href="../guides/solitaire-variants.html">Solitaire Variants</a>
+                    <a href="../guides/minesweeper-guide.html">Minesweeper Strategy</a>
+                    <a href="../guides/mahjong-solitaire-guide.html">Mahjong Guide</a>
+                    <a href="../guides/memory-game-benefits.html">Memory Game Benefits</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Site Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="../games/">All Games</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">&copy; 2025 FreeGameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P1QYZTY13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0P1QYZTY13');
+    </script>
+</body>
+</html>
